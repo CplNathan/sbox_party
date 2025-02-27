@@ -1,0 +1,247 @@
+{
+  "RootObject": {
+    "__guid": "ff2e0e11-3455-4345-a73d-335128fea2ce",
+    "Flags": 0,
+    "Name": "dice",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "SandboxParty.Components.Board.Dice.BoardDiceReader",
+        "__guid": "e68b942b-e5cf-4804-b3fb-8dee6d497325",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "273a00a0-a0c5-43fe-aff2-959c1d6839b7",
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "MaterialGroup": "default",
+        "MaterialOverride": null,
+        "Model": "models/dice/dice.vmdl",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "7cbab3b9-bb2c-4f70-9ea0-3e10fee857dc",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "eed43023-3785-47ad-9b5e-8de376699fe3",
+        "Center": "0,0,0",
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "Scale": "12.5,12.5,12.5",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "036c0542-90ad-4eec-ac60-c3dae0362650",
+        "Flags": 0,
+        "Name": "One",
+        "Position": "0,0,-6",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
+            "__guid": "8d626f21-53da-47cb-8fc4-70f877abe5b3",
+            "DiceNumber": 1,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ]
+      },
+      {
+        "__guid": "0d398f86-bcf7-4a14-a9de-2a0488192c60",
+        "Flags": 0,
+        "Name": "Two",
+        "Position": "0,6,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
+            "__guid": "deb21ff2-30c8-4526-b70f-f2dec5169c91",
+            "DiceNumber": 2,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ]
+      },
+      {
+        "__guid": "cee89e97-7bba-4282-b75f-8d4b7304a17b",
+        "Flags": 0,
+        "Name": "Three",
+        "Position": "6,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
+            "__guid": "67bdbbb6-7ebd-48c2-917d-550f0fb9cd90",
+            "DiceNumber": 3,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ]
+      },
+      {
+        "__guid": "9fe92057-b1ad-4cd1-a049-07e4f232d63c",
+        "Flags": 0,
+        "Name": "Four",
+        "Position": "-6,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
+            "__guid": "60498fca-ce6c-4422-8310-0c3fb40556c1",
+            "DiceNumber": 4,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ]
+      },
+      {
+        "__guid": "42fee383-8534-4b89-a35d-dc0662d05c33",
+        "Flags": 0,
+        "Name": "Five",
+        "Position": "0,-6,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
+            "__guid": "17bab953-b122-4619-a8f0-cb414c468534",
+            "DiceNumber": 5,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ]
+      },
+      {
+        "__guid": "49aaf9dc-7bca-4f1f-b10c-3e3cece40bca",
+        "Flags": 0,
+        "Name": "Six",
+        "Position": "0,0,6",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
+            "__guid": "6a9611d9-0044-4ce3-bc64-40cc36acb25d",
+            "DiceNumber": 6,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ]
+      }
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [
+    "baik.dice#19430"
+  ],
+  "__version": 1
+}
