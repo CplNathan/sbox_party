@@ -18,11 +18,11 @@ namespace SandboxParty.Components.Board.Character
 
 		[Sync( Flags = SyncFlags.FromHost | SyncFlags.Interpolate )] public Rotation DesiredRotation { get; set; }
 
-		private BoardComponent goalTile;
+		private BoardComponent GoalTile { get; set; }
 
-		private BoardComponent currentTile;
+		private BoardComponent CurrentTile { get; set; }
 
-		private List<BoardComponent> currentPath = [];
+		private List<BoardComponent> CurrentPath { get; set; } = [];
 
 		private bool IsOurTurn { get => BoardGameManager.Current.BoardGameState?.CurrentTurn.GameObject == GameObject; }
 
@@ -32,47 +32,39 @@ namespace SandboxParty.Components.Board.Character
 
 			NavigationAgent.SetAgentPosition( GameObject.WorldPosition );
 
-			currentTile = Scene.Components.GetAll<BoardComponent>().First();
+			CurrentTile = Scene.Components.GetAll<BoardComponent>().First();
 		}
 
-		public void MoveForward( int steps )
+		protected override void OnUpdate()
 		{
-			currentPath = GetMovement( steps );
-			goalTile = currentPath.Last();
-		}
+			base.OnUpdate();
 
-		private List<BoardComponent> GetMovement( int steps = 1 )
-		{
-			List<BoardComponent> tilePath = [];
+			Velocity = NavigationAgent.Velocity;
+			WishVelocity = NavigationAgent.WishVelocity;
 
-			for ( int i = 0; i < steps; i++ )
-			{
-				var nextComponent = currentTile.NextComponent.ElementAt( Random.Shared.Next( 0, currentTile.NextComponent.Length ) );
-				currentTile = nextComponent.Components.Get<BoardComponent>();
-				tilePath.Add( currentTile );
-			}
-
-			return tilePath;
+			HandleMovement();
+			HandleRotation();
 		}
 
 		private void HandleMovement()
 		{
-			var targetReached = NavigationAgent.TargetPosition?.IsNearlyZero() == true || NavigationAgent.AgentPosition.Distance( NavigationAgent.TargetPosition ?? Vector3.Zero ) <= 32;
-			var targetTile = currentPath.FirstOrDefault();
-			if ( targetReached && targetTile?.IsValid == true )
+			var previousTargetReached = NavigationAgent.TargetPosition?.IsNearlyZero() == true || NavigationAgent.AgentPosition.Distance( NavigationAgent.TargetPosition ?? Vector3.Zero ) <= 32;
+			var targetTile = CurrentPath.FirstOrDefault();
+			if ( previousTargetReached && targetTile?.IsValid == true )
 			{
 				var targetPosition = Scene?.NavMesh?.GetClosestPoint( targetTile.WorldPosition );
 				NavigationAgent.MoveTo( targetPosition.Value );
 
-				currentPath.RemoveAt( 0 );
-				currentTile = targetTile;
+				CurrentPath.RemoveAt( 0 );
+				CurrentTile = targetTile;
 			}
 
 			var isStationary = NavigationAgent.Velocity.IsNearlyZero();
+			var isOurTurn = BoardGameManager.Current.BoardGameState?.CurrentTurn.GameObject == GameObject;
 			NavigationArea.IsBlocker = isStationary && !IsOurTurn;
 			DesiredLocation = NavigationAgent.AgentPosition;
 
-			var destinationReached = targetReached && currentPath.Count == 0 && goalTile?.IsValid == true && NavigationAgent.AgentPosition.Distance( goalTile.WorldPosition ) <= 32;
+			var destinationReached = previousTargetReached && CurrentPath.Count == 0 && GoalTile?.IsValid == true && NavigationAgent.AgentPosition.Distance( GoalTile.WorldPosition ) <= 32;
 			if ( destinationReached && NavigationAgent.TargetPosition?.IsNearlyZero() == false )
 			{
 				IBoardCharacterEvent.PostToGameObject( GameObject, x => x.OnDestinationReached() );
@@ -91,15 +83,24 @@ namespace SandboxParty.Components.Board.Character
 			}
 		}
 
-		protected override void OnUpdate()
+		public void MoveForward( int steps )
 		{
-			base.OnUpdate();
+			CurrentPath = GetMovement( steps );
+			GoalTile = CurrentPath.Last();
+		}
 
-			Velocity = NavigationAgent.Velocity;
-			WishVelocity = NavigationAgent.WishVelocity;
+		private List<BoardComponent> GetMovement( int steps = 1 )
+		{
+			List<BoardComponent> tilePath = [];
 
-			HandleMovement();
-			HandleRotation();
+			for ( int i = 0; i < steps; i++ )
+			{
+				var nextComponent = CurrentTile.NextComponent.ElementAt( Random.Shared.Next( 0, CurrentTile.NextComponent.Length ) );
+				CurrentTile = nextComponent.Components.Get<BoardComponent>();
+				tilePath.Add( CurrentTile );
+			}
+
+			return tilePath;
 		}
 	}
 }

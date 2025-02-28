@@ -17,23 +17,6 @@ namespace SandboxParty.Components.Board.Character
 
 		private bool IsOurTurn { get => BoardGameManager.Current.BoardGameState?.CurrentTurn == this; }
 
-		private void UpdateAnimations()
-		{
-			AnimationHelper.WithVelocity( MovementHelper.Velocity );
-			AnimationHelper.WithWishVelocity( MovementHelper.WishVelocity );
-			AnimationHelper.Sitting = IsOurTurn ? CitizenAnimationHelper.SittingStyle.None : CitizenAnimationHelper.SittingStyle.Floor;
-		}
-
-		private void UpdateLocation()
-		{
-			GameObject.WorldPosition = MovementHelper.DesiredLocation;
-		}
-
-		private void UpdateRotation()
-		{
-			GameObject.WorldRotation = Rotation.Slerp( GameObject.WorldRotation, MovementHelper.DesiredRotation, Time.Delta * 3f );
-		}
-
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
@@ -57,6 +40,23 @@ namespace SandboxParty.Components.Board.Character
 
 			// AnimationHelper.Sitting = CitizenAnimationHelper.SittingStyle.Floor
 			// NavigationAgent.MoveTo( Vector3.Random );
+		}
+
+		private void UpdateAnimations()
+		{
+			AnimationHelper.WithVelocity( MovementHelper.Velocity );
+			AnimationHelper.WithWishVelocity( MovementHelper.WishVelocity );
+			AnimationHelper.Sitting = IsOurTurn ? CitizenAnimationHelper.SittingStyle.None : CitizenAnimationHelper.SittingStyle.Floor;
+		}
+
+		private void UpdateLocation()
+		{
+			GameObject.WorldPosition = MovementHelper.DesiredLocation;
+		}
+
+		private void UpdateRotation()
+		{
+			GameObject.WorldRotation = Rotation.Slerp( GameObject.WorldRotation, MovementHelper.DesiredRotation, Time.Delta * 3f );
 		}
 
 		[Rpc.Host( Flags = NetFlags.OwnerOnly )]
