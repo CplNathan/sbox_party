@@ -1,6 +1,4 @@
-﻿using SandboxParty.Components.Board.Character;
-using SandboxParty.GameManager;
-using System.Threading.Tasks;
+﻿using SandboxParty.Events;
 
 namespace SandboxParty.Components.Board
 {
@@ -40,26 +38,13 @@ namespace SandboxParty.Components.Board
 		{
 			Log.Info( $"Player '{channel.DisplayName}' has joined the game" );
 
-			if ( !PlayerPrefab.IsValid() )
-				return;
-
-
-
-			//
-			// Find a spawn location for this player
-			//
 			var startLocation = SpawnComponent.GameObject.WorldTransform.WithScale( 1 ).WithRotation( new Rotation() );
-
-			// Spawn this object and make the client the owner
-			var player = PlayerPrefab.Clone( startLocation, name: $"Player - {channel.DisplayName}" );
-			player.NetworkSpawn( channel );
-
-			GameState.Players[channel.Id] = player.GetComponentInChildren<BoardCharacter>();
+			IBoardGameEvent.Post( x => x.OnPlayerJoined( channel, PlayerPrefab, startLocation ) );
 		}
 
 		void INetworkListener.OnDisconnected( Connection channel )
 		{
-			GameState.Players.Remove( channel.Id );
+			IBoardGameEvent.Post( x => x.OnPlayerLeft( channel ) );
 		}
 	}
 }

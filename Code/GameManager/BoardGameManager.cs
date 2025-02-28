@@ -1,11 +1,10 @@
 ﻿using SandboxParty.Components.Board;
-using System.Threading.Tasks;
 
 namespace SandboxParty.GameManager
 {
 	public sealed class BoardGameManager : GameObjectSystem<BoardGameManager>, ISceneStartup
 	{
-		public BoardGameState BoardGameState { get => _boardGameState ??= Scene.GetComponentInChildren<BoardNetworkHelper>().GameState; }
+		public BoardGameState BoardGameState { get => _boardGameState ??= Scene.GetComponentInChildren<BoardNetworkHelper>()?.GameState; }
 
 		private BoardGameState _boardGameState;
 
@@ -27,7 +26,8 @@ namespace SandboxParty.GameManager
 				IsAdditive = false,
 				DeleteEverything = false,
 			};
-			_boardOptions.SetScene( "scenes/minimal.scene" );
+			//_boardOptions.SetScene( "scenes/minimal.scene" );
+			_boardOptions.SetScene( "scenes/tokyo.scene" );
 		}
 
 		void ISceneStartup.OnHostInitialize()

@@ -1,0 +1,299 @@
+{
+  "IsSubgraph": false,
+  "Path": "materials/ground_shader/ground_shader.shdrgrph",
+  "Model": "models/dev/plane.vmdl",
+  "Title": null,
+  "Description": "",
+  "Category": null,
+  "Icon": null,
+  "AddToNodeLibrary": false,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Result",
+      "DefaultOpacity": 1,
+      "DefaultRoughness": 1,
+      "DefaultMetalness": 0,
+      "DefaultAmbientOcclusion": 1,
+      "Identifier": "0",
+      "Position": "72,264",
+      "HandleOffsets": {},
+      "Albedo": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_diff_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Texture Mud",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "1",
+      "Position": "-1236,-252",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/leafy_grass/leafy_grass_diff_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Texture Grass",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "2",
+      "Position": "-1236,-444",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "3",
+      "Position": "-2052,-36",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_disp_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Mud Height",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "4",
+      "Position": "-1716,312",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "10",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "5",
+      "Position": "-588,-180",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "1",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "7",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 0,
+      "Fraction": 0.5,
+      "Identifier": "6",
+      "Position": "-252,252",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "20",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "18",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0.7,
+      "DefaultB": 0,
+      "Fraction": 0.5,
+      "Identifier": "7",
+      "Position": "-924,132",
+      "HandleOffsets": {},
+      "C": {
+        "Identifier": "8",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Saturate",
+      "Identifier": "8",
+      "Position": "-816,336",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "21",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "ObjectSpaceNormal",
+      "Identifier": "9",
+      "Position": "-948,1092",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "5,5",
+      "Identifier": "10",
+      "Position": "-2052,252",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Blend",
+      "DefaultA": "0,0,0,1",
+      "DefaultB": "1,1,1,1",
+      "Fraction": 0.5,
+      "BlendMode": "Mix",
+      "Clamp": true,
+      "Identifier": "11",
+      "Position": "-1116,552",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "WorldNormal",
+      "Identifier": "12",
+      "Position": "-1716,768",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "13",
+      "Position": "-1524,768",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "12",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1.2,
+      "Identifier": "14",
+      "Position": "-1020,780",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "13",
+        "Output": "Z"
+      }
+    },
+    {
+      "_class": "VoronoiNoise",
+      "AngleOffset": 4.5792685,
+      "CellDensity": 7,
+      "Worley": true,
+      "Identifier": "15",
+      "Position": "-1800,564",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "10,10",
+      "Identifier": "16",
+      "Position": "-2064,132",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 0.5,
+      "Identifier": "17",
+      "Position": "-1476,576",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "15",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Saturate",
+      "Identifier": "18",
+      "Position": "-540,612",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "14",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "SimplexNoise",
+      "Identifier": "19",
+      "Position": "-1824,216",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "16",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/rocks_ground_02/rocks_ground_02_col_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Rocks",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "20",
+      "Position": "-732,1044",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "9",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "21",
+      "Position": "-1272,276",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "4",
+        "Output": "R"
+      },
+      "C": {
+        "Identifier": "17",
+        "Output": "Result"
+      }
+    }
+  ]
+}

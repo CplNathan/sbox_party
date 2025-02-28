@@ -1,0 +1,24 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Tokyo",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "tokyo",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "frogpond.storefridge#12973",
+        "kenneynl.foodkitplate#80706",
+        "tfassets.awning#24976"
+      ],
+      "IsWhitelistDisabled": false,
+      "Metadata": {
+        "SingleAssetSource": "maps/tokyo.vmap"
+      }
+    }
+  }
+}

@@ -15,8 +15,6 @@ namespace SandboxParty.Components.Board.Character
 
 		[RequireComponent] public BoardCharacterDice Dice { get; set; }
 
-		[Sync( Flags = SyncFlags.FromHost )] public int LastRoll { get; set; } = 0;
-
 		private bool IsOurTurn { get => BoardGameManager.Current.BoardGameState?.CurrentTurn == this; }
 
 		private void UpdateAnimations()
@@ -33,7 +31,7 @@ namespace SandboxParty.Components.Board.Character
 
 		private void UpdateRotation()
 		{
-			AnimationHelper.Target.WorldRotation = Rotation.Slerp( AnimationHelper.Target.WorldRotation, MovementHelper.DesiredRotation, Time.Delta * 3.0f );
+			GameObject.WorldRotation = Rotation.Slerp( GameObject.WorldRotation, MovementHelper.DesiredRotation, Time.Delta * 3f );
 		}
 
 		protected override void OnUpdate()
@@ -51,7 +49,7 @@ namespace SandboxParty.Components.Board.Character
 			if ( IsProxy )
 				return;
 
-			Gizmo.Draw.ScreenText( $"You rolled {LastRoll}", new Vector2( 50, 50 ) );
+			Gizmo.Draw.ScreenText( $"You rolled {Dice.LastRoll}", new Vector2( 50, 50 ) );
 
 			if ( Input.Pressed( "jump" ) && RollDiceRPC_Validate() )
 				RollDiceRPC();
@@ -71,8 +69,8 @@ namespace SandboxParty.Components.Board.Character
 			Vector3 upVector = Vector3.Up;
 			Vector3 vector = GameObject.WorldPosition + forwardVector * 50 + upVector * 25;
 
-			LastRoll = await Dice.RollDice( vector );
-			MovementHelper.MoveForward( LastRoll );
+			var newRoll = await Dice.RollDice( vector );
+			MovementHelper.MoveForward( newRoll );
 		}
 
 		public bool RollDiceRPC_Validate()
@@ -82,7 +80,7 @@ namespace SandboxParty.Components.Board.Character
 
 		public void OnDestinationReached()
 		{
-			IBoardGameEvent.Post( x => x.OnTurnEnded( this ) );
+			IBoardGameEvent.Post( x => x.OnDestinationReached( this ) );
 		}
 	}
 }

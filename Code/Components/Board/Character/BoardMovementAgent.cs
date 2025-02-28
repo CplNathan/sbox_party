@@ -1,4 +1,5 @@
 ﻿using SandboxParty.Events;
+using SandboxParty.GameManager;
 using System;
 
 namespace SandboxParty.Components.Board.Character
@@ -17,20 +18,27 @@ namespace SandboxParty.Components.Board.Character
 
 		[Sync( Flags = SyncFlags.FromHost | SyncFlags.Interpolate )] public Rotation DesiredRotation { get; set; }
 
-		[Sync( Flags = SyncFlags.FromHost )] public BoardComponent CurrentTile { get; set; }
+		private BoardComponent goalTile;
 
-		[Sync( Flags = SyncFlags.FromHost )] public NetList<BoardComponent> CurrentPath { get; set; } = [];
+		private BoardComponent currentTile;
 
-		public bool TargetReached { get; set; } = true;
+		private List<BoardComponent> currentPath = [];
 
-		public bool DestinationReached { get; set; } = true;
+		private bool IsOurTurn { get => BoardGameManager.Current.BoardGameState?.CurrentTurn.GameObject == GameObject; }
 
-		private List<BoardComponent> AllTiles { get => [.. Scene.Components.GetAll<BoardComponent>()]; }
+		protected override void OnStart()
+		{
+			base.OnStart();
+
+			NavigationAgent.SetAgentPosition( GameObject.WorldPosition );
+
+			currentTile = Scene.Components.GetAll<BoardComponent>().First();
+		}
 
 		public void MoveForward( int steps )
 		{
-			CurrentPath.Clear();
-			GetMovement( steps ).ForEach( x => CurrentPath.Add( x ) );
+			currentPath = GetMovement( steps );
+			goalTile = currentPath.Last();
 		}
 
 		private List<BoardComponent> GetMovement( int steps = 1 )
@@ -39,9 +47,9 @@ namespace SandboxParty.Components.Board.Character
 
 			for ( int i = 0; i < steps; i++ )
 			{
-				var nextComponent = CurrentTile.NextComponent.ElementAt( Random.Shared.Next( 0, CurrentTile.NextComponent.Length ) );
-				CurrentTile = nextComponent.Components.Get<BoardComponent>();
-				tilePath.Add( CurrentTile );
+				var nextComponent = currentTile.NextComponent.ElementAt( Random.Shared.Next( 0, currentTile.NextComponent.Length ) );
+				currentTile = nextComponent.Components.Get<BoardComponent>();
+				tilePath.Add( currentTile );
 			}
 
 			return tilePath;
@@ -49,32 +57,31 @@ namespace SandboxParty.Components.Board.Character
 
 		private void HandleMovement()
 		{
-			var targetTile = CurrentPath.FirstOrDefault();
-			if ( TargetReached && targetTile?.IsValid == true )
+			var targetReached = NavigationAgent.TargetPosition?.IsNearlyZero() == true || NavigationAgent.AgentPosition.Distance( NavigationAgent.TargetPosition ?? Vector3.Zero ) <= 32;
+			var targetTile = currentPath.FirstOrDefault();
+			if ( targetReached && targetTile?.IsValid == true )
 			{
 				var targetPosition = Scene?.NavMesh?.GetClosestPoint( targetTile.WorldPosition );
 				NavigationAgent.MoveTo( targetPosition.Value );
 
-				CurrentPath.RemoveAt( 0 );
-				CurrentTile = targetTile;
+				currentPath.RemoveAt( 0 );
+				currentTile = targetTile;
 			}
 
 			var isStationary = NavigationAgent.Velocity.IsNearlyZero();
-			NavigationArea.IsBlocker = isStationary;
-			DesiredLocation = isStationary ? DesiredLocation : NavigationAgent.AgentPosition;
-			TargetReached = NavigationAgent.TargetPosition?.IsNearlyZero() == true || (NavigationAgent.TargetPosition.HasValue && NavigationAgent.AgentPosition.Distance( NavigationAgent.TargetPosition.Value ) <= 32);
-			DestinationReached = TargetReached && CurrentPath.Count == 0;
+			NavigationArea.IsBlocker = isStationary && !IsOurTurn;
+			DesiredLocation = NavigationAgent.AgentPosition;
 
-			if ( DestinationReached && NavigationAgent.TargetPosition?.IsNearlyZero() == false )
+			var destinationReached = targetReached && currentPath.Count == 0 && goalTile?.IsValid == true && NavigationAgent.AgentPosition.Distance( goalTile.WorldPosition ) <= 32;
+			if ( destinationReached && NavigationAgent.TargetPosition?.IsNearlyZero() == false )
 			{
-				NavigationAgent.Stop();
 				IBoardCharacterEvent.PostToGameObject( GameObject, x => x.OnDestinationReached() );
 			}
 		}
 
 		private void HandleRotation()
 		{
-			Vector3 vector = NavigationAgent.GetLookAhead( 30f ) - base.WorldPosition;
+			Vector3 vector = NavigationAgent.GetLookAhead( 30f ) - GameObject.WorldPosition;
 			vector.z = 0f;
 
 			if ( vector.Length > 0.1f )
@@ -90,8 +97,6 @@ namespace SandboxParty.Components.Board.Character
 
 			Velocity = NavigationAgent.Velocity;
 			WishVelocity = NavigationAgent.WishVelocity;
-
-			CurrentTile ??= AllTiles.First();
 
 			HandleMovement();
 			HandleRotation();

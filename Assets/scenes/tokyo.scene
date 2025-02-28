@@ -1,0 +1,2317 @@
+{
+  "__guid": "9ee57130-2179-4346-b139-7be4580788b0",
+  "GameObjects": [
+    {
+      "__guid": "a7a9b1ae-a5eb-407e-bc5d-a0a0c64cb3fe",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "9ed55501-497a-492e-8d04-736e6407c429",
+          "Author": null,
+          "Changes": "",
+          "Description": "",
+          "Group": null,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SceneTags": "board",
+          "Title": "Tokyo",
+          "Version": null
+        },
+        {
+          "__type": "SandboxParty.Components.Board.BoardNetworkHelper",
+          "__guid": "19824c26-662b-4b84-b716-9635b19dec89",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          },
+          "SpawnPoint": {
+            "_type": "gameobject",
+            "go": "b243997d-1635-497d-b002-1062d566aac0"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "d22b314a-10f4-4325-80a8-7300396e7f59",
+      "Flags": 0,
+      "Name": "Board",
+      "Position": "0.0000002634708,0,2.5",
+      "Rotation": "0,-1,0,-0.00000004371139",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "b243997d-1635-497d-b002-1062d566aac0",
+          "Flags": 0,
+          "Name": "component_1",
+          "Position": "720,-448,-0.0000629444",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "3ab4c198-7121-4f83-8187-e317f4581121",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "d8172028-939e-4b3b-b22f-f008404eab2d"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ce4e8783-488d-4ce8-a02c-61110cfa7c64",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "1893ca57-4694-4a57-abb1-af1961940b30",
+          "Flags": 0,
+          "Name": "component_2",
+          "Position": "-144,-448,-0.000001000979",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "9e3ab9bd-7545-4b1f-b9f1-7ce53d6d555e",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "62750e18-74de-4ba1-ad5b-9087f97e2f74"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a48efcc6-34ef-4bbb-82aa-e7759884a48b",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "d8172028-939e-4b3b-b22f-f008404eab2d",
+          "Flags": 0,
+          "Name": "component_2",
+          "Position": "416,-448,-0.00005043457",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "a271d5ee-3a2f-4459-a534-2af657fc469a",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "dfe4f5c5-2fb5-4f5e-b60f-6e17ef0aa99f"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "0e21e69a-3a04-4616-a733-751e58627084"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "34159066-d648-43fc-afb4-976d1fe612a9",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "740dcc66-623c-4380-a8f7-fdaa21115e83",
+          "Flags": 0,
+          "Name": "component_2_4",
+          "Position": "64,-448,-0.00001966175",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "d4e2aa9c-c76f-4a40-8df6-7238ee81facd",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "1893ca57-4694-4a57-abb1-af1961940b30"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "e5135ef0-486a-4c44-b91d-505cf578f7ed",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "0e21e69a-3a04-4616-a733-751e58627084",
+          "Flags": 0,
+          "Name": "component_2_a1",
+          "Position": "368,-320,-0.00004623828",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "88c7e6db-9e95-461e-b3e9-06aaeaf4e4e6",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "9de80c61-9c06-4c0a-8c9c-2e3281defec2"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "8434ee8a-1e25-4dbc-9dbb-db7ea82363fb",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "733443ec-8460-4925-b99d-36edebfdb817",
+          "Flags": 0,
+          "Name": "component_2_b3",
+          "Position": "112,-576,-0.00002385805",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "ee27612c-e116-47af-b7f5-81e24fb81595",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "740dcc66-623c-4380-a8f7-fdaa21115e83"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "21243d1f-061e-43c1-82ce-1a8cf6949de4",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "51a88593-9dfc-40ed-860f-b9c80b3a8688",
+          "Flags": 0,
+          "Name": "component_2_a3",
+          "Position": "112,-320,-0.00002385805",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "a410632c-bfa7-455b-bc44-731d005d7bd2",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "740dcc66-623c-4380-a8f7-fdaa21115e83"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "883f5471-1030-4dee-bb7e-a3677d858962",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "de7d4786-6397-4122-9010-0268f65e1b4e",
+          "Flags": 0,
+          "Name": "component_2_b2",
+          "Position": "240,-624,-0.00003504816",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "8c58da94-93db-4fe2-a88d-4ef7e06f9a73",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "733443ec-8460-4925-b99d-36edebfdb817"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "6859ad96-9cbb-4955-8762-2e00974c21d7",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "9de80c61-9c06-4c0a-8c9c-2e3281defec2",
+          "Flags": 0,
+          "Name": "component_2_a2",
+          "Position": "240,-272,-0.00003504816",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "614a0eb2-28d9-49a8-ba5b-f49af0933451",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "51a88593-9dfc-40ed-860f-b9c80b3a8688"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "36104e1c-98e2-4526-84c4-d287b27db22c",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "dfe4f5c5-2fb5-4f5e-b60f-6e17ef0aa99f",
+          "Flags": 0,
+          "Name": "component_2_b1",
+          "Position": "368,-576,-0.00004623828",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "6f6c7c97-b1d6-4be5-adc0-52b1d8781545",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "de7d4786-6397-4122-9010-0268f65e1b4e"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c1031991-ac3b-417a-94a1-cb544f9fb062",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f",
+          "Flags": 0,
+          "Name": "component_3_b",
+          "Position": "-320,-96,-0.0000003965215",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "142ddbc4-7ec6-4288-89fa-5294b2f260a9",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "bf46f903-f8a5-456f-b5ed-9bf0bea60eda",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b",
+          "Flags": 0,
+          "Name": "component_4",
+          "Position": "-416,144,0.0000001282497",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "4f0d9c72-e7f7-4c9b-9353-3b2463c8c304",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "e3ce3cef-04d5-4950-b954-9903db39698d"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "5a7ea53c-578c-4d31-8e83-48f26f030640",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "e3ce3cef-04d5-4950-b954-9903db39698d",
+          "Flags": 0,
+          "Name": "component_5",
+          "Position": "-416,400,0.0000003666682",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "c5be1bc9-8bc4-4cf6-9f33-9760b17075b2",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "9fd015e5-041b-44cc-a663-7669f0265a92"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "8a8d4c14-beaf-48ba-b26e-b71b529d523e",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "9fd015e5-041b-44cc-a663-7669f0265a92",
+          "Flags": 0,
+          "Name": "component_6",
+          "Position": "720,400,-0.00006246756",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "b82a9c78-0a36-46ad-bb03-bf9b06fd91e4",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "b243997d-1635-497d-b002-1062d566aac0"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3268e836-71a7-4cd4-9936-5d028d2267fe",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "62750e18-74de-4ba1-ad5b-9087f97e2f74",
+          "Flags": 0,
+          "Name": "component_3a",
+          "Position": "-128,144,-0.00001145965",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "752ee890-1f61-4980-9414-ff783d4cc2d9",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3c452501-6677-4e48-8eae-bd25b54759ec",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "874ecd9c-7c6e-4d8c-8179-1795c16d115b",
+      "Flags": 0,
+      "Name": "Sun",
+      "Rotation": "-0.1085762,0.409073,-0.2034477,0.8828813",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "b0497ffc-dd64-4d11-92b0-280cb1e26182",
+          "FogMode": "Enabled",
+          "FogStrength": 3,
+          "LightColor": "0.00787,0.00571,0.0093,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Shadows": true,
+          "SkyColor": "0.02325,0.02325,0.02325,1"
+        }
+      ]
+    },
+    {
+      "__guid": "247226da-d8c3-4ae4-9635-589418eec5b8",
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "e279a331-09d7-4aeb-8ea0-d60d01b2209a",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SkyIndirectLighting": true,
+          "SkyMaterial": "materials/skybox/skybox_dark_01.vmat",
+          "Tint": "0.01512,0.01209,0.01209,1"
+        }
+      ]
+    },
+    {
+      "__guid": "fa104007-9f49-4d5c-b39c-388987a4329b",
+      "Flags": 0,
+      "Name": "Volumetric Fog",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.VolumetricFogVolume",
+          "__guid": "e6ca8bae-a733-4dcb-91f9-adf0a20f4bc1",
+          "Bounds": {
+            "Mins": "-3000,-3000,-3000",
+            "Maxs": "3000,3000,3000"
+          },
+          "FalloffExponent": 1,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Strength": 0.35
+        }
+      ]
+    },
+    {
+      "__guid": "54c26b39-7b68-4a20-b509-1154b538ee16",
+      "Flags": 0,
+      "Name": "Point Light",
+      "Position": "-230.2487,160.6071,59.66753",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "393db410-727f-4853-86f3-96aafb4206d5",
+          "Attenuation": 7.5,
+          "FogMode": "Enabled",
+          "FogStrength": 0.23,
+          "LightColor": "5,1.3372,0.60464,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Radius": 250,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "7645aa80-a25c-4f9e-8d98-bb196c4a2542",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "1ac34990-0db5-4050-b085-b679d1cf635f",
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "maps/tokyo.vmap",
+          "NoOrigin": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "71b68e79-061f-48fa-9f8f-a1e2f9e09da5",
+      "Flags": 0,
+      "Name": "concrete_barrier",
+      "Position": "268.3958,40.07939,0.08680192",
+      "Rotation": "0,0,0.6427876,0.7660444",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "4970429d-45a5-4221-877e-638aa1c491d2",
+          "BodyGroups": 18446744073709551615,
+          "Health": 2000,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "models/sbox_props/concrete_barrier/concrete_barrier.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "085a74eb-f6a3-4a04-8aea-b1f3dfa20b7c",
+      "Flags": 0,
+      "Name": "parkfountain",
+      "Position": "-240,-448,0",
+      "Rotation": "0,-0,-1,-0.00000004371139",
+      "Scale": "0.35,0.35,0.35",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "c20df1f8-d193-4f44-a2e4-d373afaef297",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/gravel_concrete_03/gravel_concrete_03.vmat",
+          "Model": "models/environment/streets/parkfountain.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.CapsuleCollider",
+          "__guid": "425bb119-9b03-4359-87c6-dbbaad94f8d6",
+          "End": "0,0,150",
+          "Friction": null,
+          "IsTrigger": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Radius": 325,
+          "Start": "0,0,0",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.NavMeshArea",
+          "__guid": "954f6c6a-444c-43a7-b020-088f37ee8019",
+          "IsBlocker": true,
+          "LinkedCollider": {
+            "_type": "component",
+            "component_id": "425bb119-9b03-4359-87c6-dbbaad94f8d6",
+            "go": "085a74eb-f6a3-4a04-8aea-b1f3dfa20b7c",
+            "component_type": "CapsuleCollider"
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "59c8ccb8-f0df-4c61-a7d3-dffecb58dc33",
+      "Flags": 0,
+      "Name": "shelf",
+      "Position": "22,36,14",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "778932b8-8bef-45c0-b8ab-cf0b8964032d",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/shelf.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "edc8d38e-8961-4408-9f00-ddcabb490c53",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (11)",
+      "Position": "-416,-136,136",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2ff5c8c5-9711-48c0-87ac-1261ea2099f4",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4054c2fb-e9b4-4b7a-b611-359d11e92e7d",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (6)",
+      "Position": "-1132,-136,136",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "9ff74323-820a-4e69-ba8c-3d5a709e4130",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ea9ed77d-0cc1-452a-bbb5-15101ecc23b9",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (3)",
+      "Position": "-152,-72,232",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "34d50458-91d0-4ddb-911d-7be7e26851d4",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "9f585757-71b9-44ad-8b6e-f50f963c37e1",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (1)",
+      "Position": "44,-72,232",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "af3db65c-542c-4b37-a2dc-cb7bc1690e86",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "bd061d1a-609c-46f6-a1c6-144fc1cfc0c4",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (7)",
+      "Position": "-740,-72,232",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "5d1bac63-6478-486f-a37b-3e9d5ffc4b5b",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "6fa5f7b5-7f16-4ba5-8a4f-e31e1b8a0bee",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (5)",
+      "Position": "-544,-72,232",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "f6fa15ed-2302-4bf9-a56e-f07b3fdac1ae",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "a2cce22b-38f9-4f5e-a5e3-efa05d4abb12",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (8)",
+      "Position": "-936,-72,232",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "5d52128e-1c46-4e41-936f-0bc7a8092d86",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "46f186cf-02a8-486e-9a23-758e1fa7058f",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (4)",
+      "Position": "-740,-8,136",
+      "Rotation": "0,-0,-0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "3df43464-8e9b-4992-b243-5161f9150b15",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "9f64ff0a-01fe-480a-9720-5c001ff2523d",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (9)",
+      "Position": "44,-8,136",
+      "Rotation": "0,-0,-0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "3ffd567c-ff85-4204-a0e7-88e8008050b0",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "0ab0852a-b0aa-4b75-ac81-36c2e427be85",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (10)",
+      "Position": "-1132,-72,232",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "88056ebe-4ff2-4907-866f-058bcc262ba1",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "595a3ac5-dc28-464e-92be-867a270b4aa0",
+      "Flags": 0,
+      "Name": "supportoverpass_01 (2)",
+      "Position": "-348,-72,232",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.2,0.2,0.2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "cb789c73-f4b1-41c4-b206-80ff26a7ded9",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "2e1ea89b-a736-4225-81fe-63682bd8763d",
+      "Flags": 0,
+      "Name": "ventilationtube_01",
+      "Position": "16,-100,44",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d61d53cd-a542-4035-9aa6-3f3ca92b2e29",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/ventilationtube_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "1f7d3efd-66ee-4d61-ae56-94fcb0955419",
+      "Flags": 0,
+      "Name": "ventilationtube_01 (1)",
+      "Position": "16,-100,132",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "344e3702-fc62-43c8-8409-8f7be739ecfa",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/ventilationtube_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "5c3b64b5-c02e-4c30-af0d-231986596f4d",
+      "Flags": 0,
+      "Name": "ventilationtube_01 (2)",
+      "Position": "8,-100,168",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "7b06d819-9d58-472f-ad9d-d4f86ba815c1",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/ventilationtube_02.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "b6505603-ac13-4b22-8886-08139167698f",
+      "Flags": 0,
+      "Name": "ventilationtube_01 (3)",
+      "Position": "-32,-100,168",
+      "Rotation": "0,-0.7071068,0,0.7071068",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2de4cf5b-4082-4a01-bdee-cf1fc5eb796a",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/ventilationtube_02.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "d9dae6ba-df1f-4588-a685-eb7f049c81b7",
+      "Flags": 0,
+      "Name": "canopy_01",
+      "Position": "-240,426.7309,8",
+      "Rotation": "-0.5,0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "cfec700d-d8f5-46ec-9467-1485c7bcc98d",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/canopy_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "98a2fba4-51d3-41bf-b614-c3598e6d428f",
+      "Flags": 0,
+      "Name": "awning_07",
+      "Position": "-192,40,60",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "07f36c09-fa03-40ce-b336-88d193d12995",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/awning_07.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "2ef3ebfe-7c2c-4fa7-961c-0194ef616042",
+      "Flags": 0,
+      "Name": "awning_07 (1)",
+      "Position": "-320,40,60",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "4288021c-b4d5-46b3-93e2-63def7a054d6",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/awning_05.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "c6d1ef4b-d5e6-462f-9cc7-c3225fca7ede",
+      "Flags": 0,
+      "Name": "entrance_02",
+      "Position": "-192,32,36",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "6b8d6e55-2970-4996-9bac-0f02ba4ff3ff",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/entrance_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "cc799519-4e48-4f1a-b6ef-68cdf9695efd",
+      "Flags": 0,
+      "Name": "entrance_02 (1)",
+      "Position": "-322,32,36",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "8da89097-3f8e-4617-bc08-a0e108a30336",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/entrance_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4f7b3036-465e-4fc0-b742-eb21901cf504",
+      "Flags": 0,
+      "Name": "sign_03",
+      "Position": "-118,4,104",
+      "Rotation": "0,0.9999999,0,0",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "bbb83287-6b3e-42f6-80ee-98a26a342cdb",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/sign_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "a9bfca36-a1da-43a5-b64a-ba1443c0400b",
+      "Flags": 0,
+      "Name": "vendingmachine_06",
+      "Position": "-104,20,18",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "6413aac7-fbf6-4691-95f5-3fc683679745",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/vendingmachine_06.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "b0949889-841a-41ae-850f-7927ecc14786",
+      "Flags": 0,
+      "Name": "plasticbox_01",
+      "Position": "-283.9999,71.99998,8.49822",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a53d2a7c-422b-42bf-a73e-a671656befd7",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/plasticbox_01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ea1bafef-0e6f-41a3-9210-fa490d13efda",
+      "Flags": 0,
+      "Name": "electricpole_part_04",
+      "Position": "-248,18,112",
+      "Rotation": "0,-0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "b79fedce-7f55-4724-8f0a-99f8a6125d84",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/electricpole_part_04.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "b1538723-0062-4fcc-8a36-013443caa149",
+      "Flags": 0,
+      "Name": "sign_08",
+      "Position": "-320,34,90",
+      "Rotation": "-0.7071069,-0.7071066,0.00000009833801,-0.00000009833798",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "5576523b-c215-4a2d-8ecd-505f94df648d",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/sign_08.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "b88481a8-1742-4a2d-aa64-31baf2cadd3d",
+      "Flags": 0,
+      "Name": "vendingmachine_04",
+      "Position": "-394,16,18",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "9f5e3c7c-f3c2-4e42-8051-c54883ab4b01",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/vendingmachine_06.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "43f23ff2-2cac-41c8-96b2-15380c22bb21",
+      "Flags": 0,
+      "Name": "supportoverpass_03",
+      "Position": "-142,190,0",
+      "Rotation": "0.7071068,-0.7071068,-0.00000003090862,-0.00000003090862",
+      "Scale": "0.25,0.25,0.1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "862f2f8b-8461-4137-bb87-414c6ba6535c",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "41c92351-2475-4432-a42f-8e658e4b1ee9",
+      "Flags": 0,
+      "Name": "supportoverpass_03 (1)",
+      "Position": "-388,190,0",
+      "Rotation": "0.7071068,-0.7071068,-0.00000003090862,-0.00000003090862",
+      "Scale": "0.25,0.25,0.1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "c37e5719-0278-442c-b384-4c3a0487a913",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "1d7b9aea-17ec-4e80-b98b-cc5210789582",
+      "Flags": 0,
+      "Name": "fluorescent_ceiling_light01",
+      "Position": "-571.9999,-448,114",
+      "Rotation": "-1,0,0,-0.00000004371139",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "79d2c3da-49d2-45b8-b381-b9d350f2f502",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": true,
+          "MaterialGroup": null,
+          "Model": "models/fluorescent_ceiling_light01/fluorescent_ceiling_light01.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "7ac55879-3718-426f-a507-c4a2f3f8f7e2",
+          "Flags": 0,
+          "Name": "Point Light",
+          "Position": "0,0,15.99261",
+          "Tags": "light_point,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.PointLight",
+              "__guid": "abafc798-6dd8-47fa-809b-401194276864",
+              "Attenuation": 2.39,
+              "FogMode": "Enabled",
+              "FogStrength": 0.5,
+              "LightColor": "1,1,0.85098,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Radius": 200,
+              "Shadows": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "b319bcdc-12d1-448b-a7d4-7033631ae2bc",
+      "Flags": 0,
+      "Name": "caged_light01_wall",
+      "Position": "-128,-32,110",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "f6c4ceaf-abdc-48df-9d78-577087c33454",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/caged_lights01/caged_light01_wall.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "70fa178e-08c5-44cf-a1c2-420b171f385a",
+          "Flags": 0,
+          "Name": "Point Light",
+          "Position": "0,9.466371,-8.000001",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.PointLight",
+              "__guid": "c2accaff-eaee-4a98-909e-a915893ef810",
+              "Attenuation": 10,
+              "FogMode": "Enabled",
+              "FogStrength": 0.37,
+              "LightColor": "0.40588,0.39216,0.35098,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Radius": 250,
+              "Shadows": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "fb6e8e38-5e96-4338-93df-eb2a74da9dfa",
+      "Flags": 0,
+      "Name": "door_02",
+      "Position": "-128,-24,82",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "75787c62-ab0a-4e18-9ed2-7214fc2bf102",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/door_02.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4db2bc0c-d178-453d-8004-f72d3fb514ae",
+      "Flags": 0,
+      "Name": "electrical_box_e",
+      "Position": "-128,-50,72",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "0c13e7fd-5de1-4cce-a67f-5d5581a72b47",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "models/rust_props/electrical_boxes/electrical_box_e.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "5c38ff47-f18d-4168-b5d9-aa0c2ebda430",
+      "Flags": 0,
+      "Name": "electrical_box_b",
+      "Position": "-242,34,0",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "460f21bd-4796-402b-9a99-401360b7a53e",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "models/rust_props/electrical_boxes/electrical_box_b.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "7d7d84a1-794e-45c3-a3ea-cee2ddb55533",
+      "Flags": 0,
+      "Name": "awning001",
+      "Position": "-174,-44,132",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "1.25,1,0.8",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "75812b48-300c-46b4-931c-7fa43fb05be0",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "models/props_farm/awning001.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "c4a1046c-9402-4192-bab6-b288c547dda3",
+      "Flags": 0,
+      "Name": "awning_small",
+      "Position": "-384,16,36",
+      "Rotation": "0,0,1,-0.00000004371139",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "6dd55480-8021-40e4-bbc0-146d4617fc8d",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": true,
+          "MaterialGroup": null,
+          "Model": "models/props_selbyen/awning_small.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "Tokyo",
+      "Tags": "board"
+    },
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 6,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 2,
+  "Title": "Tokyo",
+  "Description": null,
+  "__references": [
+    "apetavern.parkfountain#46382",
+    "facepunch.concrete_barrier#33663",
+    "japancitymodels.awning_05#31982",
+    "japancitymodels.awning_07#31984",
+    "japancitymodels.canopy_01#32048",
+    "japancitymodels.door_02#31989",
+    "japancitymodels.electricpole_part_04#31996",
+    "japancitymodels.entrance_03#31999",
+    "japancitymodels.plasticbox_01#32020",
+    "japancitymodels.sign_03#32025",
+    "japancitymodels.sign_08#32028",
+    "japancitymodels.supportoverpass_01#32041",
+    "japancitymodels.supportoverpass_03#32040",
+    "japancitymodels.vendingmachine_06#32039",
+    "japancitymodels.ventilationtube_01#32043",
+    "japancitymodels.ventilationtube_02#32044",
+    "kenneynl.foodkitplate#80706",
+    "nolankicks.shelf#56681",
+    "rust.electrical_box_b#25168",
+    "rust.electrical_box_e#25171",
+    "saandy.caged_light01_wall#35996",
+    "saandy.fluorescent_ceiling_light01#36033",
+    "tfassets.awning_small#24971",
+    "tfassets.awning001#22713"
+  ],
+  "__version": 2
+}

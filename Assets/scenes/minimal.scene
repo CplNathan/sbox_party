@@ -35,12 +35,321 @@
           "OnComponentUpdate": null,
           "PlayerPrefab": {
             "_type": "gameobject",
-            "prefab": "gameplay/player.prefab"
+            "prefab": "prefabs/player.prefab"
           },
           "SpawnPoint": {
             "_type": "gameobject",
             "go": "af7bfd8e-abcc-4432-b203-fc11db7522c1"
           }
+        }
+      ]
+    },
+    {
+      "__guid": "d65b18e2-30ad-4831-9ec0-b5c7a1367f39",
+      "Flags": 0,
+      "Name": "Board",
+      "Position": "70.2711,194.1678,3.156796",
+      "Rotation": "1,0,0,-0.00000004371139",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "af7bfd8e-abcc-4432-b203-fc11db7522c1",
+          "Flags": 0,
+          "Name": "Object",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "1db15fbb-00d5-4710-ac81-ee53bb71fe92",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "588e6ec4-07ff-4d5a-89eb-c6ef77c7a920",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "290cbb59-3b57-4f5e-8079-b13e66188fb1"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "290cbb59-3b57-4f5e-8079-b13e66188fb1",
+          "Flags": 0,
+          "Name": "Object (1)",
+          "Position": "58.82309,355.4111,-0.00000007660856",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a600cb15-aef2-4421-be81-629866be2452",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "d4937b1e-1881-40d1-8de3-0dc581f1e791",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "905876fd-a9ce-45e0-a253-db4671f20711"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "2d40381b-b743-4e7f-927d-3f2ecac7f278"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "26d4b47b-9cde-4b89-a1dd-af7fc39a008b"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "26d4b47b-9cde-4b89-a1dd-af7fc39a008b",
+          "Flags": 0,
+          "Name": "Object (5)",
+          "Position": "146.2923,415.2112,-0.0000002977104",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ddb13900-490c-4461-ab00-3e4a1a1e482c",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "b6ac8319-aad3-4926-a666-96cb7c17e384",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "905876fd-a9ce-45e0-a253-db4671f20711"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "2d40381b-b743-4e7f-927d-3f2ecac7f278"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "905876fd-a9ce-45e0-a253-db4671f20711",
+          "Flags": 0,
+          "Name": "Object (2)",
+          "Position": "137.0492,225.2178,0.0000003379973",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7bc822b3-0a10-438d-82d5-b0b073cea0d3",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "326b812d-77c8-4cd3-b52b-fbbb1bb7344a",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "af7bfd8e-abcc-4432-b203-fc11db7522c1"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "2d40381b-b743-4e7f-927d-3f2ecac7f278",
+          "Flags": 0,
+          "Name": "Object (3)",
+          "Position": "-127.2321,408.6185,0.0000002786401",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "b8ca0a5f-1f52-49fb-80ad-c06fe76a8876",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "029b9397-cbb8-468e-8ec4-3af8fffc4f32",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "52982dcd-f902-4fe8-8dfc-ba65c5314869"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "52982dcd-f902-4fe8-8dfc-ba65c5314869",
+          "Flags": 0,
+          "Name": "Object (4)",
+          "Position": "-300.9376,307.6168,0.00000004858521",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c40e6063-baac-43f8-9956-9b6daea0d106",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.Board.BoardComponent",
+              "__guid": "1404d4c6-dad0-4e22-a96e-e9ac72f5dabb",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "af7bfd8e-abcc-4432-b203-fc11db7522c1"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
         }
       ]
     },
@@ -416,312 +725,6 @@
           "StartAsleep": false
         }
       ]
-    },
-    {
-      "__guid": "af7bfd8e-abcc-4432-b203-fc11db7522c1",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "70.2711,194.1678,3.156796",
-      "Rotation": "1,0,0,-0.00000004371139",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "1db15fbb-00d5-4710-ac81-ee53bb71fe92",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/food-kit/foodkit_plate.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardComponent",
-          "__guid": "588e6ec4-07ff-4d5a-89eb-c6ef77c7a920",
-          "NextComponent": [
-            {
-              "_type": "gameobject",
-              "go": "290cbb59-3b57-4f5e-8079-b13e66188fb1"
-            }
-          ],
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
-    },
-    {
-      "__guid": "290cbb59-3b57-4f5e-8079-b13e66188fb1",
-      "Flags": 0,
-      "Name": "Object (1)",
-      "Position": "129.0942,-161.2433,3.156765",
-      "Rotation": "1,0,0,-0.00000004371139",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "a600cb15-aef2-4421-be81-629866be2452",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/food-kit/foodkit_plate.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardComponent",
-          "__guid": "d4937b1e-1881-40d1-8de3-0dc581f1e791",
-          "NextComponent": [
-            {
-              "_type": "gameobject",
-              "go": "905876fd-a9ce-45e0-a253-db4671f20711"
-            },
-            {
-              "_type": "gameobject",
-              "go": "2d40381b-b743-4e7f-927d-3f2ecac7f278"
-            },
-            {
-              "_type": "gameobject",
-              "go": "26d4b47b-9cde-4b89-a1dd-af7fc39a008b"
-            }
-          ],
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
-    },
-    {
-      "__guid": "26d4b47b-9cde-4b89-a1dd-af7fc39a008b",
-      "Flags": 0,
-      "Name": "Object (5)",
-      "Position": "216.5634,-221.0434,3.15676",
-      "Rotation": "1,0,0,-0.00000004371139",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "ddb13900-490c-4461-ab00-3e4a1a1e482c",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/food-kit/foodkit_plate.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardComponent",
-          "__guid": "b6ac8319-aad3-4926-a666-96cb7c17e384",
-          "NextComponent": [
-            {
-              "_type": "gameobject",
-              "go": "905876fd-a9ce-45e0-a253-db4671f20711"
-            },
-            {
-              "_type": "gameobject",
-              "go": "2d40381b-b743-4e7f-927d-3f2ecac7f278"
-            }
-          ],
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
-    },
-    {
-      "__guid": "905876fd-a9ce-45e0-a253-db4671f20711",
-      "Flags": 0,
-      "Name": "Object (2)",
-      "Position": "207.3203,-31.04997,3.156776",
-      "Rotation": "1,0,0,-0.00000004371139",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "7bc822b3-0a10-438d-82d5-b0b073cea0d3",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/food-kit/foodkit_plate.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardComponent",
-          "__guid": "326b812d-77c8-4cd3-b52b-fbbb1bb7344a",
-          "NextComponent": [
-            {
-              "_type": "gameobject",
-              "go": "af7bfd8e-abcc-4432-b203-fc11db7522c1"
-            }
-          ],
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
-    },
-    {
-      "__guid": "2d40381b-b743-4e7f-927d-3f2ecac7f278",
-      "Flags": 0,
-      "Name": "Object (3)",
-      "Position": "-56.96098,-214.4507,3.15676",
-      "Rotation": "1,0,0,-0.00000004371139",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "b8ca0a5f-1f52-49fb-80ad-c06fe76a8876",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/food-kit/foodkit_plate.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardComponent",
-          "__guid": "029b9397-cbb8-468e-8ec4-3af8fffc4f32",
-          "NextComponent": [
-            {
-              "_type": "gameobject",
-              "go": "52982dcd-f902-4fe8-8dfc-ba65c5314869"
-            }
-          ],
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
-    },
-    {
-      "__guid": "52982dcd-f902-4fe8-8dfc-ba65c5314869",
-      "Flags": 0,
-      "Name": "Object (4)",
-      "Position": "-230.6665,-113.449,3.156769",
-      "Rotation": "1,0,0,-0.00000004371139",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c40e6063-baac-43f8-9956-9b6daea0d106",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/food-kit/foodkit_plate.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardComponent",
-          "__guid": "1404d4c6-dad0-4e22-a96e-e9ac72f5dabb",
-          "NextComponent": [
-            {
-              "_type": "gameobject",
-              "go": "af7bfd8e-abcc-4432-b203-fc11db7522c1"
-            }
-          ],
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -742,7 +745,7 @@
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
       "AgentHeight": 64,
-      "AgentRadius": 2,
+      "AgentRadius": 16,
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",

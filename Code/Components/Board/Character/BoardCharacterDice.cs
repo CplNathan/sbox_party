@@ -9,13 +9,15 @@ namespace SandboxParty.Components.Board.Character
 	[Title( "Board Dice" )]
 	public class BoardCharacterDice : Component
 	{
-		[Property] public GameObject DicePrefab { get; set; }
+		[Property] public GameObject DicePrefab { get; init; }
 
-		[Property] public int DicePerRoll { get; set; } = 2;
+		[Property] public int DicePerRoll { get; init; } = 2;
 
-		[Property] public int DiceLifetimeSeconds { get; set; } = 5;
+		[Property] public int DiceLifetimeSeconds { get; init; } = 5;
 
-		[Property] public int Multiplier { get; set; } = 1;
+		[Property] public int Multiplier { get; init; } = 1;
+
+		[Sync( Flags = SyncFlags.FromHost )] public int LastRoll { get; private set; } = 0;
 
 		private List<GameObject> ValidDice { get => [.. _spawnedDice?.Where( x => x.IsValid ) ?? []]; }
 
@@ -26,7 +28,8 @@ namespace SandboxParty.Components.Board.Character
 		public async Task<int> RollDice( Vector3 effectLocation )
 		{
 			var newRoll = await PerformEffects( DicePerRoll, effectLocation );
-			return newRoll >= 2 ? newRoll : Random.Shared.Next( DicePerRoll, DicePerRoll * 6 );
+			LastRoll = newRoll >= 2 ? newRoll : Random.Shared.Next( DicePerRoll, DicePerRoll * 6 );
+			return LastRoll;
 		}
 
 		public async Task<int> PerformEffects( int count, Vector3 vector )
@@ -63,7 +66,7 @@ namespace SandboxParty.Components.Board.Character
 			{
 				var diceObject = DicePrefab.Clone( vector, Rotation.Random );
 				diceObject.NetworkSpawn();
-				diceObject.GetComponent<Rigidbody>().ApplyForceAt( Vector3.Random, -(WorldPosition - vector) * 12500 );
+				diceObject.GetComponent<Rigidbody>().ApplyForceAt( Vector3.Random, -(WorldPosition - vector) * 20000 );
 
 				newDice[i] = diceObject;
 				_spawnedDice?.Add( diceObject );
