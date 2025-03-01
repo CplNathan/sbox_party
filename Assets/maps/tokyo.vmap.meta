@@ -11,9 +11,7 @@
       "Resources": null,
       "PackageReferences": [],
       "EditorReferences": [
-        "frogpond.storefridge#12973",
-        "kenneynl.foodkitplate#80706",
-        "tfassets.awning#24976"
+        "kenneynl.foodkitplate#80706"
       ],
       "IsWhitelistDisabled": false,
       "Metadata": {

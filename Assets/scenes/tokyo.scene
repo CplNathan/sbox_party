@@ -8,8 +8,8 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.SceneInformation",
-          "__guid": "9ed55501-497a-492e-8d04-736e6407c429",
+          "__type": "SandboxParty.Components.Information.BoardSceneInformation",
+          "__guid": "151fa0f5-9f51-4ae4-8470-82ebf49c7224",
           "Author": null,
           "Changes": "",
           "Description": "",
@@ -20,27 +20,16 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "RespawnPoints": [],
           "SceneTags": "board",
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "b243997d-1635-497d-b002-1062d566aac0"
+            }
+          ],
           "Title": "Tokyo",
           "Version": null
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardNetworkHelper",
-          "__guid": "19824c26-662b-4b84-b716-9635b19dec89",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/player.prefab"
-          },
-          "SpawnPoint": {
-            "_type": "gameobject",
-            "go": "b243997d-1635-497d-b002-1062d566aac0"
-          }
         }
       ]
     },
@@ -803,7 +792,7 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "Shadows": true,
-          "SkyColor": "0.02325,0.02325,0.02325,1"
+          "SkyColor": "0.093,0.093,0.093,1"
         }
       ]
     },
@@ -1548,39 +1537,6 @@
       ]
     },
     {
-      "__guid": "d9dae6ba-df1f-4588-a685-eb7f049c81b7",
-      "Flags": 0,
-      "Name": "canopy_01",
-      "Position": "-240,426.7309,8",
-      "Rotation": "-0.5,0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "cfec700d-d8f5-46ec-9467-1485c7bcc98d",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/canopy_01.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "98a2fba4-51d3-41bf-b614-c3598e6d428f",
       "Flags": 0,
       "Name": "awning_07",
@@ -1660,6 +1616,40 @@
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "6b8d6e55-2970-4996-9bac-0f02ba4ff3ff",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/japan_props_001/entrance_03.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "3b4baad1-439c-400c-8f04-45e29c596fb4",
+      "Flags": 0,
+      "Name": "entrance_02 (2)",
+      "Position": "-62,0,36",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "66b26d59-df3e-480b-aeea-2d5715f94881",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
           "MaterialGroup": null,
@@ -1784,39 +1774,6 @@
       ]
     },
     {
-      "__guid": "b0949889-841a-41ae-850f-7927ecc14786",
-      "Flags": 0,
-      "Name": "plasticbox_01",
-      "Position": "-283.9999,71.99998,8.49822",
-      "Scale": "0.25,0.25,0.25",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "a53d2a7c-422b-42bf-a73e-a671656befd7",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/plasticbox_01.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "ea1bafef-0e6f-41a3-9210-fa490d13efda",
       "Flags": 0,
       "Name": "electricpole_part_04",
@@ -1888,7 +1845,7 @@
       "__guid": "b88481a8-1742-4a2d-aa64-31baf2cadd3d",
       "Flags": 0,
       "Name": "vendingmachine_04",
-      "Position": "-394,16,18",
+      "Position": "-394,14,18",
       "Rotation": "0,0,0.7071068,0.7071068",
       "Scale": "0.25,0.25,0.25",
       "Enabled": true,
@@ -1901,74 +1858,6 @@
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/japan_props_001/vendingmachine_06.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "43f23ff2-2cac-41c8-96b2-15380c22bb21",
-      "Flags": 0,
-      "Name": "supportoverpass_03",
-      "Position": "-142,190,0",
-      "Rotation": "0.7071068,-0.7071068,-0.00000003090862,-0.00000003090862",
-      "Scale": "0.25,0.25,0.1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "862f2f8b-8461-4137-bb87-414c6ba6535c",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "41c92351-2475-4432-a42f-8e658e4b1ee9",
-      "Flags": 0,
-      "Name": "supportoverpass_03 (1)",
-      "Position": "-388,190,0",
-      "Rotation": "0.7071068,-0.7071068,-0.00000003090862,-0.00000003090862",
-      "Scale": "0.25,0.25,0.1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c37e5719-0278-442c-b384-4c3a0487a913",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/supportoverpass_03.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -2231,9 +2120,9 @@
       "__guid": "c4a1046c-9402-4192-bab6-b288c547dda3",
       "Flags": 0,
       "Name": "awning_small",
-      "Position": "-384,16,36",
+      "Position": "-392,-24,42",
       "Rotation": "0,0,1,-0.00000004371139",
-      "Scale": "0.25,0.25,0.25",
+      "Scale": "0.4,0.4,0.4",
       "Enabled": true,
       "Components": [
         {
@@ -2243,7 +2132,7 @@
           "Health": 0,
           "IsStatic": true,
           "MaterialGroup": null,
-          "Model": "models/props_selbyen/awning_small.vmdl",
+          "Model": "models/props_farm/awning001.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -2276,8 +2165,8 @@
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
-      "AgentHeight": 64,
-      "AgentRadius": 16,
+      "AgentHeight": 90,
+      "AgentRadius": 24,
       "AgentStepSize": 6,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
@@ -2292,11 +2181,9 @@
     "facepunch.concrete_barrier#33663",
     "japancitymodels.awning_05#31982",
     "japancitymodels.awning_07#31984",
-    "japancitymodels.canopy_01#32048",
     "japancitymodels.door_02#31989",
     "japancitymodels.electricpole_part_04#31996",
     "japancitymodels.entrance_03#31999",
-    "japancitymodels.plasticbox_01#32020",
     "japancitymodels.sign_03#32025",
     "japancitymodels.sign_08#32028",
     "japancitymodels.supportoverpass_01#32041",
@@ -2310,7 +2197,6 @@
     "rust.electrical_box_e#25171",
     "saandy.caged_light01_wall#35996",
     "saandy.fluorescent_ceiling_light01#36033",
-    "tfassets.awning_small#24971",
     "tfassets.awning001#22713"
   ],
   "__version": 2

@@ -1,29 +1,24 @@
 ﻿using Sandbox.Citizen;
+using SandboxParty.Components.State;
 using SandboxParty.Events;
-using SandboxParty.GameManager;
-using System;
-using System.Numerics;
-using System.Threading.Tasks;
+using SandboxParty.Managers;
+using GameManager = SandboxParty.Managers.GameManager;
 
-namespace SandboxParty.Components.Board.Character
+namespace SandboxParty.Components.Character.Board
 {
-	public class BoardCharacter : Component, IBoardCharacterEvent
+	public class BoardCharacter : BaseCharacter, IBoardCharacterEvent
 	{
-		[RequireComponent] public BoardMovementAgent MovementHelper { get; set; }
+		[RequireComponent] public BoardCharacterMovementAgent MovementHelper { get; set; }
 
 		[RequireComponent] public CitizenAnimationHelper AnimationHelper { get; set; }
 
 		[RequireComponent] public BoardCharacterDice Dice { get; set; }
 
-		private bool IsOurTurn { get => BoardGameManager.Current.BoardGameState?.CurrentTurn == this; }
+		private bool IsOurTurn { get => GameManager.Current.BoardState?.CurrentTurn == this; }
 
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
-
-			var camera = GameObject.GetComponentInChildren<CameraComponent>();
-			if ( camera?.IsValid == true )
-				camera.Priority = Network.IsOwner ? 2 : 1;
 
 			UpdateAnimations();
 			UpdateLocation();
@@ -34,12 +29,8 @@ namespace SandboxParty.Components.Board.Character
 
 			Gizmo.Draw.ScreenText( $"You rolled {Dice.LastRoll}", new Vector2( 50, 50 ) );
 
-			if ( Input.Pressed( "jump" ) && RollDiceRPC_Validate() )
-				RollDiceRPC();
-
-
-			// AnimationHelper.Sitting = CitizenAnimationHelper.SittingStyle.Floor
-			// NavigationAgent.MoveTo( Vector3.Random );
+			if ( Input.Pressed( "jump" ) && RollDice_Validate() )
+				RollDice();
 		}
 
 		private void UpdateAnimations()
@@ -59,28 +50,44 @@ namespace SandboxParty.Components.Board.Character
 			GameObject.WorldRotation = Rotation.Slerp( GameObject.WorldRotation, MovementHelper.DesiredRotation, Time.Delta * 3f );
 		}
 
-		[Rpc.Host( Flags = NetFlags.OwnerOnly )]
-		public async void RollDiceRPC()
+		void IBoardCharacterEvent.OnDestinationReached()
 		{
-			if ( !RollDiceRPC_Validate() )
+			IBoardEvent.Post( x => x.OnDestinationReached( this ) );
+		}
+
+		[Rpc.Host( Flags = NetFlags.OwnerOnly )]
+		public void RollDice()
+		{
+			if ( !RollDice_Validate() )
 				return;
 
 			Vector3 forwardVector = AnimationHelper.Target.WorldRotation.Forward;
 			Vector3 upVector = Vector3.Up;
 			Vector3 vector = GameObject.WorldPosition + forwardVector * 50 + upVector * 25;
 
-			var newRoll = await Dice.RollDice( vector );
-			MovementHelper.MoveForward( newRoll );
+			Dice.RollDice( vector ).ContinueWith(newRoll =>
+			{
+				MovementHelper.MoveForward( newRoll.Result );
+			} );
 		}
 
-		public bool RollDiceRPC_Validate()
+		[Rpc.Host( Flags = NetFlags.OwnerOnly )]
+		public void EndTurn()
+		{
+			if ( !EndTurn_Validate() )
+				return;
+
+			IBoardEvent.Post( x => x.OnTurnEnded( this ) );
+		}
+
+		public bool RollDice_Validate()
 		{
 			return IsOurTurn;
 		}
 
-		public void OnDestinationReached()
+		public bool EndTurn_Validate()
 		{
-			IBoardGameEvent.Post( x => x.OnDestinationReached( this ) );
+			return IsOurTurn;
 		}
 	}
 }

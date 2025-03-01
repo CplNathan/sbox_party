@@ -4,7 +4,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SandboxParty.Components.Board.Character
+namespace SandboxParty.Components.Character.Board
 {
 	[Title( "Board Dice" )]
 	public class BoardCharacterDice : Component

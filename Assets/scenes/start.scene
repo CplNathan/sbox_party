@@ -2,24 +2,28 @@
   "__guid": "78e87c5e-55fd-477a-8fd0-e8ef4bbe280c",
   "GameObjects": [
     {
-      "__guid": "b6c49c6e-0357-4978-89c4-3fafea37bd49",
+      "__guid": "ee7340a9-65f0-4d62-a61e-348be72ad6a2",
       "Flags": 0,
       "Name": "Scene Information",
-      "Position": "-24.67352,7.420654,98.24257",
+      "Position": "-535.6497,277.2623,255.7914",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.NetworkHelper",
-          "__guid": "3300d12c-7982-4126-bed4-104a785a9020",
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "74f6d311-1fa2-4602-9ca1-bd3734769d74",
+          "Author": null,
+          "Changes": "",
+          "Description": "",
+          "Group": null,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PlayerPrefab": null,
-          "SpawnPoints": [],
-          "StartServer": true
+          "SceneTags": "",
+          "Title": null,
+          "Version": null
         }
       ]
     }

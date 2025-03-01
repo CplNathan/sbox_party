@@ -1,0 +1,13 @@
+﻿using SandboxParty.Components.Character.Board;
+
+namespace SandboxParty.Events
+{
+	public interface IBoardEvent : ISceneEvent<IBoardEvent>
+	{
+		void OnTurnStarted( BoardCharacter character );
+
+		void OnDestinationReached( BoardCharacter character );
+
+		void OnTurnEnded( BoardCharacter character );
+	}
+}

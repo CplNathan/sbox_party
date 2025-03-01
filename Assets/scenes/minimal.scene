@@ -23,24 +23,6 @@
           "SceneTags": "",
           "Title": "minimal",
           "Version": null
-        },
-        {
-          "__type": "SandboxParty.Components.Board.BoardNetworkHelper",
-          "__guid": "a97bc23e-588f-4619-90da-9741de9097f3",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/player.prefab"
-          },
-          "SpawnPoint": {
-            "_type": "gameobject",
-            "go": "af7bfd8e-abcc-4432-b203-fc11db7522c1"
-          }
         }
       ]
     },

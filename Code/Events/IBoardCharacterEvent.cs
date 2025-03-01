@@ -1,7 +1,9 @@
-﻿namespace SandboxParty.Events
+﻿using SandboxParty.Components.Character.Board;
+
+namespace SandboxParty.Events
 {
-    public interface IBoardCharacterEvent : ISceneEvent<IBoardCharacterEvent>
-    {
+	public interface IBoardCharacterEvent : ISceneEvent<IBoardCharacterEvent>
+	{
 		void OnDestinationReached();
-    }
+	}
 }
