@@ -1,0 +1,491 @@
+{
+  "IsSubgraph": false,
+  "Path": "materials/shaders/water blend.shdrgrph",
+  "Model": "models/dev/plane.vmdl",
+  "Title": null,
+  "Description": null,
+  "Category": null,
+  "Icon": null,
+  "AddToNodeLibrary": false,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "1,1,1,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Result",
+      "DefaultOpacity": 1,
+      "DefaultRoughness": 1,
+      "DefaultMetalness": 0,
+      "DefaultAmbientOcclusion": 1,
+      "Identifier": "0",
+      "Position": "-1752,84",
+      "HandleOffsets": {},
+      "Albedo": {
+        "Identifier": "6",
+        "Output": "Result"
+      },
+      "Normal": {
+        "Identifier": "12",
+        "Output": "Result"
+      },
+      "Roughness": {
+        "Identifier": "8",
+        "Output": "Result"
+      },
+      "AmbientOcclusion": {
+        "Identifier": "27",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "SubgraphNode",
+      "SubgraphPath": "materials/shaders/parallax.shdrfunc",
+      "DefaultValues": {
+        "Depth": 0.575,
+        "Heightmap": 0,
+        "TexCoord": "0,0"
+      },
+      "Identifier": "1",
+      "Position": "-3348,108",
+      "HandleOffsets": {},
+      "Heightmap": {
+        "Identifier": "4",
+        "Output": "R"
+      },
+      "TexCoord": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "2",
+      "Position": "-4188,156",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_diff_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Colour",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "3",
+      "Position": "-3132,108",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "1",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_disp_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Parallax",
+        "Default": "1,1,1,1",
+        "Extension": "Mask",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "4",
+      "Position": "-3912,108",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "OneMinus",
+      "Identifier": "5",
+      "Position": "-2964,540",
+      "HandleOffsets": {},
+      "In": {
+        "Identifier": "21",
+        "Output": "R"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "6",
+      "Position": "-2160,84",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "7",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "10",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/leafy_grass/leafy_grass_diff_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "7",
+      "Position": "-3132,-360",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "1",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "8",
+      "Position": "-2160,516",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "5",
+        "Output": "Out"
+      },
+      "C": {
+        "Identifier": "16",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Power",
+      "DefaultA": 1,
+      "DefaultB": 4,
+      "Identifier": "9",
+      "Position": "-2964,1116",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "17",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "23",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "10",
+      "Position": "-2340,84",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "25",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "3",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "15",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float4",
+      "Value": "0,0,1,1",
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Color"
+      },
+      "Identifier": "11",
+      "Position": "-2340,288",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "12",
+      "Position": "-2160,288",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "20",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "16",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "VoronoiNoise",
+      "AngleOffset": 3.1415925,
+      "CellDensity": 0.2,
+      "Worley": true,
+      "Identifier": "13",
+      "Position": "-3132,-468",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "14",
+      "Position": "-2652,1080",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Saturate",
+      "Identifier": "15",
+      "Position": "-2868,1116",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "9",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Branch",
+      "Name": "",
+      "IsAttribute": true,
+      "Operator": "LessThan",
+      "Enabled": false,
+      "UI": {},
+      "Identifier": "16",
+      "Position": "-2436,1080",
+      "HandleOffsets": {},
+      "True": {
+        "Identifier": "14",
+        "Output": "Result"
+      },
+      "False": {
+        "Identifier": "15",
+        "Output": "Result"
+      },
+      "A": {
+        "Identifier": "15",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "18",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 0.3,
+      "Identifier": "17",
+      "Position": "-2964,1200",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "24",
+        "Output": "R"
+      },
+      "B": {
+        "Identifier": "22",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.23017989,
+      "Name": "Water Blend Clamp",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "18",
+      "Position": "-2652,1200",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "OneMinus",
+      "Identifier": "19",
+      "Position": "-2964,-468",
+      "HandleOffsets": {},
+      "In": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_nor_dx_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Normal",
+        "Default": "1,1,1,1",
+        "Extension": "Normal",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "20",
+      "Position": "-3132,312",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "1",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_rough_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Roughness",
+        "Default": "1,1,1,1",
+        "Extension": "Rough",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "21",
+      "Position": "-3132,516",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "1",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.25,
+      "Name": "Water Height Threshold",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "22",
+      "Position": "-3132,1212",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 2,
+      "Name": "Water Edge Hardness",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "23",
+      "Position": "-3132,1152",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_disp_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Height",
+        "Default": "1,1,1,1",
+        "Extension": "Mask",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "24",
+      "Position": "-3132,924",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float4",
+      "Value": "0.13986,0.13986,0.09189,1",
+      "Name": "Water Colour",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Color"
+      },
+      "Identifier": "25",
+      "Position": "-3132,-48",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_ao_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "AO",
+        "Default": "1,1,1,1",
+        "Extension": "AO",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "26",
+      "Position": "-3132,720",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 1,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "27",
+      "Position": "-2160,720",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "26",
+        "Output": "R"
+      },
+      "C": {
+        "Identifier": "16",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Branch",
+      "Name": "Water",
+      "IsAttribute": true,
+      "Operator": "Equal",
+      "Enabled": true,
+      "UI": {},
+      "Identifier": "28",
+      "Position": "-1956,948",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "16",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "26",
+        "Output": "R"
+      }
+    }
+  ]
+}

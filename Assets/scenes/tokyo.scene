@@ -145,7 +145,7 @@
           "__guid": "d8172028-939e-4b3b-b22f-f008404eab2d",
           "Flags": 0,
           "Name": "component_2",
-          "Position": "416,-448,-0.00005043457",
+          "Position": "398,-450,-0.00004886097",
           "Enabled": true,
           "Components": [
             {
@@ -197,7 +197,7 @@
           "__guid": "740dcc66-623c-4380-a8f7-fdaa21115e83",
           "Flags": 0,
           "Name": "component_2_4",
-          "Position": "64,-448,-0.00001966175",
+          "Position": "46,-450,-0.00001808814",
           "Enabled": true,
           "Components": [
             {
@@ -245,7 +245,7 @@
           "__guid": "0e21e69a-3a04-4616-a733-751e58627084",
           "Flags": 0,
           "Name": "component_2_a1",
-          "Position": "368,-320,-0.00004623828",
+          "Position": "350,-322,-0.00004466467",
           "Enabled": true,
           "Components": [
             {
@@ -293,7 +293,7 @@
           "__guid": "733443ec-8460-4925-b99d-36edebfdb817",
           "Flags": 0,
           "Name": "component_2_b3",
-          "Position": "112,-576,-0.00002385805",
+          "Position": "94,-578,-0.00002228444",
           "Enabled": true,
           "Components": [
             {
@@ -341,7 +341,7 @@
           "__guid": "51a88593-9dfc-40ed-860f-b9c80b3a8688",
           "Flags": 0,
           "Name": "component_2_a3",
-          "Position": "112,-320,-0.00002385805",
+          "Position": "94,-322,-0.00002228444",
           "Enabled": true,
           "Components": [
             {
@@ -389,7 +389,7 @@
           "__guid": "de7d4786-6397-4122-9010-0268f65e1b4e",
           "Flags": 0,
           "Name": "component_2_b2",
-          "Position": "240,-624,-0.00003504816",
+          "Position": "222,-626,-0.00003347455",
           "Enabled": true,
           "Components": [
             {
@@ -437,7 +437,7 @@
           "__guid": "9de80c61-9c06-4c0a-8c9c-2e3281defec2",
           "Flags": 0,
           "Name": "component_2_a2",
-          "Position": "240,-272,-0.00003504816",
+          "Position": "222,-274,-0.00003347455",
           "Enabled": true,
           "Components": [
             {
@@ -485,7 +485,7 @@
           "__guid": "dfe4f5c5-2fb5-4f5e-b60f-6e17ef0aa99f",
           "Flags": 0,
           "Name": "component_2_b1",
-          "Position": "368,-576,-0.00004623828",
+          "Position": "350,-578,-0.00004466467",
           "Enabled": true,
           "Components": [
             {
@@ -533,7 +533,7 @@
           "__guid": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f",
           "Flags": 0,
           "Name": "component_3_b",
-          "Position": "-320,-96,-0.0000003965215",
+          "Position": "-320,-450,-0.0000003965215",
           "Enabled": true,
           "Components": [
             {
@@ -581,7 +581,7 @@
           "__guid": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b",
           "Flags": 0,
           "Name": "component_4",
-          "Position": "-416,144,0.0000001282497",
+          "Position": "-416,-210,0.0000001282497",
           "Enabled": true,
           "Components": [
             {
@@ -629,7 +629,7 @@
           "__guid": "e3ce3cef-04d5-4950-b954-9903db39698d",
           "Flags": 0,
           "Name": "component_5",
-          "Position": "-416,400,0.0000003666682",
+          "Position": "-416,78,0.0000003666682",
           "Enabled": true,
           "Components": [
             {
@@ -677,7 +677,7 @@
           "__guid": "9fd015e5-041b-44cc-a663-7669f0265a92",
           "Flags": 0,
           "Name": "component_6",
-          "Position": "720,400,-0.00006246756",
+          "Position": "720,78,-0.00006246756",
           "Enabled": true,
           "Components": [
             {
@@ -725,7 +725,7 @@
           "__guid": "62750e18-74de-4ba1-ad5b-9087f97e2f74",
           "Flags": 0,
           "Name": "component_3a",
-          "Position": "-128,144,-0.00001145965",
+          "Position": "-128,-210,-0.00001145965",
           "Enabled": true,
           "Components": [
             {
@@ -772,99 +772,188 @@
       ]
     },
     {
-      "__guid": "874ecd9c-7c6e-4d8c-8179-1795c16d115b",
+      "__guid": "17ce4d9b-264f-4f88-a659-9362a74f9ae5",
       "Flags": 0,
-      "Name": "Sun",
-      "Rotation": "-0.1085762,0.409073,-0.2034477,0.8828813",
-      "Tags": "light_directional,light",
+      "Name": "Environment",
       "Enabled": true,
-      "Components": [
+      "Children": [
         {
-          "__type": "Sandbox.DirectionalLight",
-          "__guid": "b0497ffc-dd64-4d11-92b0-280cb1e26182",
-          "FogMode": "Enabled",
-          "FogStrength": 3,
-          "LightColor": "0.00787,0.00571,0.0093,1",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Shadows": true,
-          "SkyColor": "0.093,0.093,0.093,1"
+          "__guid": "874ecd9c-7c6e-4d8c-8179-1795c16d115b",
+          "Flags": 0,
+          "Name": "Sun",
+          "Rotation": "0.4671496,0.1753875,-0.4257632,0.7548088",
+          "Tags": "light,light_directional",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "b0497ffc-dd64-4d11-92b0-280cb1e26182",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.02792,0.02792,0.02792,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Shadows": true,
+              "SkyColor": "0.0354,0.0354,0.0492,1"
+            }
+          ]
+        },
+        {
+          "__guid": "fa104007-9f49-4d5c-b39c-388987a4329b",
+          "Flags": 0,
+          "Name": "Volumetric Fog",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.VolumetricFogVolume",
+              "__guid": "e6ca8bae-a733-4dcb-91f9-adf0a20f4bc1",
+              "Bounds": {
+                "Mins": "-3000,-3000,-3000",
+                "Maxs": "3000,3000,3000"
+              },
+              "FalloffExponent": 1,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Strength": 0.35
+            }
+          ]
+        },
+        {
+          "__guid": "dd7e1898-793d-4a85-b64d-7819acafa43a",
+          "Flags": 0,
+          "Name": "2D Skybox",
+          "Tags": "skybox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "2443e259-8036-47c4-9120-ed29d8c00ca8",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "SkyIndirectLighting": true,
+              "SkyMaterial": "materials/skybox/skybox_dark_01.vmat",
+              "Tint": "0.02826,0.02578,0.0372,1"
+            }
+          ]
         }
       ]
     },
     {
-      "__guid": "247226da-d8c3-4ae4-9635-589418eec5b8",
+      "__guid": "8d8c9f2a-816a-41e5-b920-1bbcacadcd83",
       "Flags": 0,
-      "Name": "2D Skybox",
-      "Tags": "skybox",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SkyBox2D",
-          "__guid": "e279a331-09d7-4aeb-8ea0-d60d01b2209a",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "SkyIndirectLighting": true,
-          "SkyMaterial": "materials/skybox/skybox_dark_01.vmat",
-          "Tint": "0.01512,0.01209,0.01209,1"
-        }
-      ]
-    },
-    {
-      "__guid": "fa104007-9f49-4d5c-b39c-388987a4329b",
-      "Flags": 0,
-      "Name": "Volumetric Fog",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.VolumetricFogVolume",
-          "__guid": "e6ca8bae-a733-4dcb-91f9-adf0a20f4bc1",
-          "Bounds": {
-            "Mins": "-3000,-3000,-3000",
-            "Maxs": "3000,3000,3000"
-          },
-          "FalloffExponent": 1,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Strength": 0.35
-        }
-      ]
-    },
-    {
-      "__guid": "54c26b39-7b68-4a20-b509-1154b538ee16",
-      "Flags": 0,
-      "Name": "Point Light",
-      "Position": "-230.2487,160.6071,59.66753",
+      "Name": "Point Light (1)",
+      "Position": "-102,90,54",
       "Scale": "0.5,0.5,0.5",
       "Tags": "light_point,light",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.PointLight",
-          "__guid": "393db410-727f-4853-86f3-96aafb4206d5",
-          "Attenuation": 7.5,
-          "FogMode": "Enabled",
-          "FogStrength": 0.23,
-          "LightColor": "5,1.3372,0.60464,1",
+          "__guid": "20d856ea-b794-4f4b-a500-d88883fa40fe",
+          "Attenuation": 5,
+          "FogMode": "WithoutShadows",
+          "FogStrength": 0.34,
+          "LightColor": "0.88837,0.09917,0.09917,1",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Radius": 250,
+          "Radius": 150,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "7c23f2a7-d155-4012-843a-dedca5206d38",
+      "Flags": 0,
+      "Name": "Point Light (2)",
+      "Position": "-300,72,90",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "light,light_point",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "bf991ecd-76d6-4260-b299-bd5486873808",
+          "Attenuation": 5,
+          "FogMode": "WithoutShadows",
+          "FogStrength": 0.34,
+          "LightColor": "0.88837,0.09917,0.09917,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Radius": 150,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "f35d9ff8-caba-4575-9e3f-bcedea4125ca",
+      "Flags": 0,
+      "Name": "Point Light (4)",
+      "Position": "132,36,54",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "c993b84f-fa47-4e21-9d10-e6c868e2868e",
+          "Attenuation": 5,
+          "FogMode": "WithoutShadows",
+          "FogStrength": 0.34,
+          "LightColor": "0.88837,0.09917,0.09917,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Radius": 150,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "eca7f45d-ed80-4ff8-87b0-44cea70299f6",
+      "Flags": 0,
+      "Name": "Point Light (3)",
+      "Position": "-264,-210,84",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "light,light_point",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "d3e08372-12a6-46b1-a7a7-3b7ed5df440b",
+          "Attenuation": 5,
+          "FogMode": "WithoutShadows",
+          "FogStrength": 0.34,
+          "LightColor": "0.88837,0.09917,0.09917,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Radius": 150,
           "Shadows": true
         }
       ]
@@ -894,140 +983,6 @@
         }
       ],
       "Children": []
-    },
-    {
-      "__guid": "71b68e79-061f-48fa-9f8f-a1e2f9e09da5",
-      "Flags": 0,
-      "Name": "concrete_barrier",
-      "Position": "268.3958,40.07939,0.08680192",
-      "Rotation": "0,0,0.6427876,0.7660444",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "4970429d-45a5-4221-877e-638aa1c491d2",
-          "BodyGroups": 18446744073709551615,
-          "Health": 2000,
-          "IsStatic": false,
-          "MaterialGroup": null,
-          "Model": "models/sbox_props/concrete_barrier/concrete_barrier.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "StartAsleep": false,
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "085a74eb-f6a3-4a04-8aea-b1f3dfa20b7c",
-      "Flags": 0,
-      "Name": "parkfountain",
-      "Position": "-240,-448,0",
-      "Rotation": "0,-0,-1,-0.00000004371139",
-      "Scale": "0.35,0.35,0.35",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c20df1f8-d193-4f44-a2e4-d373afaef297",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": "materials/gravel_concrete_03/gravel_concrete_03.vmat",
-          "Model": "models/environment/streets/parkfountain.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.CapsuleCollider",
-          "__guid": "425bb119-9b03-4359-87c6-dbbaad94f8d6",
-          "End": "0,0,150",
-          "Friction": null,
-          "IsTrigger": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "Radius": 325,
-          "Start": "0,0,0",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "Sandbox.NavMeshArea",
-          "__guid": "954f6c6a-444c-43a7-b020-088f37ee8019",
-          "IsBlocker": true,
-          "LinkedCollider": {
-            "_type": "component",
-            "component_id": "425bb119-9b03-4359-87c6-dbbaad94f8d6",
-            "go": "085a74eb-f6a3-4a04-8aea-b1f3dfa20b7c",
-            "component_type": "CapsuleCollider"
-          },
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
-    },
-    {
-      "__guid": "59c8ccb8-f0df-4c61-a7d3-dffecb58dc33",
-      "Flags": 0,
-      "Name": "shelf",
-      "Position": "22,36,14",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "778932b8-8bef-45c0-b8ab-cf0b8964032d",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/shelf.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
     },
     {
       "__guid": "edc8d38e-8961-4408-9f00-ddcabb490c53",
@@ -1064,17 +1019,17 @@
       ]
     },
     {
-      "__guid": "4054c2fb-e9b4-4b7a-b611-359d11e92e7d",
+      "__guid": "d5c3fb92-ab96-4e81-b5a5-6feeebaa08da",
       "Flags": 0,
-      "Name": "supportoverpass_01 (6)",
-      "Position": "-1132,-136,136",
+      "Name": "supportoverpass_01 (9)",
+      "Position": "0,-136,136",
       "Rotation": "0,0,0.7071068,0.7071068",
       "Scale": "0.2,0.2,0.2",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "9ff74323-820a-4e69-ba8c-3d5a709e4130",
+          "__guid": "45dd78f4-1286-401b-bbe5-d60d3c9bf6cf",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
           "MaterialGroup": null,
@@ -1302,17 +1257,17 @@
       ]
     },
     {
-      "__guid": "9f64ff0a-01fe-480a-9720-5c001ff2523d",
+      "__guid": "cd729b96-6c0a-4059-aef2-f452126d320d",
       "Flags": 0,
-      "Name": "supportoverpass_01 (9)",
-      "Position": "44,-8,136",
+      "Name": "supportoverpass_01 (6)",
+      "Position": "-1110,-8,136",
       "Rotation": "0,-0,-0.7071068,0.7071068",
       "Scale": "0.2,0.2,0.2",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "3ffd567c-ff85-4204-a0e7-88e8008050b0",
+          "__guid": "a66da0ba-ee62-4983-85f5-ef103f9b67df",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
           "MaterialGroup": null,
@@ -1404,139 +1359,6 @@
       ]
     },
     {
-      "__guid": "2e1ea89b-a736-4225-81fe-63682bd8763d",
-      "Flags": 0,
-      "Name": "ventilationtube_01",
-      "Position": "16,-100,44",
-      "Scale": "0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "d61d53cd-a542-4035-9aa6-3f3ca92b2e29",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/ventilationtube_01.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "1f7d3efd-66ee-4d61-ae56-94fcb0955419",
-      "Flags": 0,
-      "Name": "ventilationtube_01 (1)",
-      "Position": "16,-100,132",
-      "Scale": "0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "344e3702-fc62-43c8-8409-8f7be739ecfa",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/ventilationtube_01.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "5c3b64b5-c02e-4c30-af0d-231986596f4d",
-      "Flags": 0,
-      "Name": "ventilationtube_01 (2)",
-      "Position": "8,-100,168",
-      "Scale": "0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "7b06d819-9d58-472f-ad9d-d4f86ba815c1",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/ventilationtube_02.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "b6505603-ac13-4b22-8886-08139167698f",
-      "Flags": 0,
-      "Name": "ventilationtube_01 (3)",
-      "Position": "-32,-100,168",
-      "Rotation": "0,-0.7071068,0,0.7071068",
-      "Scale": "0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "2de4cf5b-4082-4a01-bdee-cf1fc5eb796a",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/ventilationtube_02.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "98a2fba4-51d3-41bf-b614-c3598e6d428f",
       "Flags": 0,
       "Name": "awning_07",
@@ -1586,7 +1408,7 @@
           "CreateAttachments": false,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/japan_props_001/awning_05.vmdl",
+          "Model": "models/japan_props_001/awning_08.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1710,7 +1532,7 @@
       "__guid": "4f7b3036-465e-4fc0-b742-eb21901cf504",
       "Flags": 0,
       "Name": "sign_03",
-      "Position": "-118,4,104",
+      "Position": "-266,36,106",
       "Rotation": "0,0.9999999,0,0",
       "Scale": "0.25,0.25,0.25",
       "Enabled": true,
@@ -1723,39 +1545,6 @@
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/japan_props_001/sign_03.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "a9bfca36-a1da-43a5-b64a-ba1443c0400b",
-      "Flags": 0,
-      "Name": "vendingmachine_06",
-      "Position": "-104,20,18",
-      "Scale": "0.25,0.25,0.25",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6413aac7-fbf6-4691-95f5-3fc683679745",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/vendingmachine_06.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1824,40 +1613,6 @@
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/japan_props_001/sign_08.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "b88481a8-1742-4a2d-aa64-31baf2cadd3d",
-      "Flags": 0,
-      "Name": "vendingmachine_04",
-      "Position": "-394,14,18",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.25,0.25,0.25",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "9f5e3c7c-f3c2-4e42-8051-c54883ab4b01",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/vendingmachine_06.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1962,7 +1717,7 @@
             "BloomLayer": false,
             "AfterUILayer": false
           },
-          "RenderType": "On",
+          "RenderType": "Off",
           "Tint": "1,1,1,1"
         }
       ],
@@ -1978,7 +1733,7 @@
               "__type": "Sandbox.PointLight",
               "__guid": "c2accaff-eaee-4a98-909e-a915893ef810",
               "Attenuation": 10,
-              "FogMode": "Enabled",
+              "FogMode": "WithoutShadows",
               "FogStrength": 0.37,
               "LightColor": "0.40588,0.39216,0.35098,1",
               "OnComponentDestroy": null,
@@ -1988,7 +1743,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "Radius": 250,
-              "Shadows": false
+              "Shadows": true
             }
           ]
         }
@@ -2028,111 +1783,238 @@
       ]
     },
     {
-      "__guid": "4db2bc0c-d178-453d-8004-f72d3fb514ae",
+      "__guid": "dacb404f-504b-4c66-b8f3-eaedf968814f",
       "Flags": 0,
-      "Name": "electrical_box_e",
-      "Position": "-128,-50,72",
+      "Name": "awning_small (1)",
+      "Position": "-66,8,60",
       "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "0c13e7fd-5de1-4cce-a67f-5d5581a72b47",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "MaterialGroup": null,
-          "Model": "models/rust_props/electrical_boxes/electrical_box_e.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "StartAsleep": false,
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "5c38ff47-f18d-4168-b5d9-aa0c2ebda430",
-      "Flags": 0,
-      "Name": "electrical_box_b",
-      "Position": "-242,34,0",
-      "Scale": "0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "460f21bd-4796-402b-9a99-401360b7a53e",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "MaterialGroup": null,
-          "Model": "models/rust_props/electrical_boxes/electrical_box_b.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "StartAsleep": false,
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "7d7d84a1-794e-45c3-a3ea-cee2ddb55533",
-      "Flags": 0,
-      "Name": "awning001",
-      "Position": "-174,-44,132",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "1.25,1,0.8",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "75812b48-300c-46b4-931c-7fa43fb05be0",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "MaterialGroup": null,
-          "Model": "models/props_farm/awning001.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "StartAsleep": false,
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "c4a1046c-9402-4192-bab6-b288c547dda3",
-      "Flags": 0,
-      "Name": "awning_small",
-      "Position": "-392,-24,42",
-      "Rotation": "0,0,1,-0.00000004371139",
       "Scale": "0.4,0.4,0.4",
       "Enabled": true,
       "Components": [
         {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "6fce4225-fca9-40ee-9b31-61601774c12c",
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props_farm/awning001.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        }
+      ]
+    },
+    {
+      "__guid": "a65189dc-2410-42eb-a062-3d5f345c794b",
+      "Flags": 0,
+      "Name": "awning_small (2)",
+      "Position": "-316,-138,68",
+      "Rotation": "0,-0,-0.7071068,0.7071068",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "35f69eed-9835-4ce7-bd53-710bd6c4b5cb",
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props_farm/awning001.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        }
+      ]
+    },
+    {
+      "__guid": "2d7995ed-fdf3-4806-9833-b54fc62506fd",
+      "Flags": 0,
+      "Name": "awning_small (3)",
+      "Position": "-196,-138,68",
+      "Rotation": "0,-0,-0.7071068,0.7071068",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "4f580a08-2ece-4d71-98e5-8f4a0c7e1156",
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props_farm/awning001.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        }
+      ]
+    },
+    {
+      "__guid": "939a5d49-ee09-455f-b66c-1d834af719c8",
+      "Flags": 0,
+      "Name": "vend1_2k_hr",
+      "Position": "138,15,0",
+      "Rotation": "0,0,1,-0.00000004371139",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "423e8679-fa97-4b02-badd-3891c7151c73",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/prop_street/vend1_2k_hr.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "0a30ee59-e39e-412a-953b-c5789da12637",
+      "Flags": 0,
+      "Name": "catwalk_ladder",
+      "Position": "-79.43896,-126,164",
+      "Rotation": "0.00000004495562,-0.00000004495562,-0.7071068,0.7071068",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d56393e7-c92f-46fb-9410-a79a6fab33a6",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/catwalk/catwalk_ladder.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "040d6243-bfa3-4b7d-9581-14364567b458",
+      "Flags": 0,
+      "Name": "bike_rack",
+      "Position": "-391.9999,-303.9999,0.08633646",
+      "Enabled": true,
+      "Components": [
+        {
           "__type": "Sandbox.Prop",
-          "__guid": "6dd55480-8021-40e4-bbc0-146d4617fc8d",
+          "__guid": "a267da75-5c1b-4d48-9bcd-0906b4023ae0",
           "BodyGroups": 18446744073709551615,
           "Health": 0,
-          "IsStatic": true,
+          "IsStatic": false,
           "MaterialGroup": null,
-          "Model": "models/props_farm/awning001.vmdl",
+          "Model": "models/props/bike_rack/bike_rack.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -2142,6 +2024,70 @@
           "OnPropBreak": null,
           "OnPropTakeDamage": null,
           "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "a491480b-0b45-4ea4-94a1-15ed0bc20eb6",
+      "Flags": 0,
+      "Name": "beech_bush_medium",
+      "Position": "-72,-479.9999,-5.999998",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "e23a7047-01e7-429c-a839-1b502a40e64f",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/shrubs/beech/beech_bush_medium.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "a8a4e4b5-4410-41dc-aace-f442bf132c4a",
+      "Flags": 0,
+      "Name": "pine_bush_low_b",
+      "Position": "-456,-174,5.28571",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ebc33edd-58e4-463d-a629-649f07b74b2a",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/shrubs/pine/pine_bush_low_b.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
           "Tint": "1,1,1,1"
         }
       ]
@@ -2177,10 +2123,13 @@
   "Title": "Tokyo",
   "Description": null,
   "__references": [
-    "apetavern.parkfountain#46382",
-    "facepunch.concrete_barrier#33663",
-    "japancitymodels.awning_05#31982",
+    "creation.vending_01#12800",
+    "facepunch.beech_bush_medium#60671",
+    "facepunch.bike_rack#37050",
+    "facepunch.catwalk_ladder#48202",
+    "facepunch.pine_bush_low_b#29106",
     "japancitymodels.awning_07#31984",
+    "japancitymodels.awning_08#31985",
     "japancitymodels.door_02#31989",
     "japancitymodels.electricpole_part_04#31996",
     "japancitymodels.entrance_03#31999",
@@ -2188,13 +2137,7 @@
     "japancitymodels.sign_08#32028",
     "japancitymodels.supportoverpass_01#32041",
     "japancitymodels.supportoverpass_03#32040",
-    "japancitymodels.vendingmachine_06#32039",
-    "japancitymodels.ventilationtube_01#32043",
-    "japancitymodels.ventilationtube_02#32044",
     "kenneynl.foodkitplate#80706",
-    "nolankicks.shelf#56681",
-    "rust.electrical_box_b#25168",
-    "rust.electrical_box_e#25171",
     "saandy.caged_light01_wall#35996",
     "saandy.fluorescent_ceiling_light01#36033",
     "tfassets.awning001#22713"

@@ -60,10 +60,14 @@ namespace SandboxParty.Managers
 
 		void ISceneLoadingEvents.AfterLoad( Scene scene )
 		{
-			WorldCamera = scene.CreateObject( true ).AddComponent<CameraComponent>();
+			var cameraObject = scene.CreateObject( true );
+			WorldCamera = cameraObject.AddComponent<CameraComponent>();
 			WorldCamera.IsMainCamera = true;
 			WorldCamera.FovAxis = CameraComponent.Axis.Vertical;
 			WorldCamera.FieldOfView = 70;
+
+			var occlusionObject = WorldCamera.AddComponent<AmbientOcclusion>();
+			occlusionObject.Intensity = 1;
 
 			BoardState = scene.GetComponentInChildren<BoardGameState>();
 		}

@@ -1,0 +1,241 @@
+{
+  "IsSubgraph": true,
+  "Path": "materials/parallax.shdrfunc",
+  "Model": null,
+  "Title": "Parallax UV",
+  "Description": "",
+  "Category": null,
+  "Icon": null,
+  "AddToNodeLibrary": true,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "ee824b09-f31e-4a2b-8015-16ee56034e2b",
+          "Name": "TexCoord",
+          "Type": "Vector2"
+        }
+      ],
+      "Identifier": "0",
+      "Position": "-468,-120",
+      "HandleOffsets": {},
+      "TexCoord": {
+        "Identifier": "4",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "1",
+      "Position": "-792,264",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "3",
+        "Output": "XY"
+      },
+      "B": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "2",
+      "Position": "-684,-96",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "7",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "CombineVector",
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "3",
+      "Position": "-996,108",
+      "HandleOffsets": {},
+      "X": {
+        "Identifier": "6",
+        "Output": "X"
+      },
+      "Y": {
+        "Identifier": "6",
+        "Output": "Y"
+      },
+      "Z": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "4",
+      "Position": "-576,-120",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "15",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 0.42,
+      "Identifier": "5",
+      "Position": "-1140,192",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "6",
+        "Output": "Z"
+      }
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "6",
+      "Position": "-1368,108",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "11",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "7",
+      "Position": "-1368,-96",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "8",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "9",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 2,
+      "Identifier": "8",
+      "Position": "-1464,-96",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "14",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "9",
+      "Position": "-1464,-12",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "14",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "10",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.575,
+      "Name": "Depth",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "10",
+      "Position": "-1692,72",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TransformNormal",
+      "InputSpace": "World",
+      "OutputSpace": "Tangent",
+      "DecodeNormal": false,
+      "Identifier": "11",
+      "Position": "-1932,108",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "2,2",
+      "Identifier": "12",
+      "Position": "-1068,-120",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "ViewDirection",
+      "Identifier": "13",
+      "Position": "-2136,108",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0,
+      "Name": "Heightmap",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "14",
+      "Position": "-1692,-96",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float2",
+      "Min": "0,0",
+      "Max": "2,2",
+      "Value": "0,0",
+      "Name": "TexCoord",
+      "IsAttribute": true,
+      "UI": {},
+      "Identifier": "15",
+      "Position": "-876,-120",
+      "HandleOffsets": {},
+      "PreviewInput": {
+        "Identifier": "12",
+        "Output": "Result"
+      }
+    }
+  ]
+}
