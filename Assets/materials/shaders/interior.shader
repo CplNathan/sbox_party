@@ -73,10 +73,16 @@ PS
 	#include "common/pixel.hlsl"
 	
 	SamplerState g_sSampler0 < Filter( ANISO ); AddressU( WRAP ); AddressV( WRAP ); >;
-	CreateInputTextureCube( Texture_ps_0, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	TextureCube g_tTexture_ps_0 < Channel( RGBA, Box( Texture_ps_0 ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tTexture_ps_0 )
-	TextureAttribute( RepresentativeTexture, g_tTexture_ps_0 )
+	CreateInputTextureCube( Cubemap, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	CreateInputTexture2D( Overlay, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	CreateInputTexture2D( Texture_ps_2, Srgb, 8, "None", "_mask", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	CreateInputTexture2D( OverlayNormal, Srgb, 8, "None", "_normal", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	TextureCube g_tCubemap < Channel( RGBA, Box( Cubemap ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	Texture2D g_tOverlay < Channel( RGBA, Box( Overlay ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	Texture2D g_tTexture_ps_2 < Channel( RGBA, Box( Texture_ps_2 ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	Texture2D g_tOverlayNormal < Channel( RGBA, Box( OverlayNormal ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tTexture_ps_2 )
+	TextureAttribute( RepresentativeTexture, g_tTexture_ps_2 )
 	float g_flTiling < UiGroup( ",0/,0/0" ); Default1( 1 ); Range1( 0, 1 ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
@@ -120,16 +126,41 @@ PS
 		float3 l_24 = float3( -1, -1, -1 );
 		float3 l_25 = l_23 * l_24;
 		float4 l_26 = float4( l_25, 0 ).xzyw;
-		float4 l_27 = TexCubeS( g_tTexture_ps_0, g_sSampler0, l_26.xyz );
+		float4 l_27 = TexCubeS( g_tCubemap, g_sSampler0, l_26.xyz );
 		float4 l_28 = l_27 * float4( 0.1, 0.1, 0.1, 0.1 );
 		float3 l_29 = pow( 1.0 - dot( normalize( i.vNormalWs ), normalize( CalculatePositionToCameraDirWs( i.vPositionWithOffsetWs.xyz + g_vHighPrecisionLightingOffsetWs.xyz ) ) ), 2 );
 		float4 l_30 = lerp( l_27, l_28, float4( l_29, 0 ) );
-		float3 l_31 = 1 - l_29;
-		float l_32 = lerp( 0, 0.05, l_31.x );
+		float2 l_31 = i.vTextureCoords.xy * float2( 1, 1 );
+		float2 l_32 = i.vTextureCoords.xy * float2( 1, 1 );
+		float4 l_33 = Tex2DS( g_tTexture_ps_2, g_sSampler0, l_32 );
+		float l_34 = l_33.r / 2;
+		float l_35 = l_33.r * 0.65;
+		float l_36 = l_34 - l_35;
+		float3 l_37 = CalculatePositionToCameraDirWs( i.vPositionWithOffsetWs.xyz + g_vHighPrecisionLightingOffsetWs.xyz );
+		float3 l_38 = Vec3WsToTs( l_37, i.vNormalWs, i.vTangentUWs, i.vTangentVWs );
+		float l_39 = l_38.x;
+		float l_40 = l_38.y;
+		float2 l_41 = float2( l_39, l_40);
+		float l_42 = l_38.z;
+		float l_43 = l_42 + 0.42;
+		float2 l_44 = l_41 / float2( l_43, l_43 );
+		float2 l_45 = float2( l_36, l_36 ) * l_44;
+		float2 l_46 = l_31 + l_45;
+		float4 l_47 = Tex2DS( g_tOverlay, g_sSampler0, l_46 );
+		float l_48 = l_32.y;
+		float l_49 = pow( l_48, 0.3 );
+		float l_50 = l_49 > 0.7181686 ? 0 : 1;
+		float4 l_51 = lerp( l_30, l_47, l_50 );
+		float3 l_52 = float3( 0, 0, 1 );
+		float4 l_53 = Tex2DS( g_tOverlayNormal, g_sSampler0, l_46 );
+		float4 l_54 = lerp( float4( l_52, 0 ), l_53, l_50 );
+		float3 l_55 = 1 - l_29;
+		float l_56 = lerp( 0, 0.05, l_55.x );
 		
-		m.Albedo = l_30.xyz;
+		m.Albedo = l_51.xyz;
 		m.Opacity = 1;
-		m.Roughness = l_32;
+		m.Normal = l_54.xyz;
+		m.Roughness = l_56;
 		m.Metalness = 0;
 		m.AmbientOcclusion = 1;
 		

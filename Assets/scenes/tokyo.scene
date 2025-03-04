@@ -865,7 +865,7 @@
           "Attenuation": 5,
           "FogMode": "WithoutShadows",
           "FogStrength": 0.34,
-          "LightColor": "1.77674,1.77674,1.77674,1",
+          "LightColor": "1.05778,0.26076,0.26076,1",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,

@@ -52,34 +52,6 @@
         }
       ],
       "Children": []
-    },
-    {
-      "__guid": "9396e116-7fb9-44ba-b230-eba562bd3f9a",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "0,0,-90",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "SandboxParty.Components.Information.BoardSceneInformation",
-          "__guid": "6d1e3b0d-3916-40cd-b0de-656043370231",
-          "Author": null,
-          "Changes": "",
-          "Description": "",
-          "Group": null,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RespawnPoints": [],
-          "SceneTags": "",
-          "SpawnPoints": [],
-          "Title": null,
-          "Version": null
-        }
-      ]
     }
   ],
   "SceneProperties": {

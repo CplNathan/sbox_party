@@ -1,7 +1,7 @@
 {
   "IsSubgraph": false,
   "Path": "materials/shaders/interior.shdrgrph",
-  "Model": null,
+  "Model": "models/dev/box.vmdl",
   "Title": null,
   "Description": "",
   "Category": null,
@@ -24,10 +24,14 @@
       "DefaultMetalness": 0,
       "DefaultAmbientOcclusion": 1,
       "Identifier": "0",
-      "Position": "2388,840",
+      "Position": "3180,840",
       "HandleOffsets": {},
       "Albedo": {
-        "Identifier": "31",
+        "Identifier": "33",
+        "Output": "Result"
+      },
+      "Normal": {
+        "Identifier": "42",
         "Output": "Result"
       },
       "Roughness": {
@@ -345,6 +349,7 @@
       "Texture": "materials/interior/supermarket.png",
       "Sampler": {},
       "UI": {
+        "Name": "Cubemap",
         "Default": "1,1,1,1",
         "ShowExtension": true,
         "SrgbRead": true
@@ -442,6 +447,228 @@
       "_class": "WorldNormal",
       "Identifier": "32",
       "Position": "1128,828",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "33",
+      "Position": "2832,840",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "31",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "34",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "39",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/rusted_shutter/rusted_shutter_diff_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Overlay",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "34",
+      "Position": "1920,864",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "43",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "35",
+      "Position": "1320,1344",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "36",
+      "Position": "1920,1344",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "35",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Power",
+      "DefaultA": 1,
+      "DefaultB": 0.3,
+      "Identifier": "37",
+      "Position": "2148,1368",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "36",
+        "Output": "Y"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "38",
+      "Position": "2280,1260",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Branch",
+      "Name": "",
+      "IsAttribute": true,
+      "Operator": "GreaterThan",
+      "Enabled": false,
+      "UI": {},
+      "Identifier": "39",
+      "Position": "2484,1320",
+      "HandleOffsets": {},
+      "True": {
+        "Identifier": "38",
+        "Output": "Result"
+      },
+      "False": {
+        "Identifier": "41",
+        "Output": "Result"
+      },
+      "A": {
+        "Identifier": "37",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "40",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.7181686,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "40",
+      "Position": "2280,1512",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 1,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "41",
+      "Position": "2280,1320",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "42",
+      "Position": "2832,960",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "46",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "45",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "39",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "SubgraphNode",
+      "SubgraphPath": "materials/shaders/parallax.shdrfunc",
+      "DefaultValues": {
+        "Depth": 0.65,
+        "Heightmap": 0,
+        "TexCoord": "0,0"
+      },
+      "Identifier": "43",
+      "Position": "1740,1344",
+      "HandleOffsets": {},
+      "Heightmap": {
+        "Identifier": "44",
+        "Output": "R"
+      },
+      "TexCoord": {
+        "Identifier": "35",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/rusted_shutter/rusted_shutter_disp_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Default": "1,1,1,1",
+        "Extension": "Mask",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "44",
+      "Position": "1512,1344",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "35",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/rusted_shutter/rusted_shutter_nor_dx_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Overlay Normal",
+        "Default": "1,1,1,1",
+        "Extension": "Normal",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "45",
+      "Position": "1920,1068",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "43",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "Float3",
+      "Min": "0,0,0",
+      "Max": "1,1,1",
+      "Value": "0,0,1",
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "46",
+      "Position": "2412,960",
       "HandleOffsets": {}
     }
   ]

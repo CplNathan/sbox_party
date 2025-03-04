@@ -15,8 +15,8 @@ namespace SandboxParty
 
 
 	[EditorTool]
-	[Title( "Rocket" )]
-	[Icon( "rocket_launch" )]
+	[Title( "Cubemap Generator" )]
+	[Icon( "square" )]
 	public class CubemapGenerator : EditorTool
 	{
 		private record struct CubemapData( Vector3 CameraDirection, Point CubeOffset );
