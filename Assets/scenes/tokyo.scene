@@ -581,7 +581,7 @@
           "__guid": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b",
           "Flags": 0,
           "Name": "component_4",
-          "Position": "-416,-210,0.0000001282497",
+          "Position": "-576,-318,0.0000141159",
           "Enabled": true,
           "Components": [
             {
@@ -629,7 +629,7 @@
           "__guid": "e3ce3cef-04d5-4950-b954-9903db39698d",
           "Flags": 0,
           "Name": "component_5",
-          "Position": "-416,78,0.0000003666682",
+          "Position": "-576,78,32.50005",
           "Enabled": true,
           "Components": [
             {
@@ -725,7 +725,7 @@
           "__guid": "62750e18-74de-4ba1-ad5b-9087f97e2f74",
           "Flags": 0,
           "Name": "component_3a",
-          "Position": "-128,-210,-0.00001145965",
+          "Position": "-128,-318,-0.00001145965",
           "Enabled": true,
           "Components": [
             {
@@ -865,7 +865,7 @@
           "Attenuation": 5,
           "FogMode": "WithoutShadows",
           "FogStrength": 0.34,
-          "LightColor": "0.88837,0.09917,0.09917,1",
+          "LightColor": "1.77674,1.77674,1.77674,1",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1461,40 +1461,6 @@
       ]
     },
     {
-      "__guid": "3b4baad1-439c-400c-8f04-45e29c596fb4",
-      "Flags": 0,
-      "Name": "entrance_02 (2)",
-      "Position": "-62,0,36",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.25,0.25,0.25",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "66b26d59-df3e-480b-aeea-2d5715f94881",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/entrance_03.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "cc799519-4e48-4f1a-b6ef-68cdf9695efd",
       "Flags": 0,
       "Name": "entrance_02 (1)",
@@ -1933,40 +1899,6 @@
       ]
     },
     {
-      "__guid": "939a5d49-ee09-455f-b66c-1d834af719c8",
-      "Flags": 0,
-      "Name": "vend1_2k_hr",
-      "Position": "138,15,0",
-      "Rotation": "0,0,1,-0.00000004371139",
-      "Scale": "0.5,0.5,0.5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "423e8679-fa97-4b02-badd-3891c7151c73",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/prop_street/vend1_2k_hr.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "0a30ee59-e39e-412a-953b-c5789da12637",
       "Flags": 0,
       "Name": "catwalk_ladder",
@@ -2032,7 +1964,7 @@
       "__guid": "a491480b-0b45-4ea4-94a1-15ed0bc20eb6",
       "Flags": 0,
       "Name": "beech_bush_medium",
-      "Position": "-72,-479.9999,-5.999998",
+      "Position": "-72,-504,-5.999998",
       "Enabled": true,
       "Components": [
         {
@@ -2113,8 +2045,8 @@
       "EditorAutoUpdate": true,
       "AgentHeight": 90,
       "AgentRadius": 24,
-      "AgentStepSize": 6,
-      "AgentMaxSlope": 40,
+      "AgentStepSize": 2,
+      "AgentMaxSlope": 45,
       "ExcludedBodies": "",
       "IncludedBodies": ""
     }
@@ -2123,7 +2055,6 @@
   "Title": "Tokyo",
   "Description": null,
   "__references": [
-    "creation.vending_01#12800",
     "facepunch.beech_bush_medium#60671",
     "facepunch.bike_rack#37050",
     "facepunch.catwalk_ladder#48202",

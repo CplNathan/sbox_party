@@ -1,0 +1,12 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/interior.shader"
+
+	g_flTiling "1.000"
+	Texture_ps_0 "materials/interior/supermarket.png"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

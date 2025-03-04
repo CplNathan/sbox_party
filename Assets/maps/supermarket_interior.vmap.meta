@@ -1,0 +1,25 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Supermarket Interior",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "supermarketinterior",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.atm#33652",
+        "facepunch.trolley#33629",
+        "facepunch.wooden_door_01a#43540",
+        "fish.shop_shelves#89032"
+      ],
+      "IsWhitelistDisabled": false,
+      "Metadata": {
+        "SingleAssetSource": "maps/supermarket_interior.vmap"
+      }
+    }
+  }
+}

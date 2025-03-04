@@ -1,6 +1,6 @@
 {
   "IsSubgraph": true,
-  "Path": "materials/parallax.shdrfunc",
+  "Path": "materials/shaders/parallax.shdrfunc",
   "Model": null,
   "Title": "Parallax UV",
   "Description": "",
@@ -21,7 +21,7 @@
       "_class": "FunctionResult",
       "FunctionOutputs": [
         {
-          "Id": "ee824b09-f31e-4a2b-8015-16ee56034e2b",
+          "Id": "6e66f534-1573-41a8-9563-09c338baf4a4",
           "Name": "TexCoord",
           "Type": "Vector2"
         }

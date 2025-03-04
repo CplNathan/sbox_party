@@ -37,17 +37,13 @@
       "Roughness": {
         "Identifier": "8",
         "Output": "Result"
-      },
-      "AmbientOcclusion": {
-        "Identifier": "27",
-        "Output": "Result"
       }
     },
     {
       "_class": "SubgraphNode",
       "SubgraphPath": "materials/shaders/parallax.shdrfunc",
       "DefaultValues": {
-        "Depth": 0.575,
+        "Depth": 0.6,
         "Heightmap": 0,
         "TexCoord": "0,0"
       },
@@ -55,8 +51,8 @@
       "Position": "-3348,108",
       "HandleOffsets": {},
       "Heightmap": {
-        "Identifier": "4",
-        "Output": "R"
+        "Identifier": "31",
+        "Output": "Result"
       },
       "TexCoord": {
         "Identifier": "2",
@@ -114,7 +110,7 @@
       "Position": "-2964,540",
       "HandleOffsets": {},
       "In": {
-        "Identifier": "21",
+        "Identifier": "20",
         "Output": "R"
       }
     },
@@ -185,7 +181,7 @@
         "Output": "Result"
       },
       "B": {
-        "Identifier": "23",
+        "Identifier": "22",
         "Output": "Result"
       }
     },
@@ -198,7 +194,7 @@
       "Position": "-2340,84",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "25",
+        "Identifier": "32",
         "Output": "Result"
       },
       "B": {
@@ -235,7 +231,7 @@
         "Output": "Result"
       },
       "B": {
-        "Identifier": "20",
+        "Identifier": "19",
         "Output": "Result"
       },
       "C": {
@@ -246,7 +242,7 @@
     {
       "_class": "VoronoiNoise",
       "AngleOffset": 3.1415925,
-      "CellDensity": 0.2,
+      "CellDensity": 2,
       "Worley": true,
       "Identifier": "13",
       "Position": "-3132,-468",
@@ -309,11 +305,11 @@
       "Position": "-2964,1200",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "24",
+        "Identifier": "23",
         "Output": "R"
       },
       "B": {
-        "Identifier": "22",
+        "Identifier": "21",
         "Output": "Result"
       }
     },
@@ -330,16 +326,6 @@
       "HandleOffsets": {}
     },
     {
-      "_class": "OneMinus",
-      "Identifier": "19",
-      "Position": "-2964,-468",
-      "HandleOffsets": {},
-      "In": {
-        "Identifier": "13",
-        "Output": "Result"
-      }
-    },
-    {
       "_class": "TextureSampler",
       "Image": "materials/brown_mud_03/brown_mud_03_nor_dx_1k.jpg",
       "Sampler": {},
@@ -350,7 +336,7 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "20",
+      "Identifier": "19",
       "Position": "-3132,312",
       "HandleOffsets": {},
       "Coords": {
@@ -369,7 +355,7 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "21",
+      "Identifier": "20",
       "Position": "-3132,516",
       "HandleOffsets": {},
       "Coords": {
@@ -385,7 +371,7 @@
       "Name": "Water Height Threshold",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "22",
+      "Identifier": "21",
       "Position": "-3132,1212",
       "HandleOffsets": {}
     },
@@ -397,7 +383,7 @@
       "Name": "Water Edge Hardness",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "23",
+      "Identifier": "22",
       "Position": "-3132,1152",
       "HandleOffsets": {}
     },
@@ -412,7 +398,7 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "24",
+      "Identifier": "23",
       "Position": "-3132,924",
       "HandleOffsets": {},
       "Coords": {
@@ -428,7 +414,7 @@
       "UI": {
         "Type": "Color"
       },
-      "Identifier": "25",
+      "Identifier": "24",
       "Position": "-3132,-48",
       "HandleOffsets": {}
     },
@@ -443,7 +429,7 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "26",
+      "Identifier": "25",
       "Position": "-3132,720",
       "HandleOffsets": {},
       "Coords": {
@@ -456,11 +442,11 @@
       "DefaultA": 1,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "27",
+      "Identifier": "26",
       "Position": "-2160,720",
       "HandleOffsets": {},
       "B": {
-        "Identifier": "26",
+        "Identifier": "25",
         "Output": "R"
       },
       "C": {
@@ -469,22 +455,90 @@
       }
     },
     {
-      "_class": "Branch",
-      "Name": "Water",
-      "IsAttribute": true,
-      "Operator": "Equal",
-      "Enabled": true,
-      "UI": {},
+      "_class": "SplitVector",
+      "Identifier": "27",
+      "Position": "-1980,720",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "26",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Fresnel",
+      "DefaultPower": 10,
       "Identifier": "28",
-      "Position": "-1956,948",
+      "Position": "-2700,168",
+      "HandleOffsets": {},
+      "Normal": {
+        "Identifier": "12",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 2,
+      "Identifier": "29",
+      "Position": "-2868,24",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "16",
+        "Identifier": "24",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "30",
+      "Position": "-2700,12",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "24",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "26",
+        "Identifier": "29",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "28",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0.5,
+      "DefaultB": 0.5,
+      "Fraction": 0.5,
+      "Identifier": "31",
+      "Position": "-3576,-192",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "4",
         "Output": "R"
+      },
+      "C": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "32",
+      "Position": "-2520,12",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "30",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "3",
+        "Output": "Result"
       }
     }
   ]

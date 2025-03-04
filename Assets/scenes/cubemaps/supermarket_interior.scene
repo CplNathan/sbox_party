@@ -1,0 +1,113 @@
+{
+  "__guid": "4a617faf-4815-4e62-b8c0-5b8e5aaa7591",
+  "GameObjects": [
+    {
+      "__guid": "c08fb99d-8b66-49c5-ab91-84d06306b46c",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "b058b8ea-ac2d-427f-93f5-8fe4312b432b",
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "maps/supermarket_interior.vmap",
+          "NoOrigin": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        },
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "a4a23c8f-1884-4b8a-941f-b5db0741541e",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 8,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "MultiBounce": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Projection": "Sphere",
+          "RenderDynamically": false,
+          "Texture": null,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "9396e116-7fb9-44ba-b230-eba562bd3f9a",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "0,0,-90",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SandboxParty.Components.Information.BoardSceneInformation",
+          "__guid": "6d1e3b0d-3916-40cd-b0de-656043370231",
+          "Author": null,
+          "Changes": "",
+          "Description": "",
+          "Group": null,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RespawnPoints": [],
+          "SceneTags": "",
+          "SpawnPoints": [],
+          "Title": null,
+          "Version": null
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 2,
+  "Title": null,
+  "Description": null,
+  "__references": [],
+  "__version": 2
+}
