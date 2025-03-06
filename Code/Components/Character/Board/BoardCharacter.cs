@@ -21,42 +21,6 @@ namespace SandboxParty.Components.Character.Board
 
 		private bool IsOurTurn { get => GameManager.Current.BoardState?.CurrentTurn == this; }
 
-		protected override void OnUpdate()
-		{
-			base.OnUpdate();
-
-			this.UpdateAnimations();
-			this.UpdateLocation();
-			this.UpdateRotation();
-
-			if (this.IsProxy)
-			{
-				return;
-			}
-
-			Gizmo.Draw.ScreenText($"You rolled {this.Dice.LastRoll}", new Vector2(50, 50));
-
-			if (Input.Pressed("jump") && this.RollDice_Validate())
-				this.RollDice();
-		}
-
-		private void UpdateAnimations()
-		{
-			this.AnimationHelper.WithVelocity(this.MovementHelper.Velocity);
-			this.AnimationHelper.WithWishVelocity(this.MovementHelper.WishVelocity);
-			this.AnimationHelper.Sitting = this.IsOurTurn ? CitizenAnimationHelper.SittingStyle.None : CitizenAnimationHelper.SittingStyle.Floor;
-		}
-
-		private void UpdateLocation()
-		{
-			this.GameObject.WorldPosition = this.MovementHelper.DesiredLocation;
-		}
-
-		private void UpdateRotation()
-		{
-			this.GameObject.WorldRotation = Rotation.Slerp(this.GameObject.WorldRotation, this.MovementHelper.DesiredRotation, Time.Delta * 3f);
-		}
-
 		void IBoardCharacterEvent.OnDestinationReached()
 		{
 			IBoardEvent.Post(x => x.OnDestinationReached(this));
@@ -72,7 +36,7 @@ namespace SandboxParty.Components.Character.Board
 
 			Vector3 forwardVector = this.AnimationHelper.Target.WorldRotation.Forward;
 			Vector3 upVector = Vector3.Up;
-			Vector3 vector = this.GameObject.WorldPosition + forwardVector * 50 + upVector * 25;
+			Vector3 vector = this.GameObject.WorldPosition + (forwardVector * 50) + (upVector * 25);
 
 			this.Dice.RollDice(vector).ContinueWith(newRoll =>
 			{
@@ -99,6 +63,44 @@ namespace SandboxParty.Components.Character.Board
 		public bool EndTurn_Validate()
 		{
 			return this.IsOurTurn;
+		}
+
+		protected override void OnUpdate()
+		{
+			base.OnUpdate();
+
+			this.UpdateAnimations();
+			this.UpdateLocation();
+			this.UpdateRotation();
+
+			if (this.IsProxy)
+			{
+				return;
+			}
+
+			Gizmo.Draw.ScreenText($"You rolled {this.Dice.LastRoll}", new Vector2(50, 50));
+
+			if (Input.Pressed("jump") && this.RollDice_Validate())
+			{
+				this.RollDice();
+			}
+		}
+
+		private void UpdateAnimations()
+		{
+			this.AnimationHelper.WithVelocity(this.MovementHelper.Velocity);
+			this.AnimationHelper.WithWishVelocity(this.MovementHelper.WishVelocity);
+			this.AnimationHelper.Sitting = this.IsOurTurn ? CitizenAnimationHelper.SittingStyle.None : CitizenAnimationHelper.SittingStyle.Floor;
+		}
+
+		private void UpdateLocation()
+		{
+			this.GameObject.WorldPosition = this.MovementHelper.DesiredLocation;
+		}
+
+		private void UpdateRotation()
+		{
+			this.GameObject.WorldRotation = Rotation.Slerp(this.GameObject.WorldRotation, this.MovementHelper.DesiredRotation, Time.Delta * 3f);
 		}
 	}
 }

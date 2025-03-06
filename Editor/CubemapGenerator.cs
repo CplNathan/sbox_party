@@ -51,12 +51,16 @@ namespace SandboxParty
 			saveButton.Pressed = () =>
 			{
 				if ( this.Cubemap == null )
+				{
 					return;
+				}
 
 				saveButton.Pressed = () =>
 				{
 					if ( this.Cubemap == null )
+					{
 						return;
+					}
 
 					var fullPath = EditorUtility.SaveFileDialog( "Save Cubemap Location", "png", Path.Combine( MainAssetBrowser.Instance.CurrentLocation.Path, "Cubemap" ) );
 					if ( !string.IsNullOrEmpty( fullPath ) )
@@ -116,7 +120,9 @@ namespace SandboxParty
 			finally
 			{
 				if ( cameraObject?.IsValid() == true )
+				{
 					cameraObject.Destroy();
+				}
 			}
 		}
 	}

@@ -17,6 +17,41 @@ namespace SandboxParty.Components.State
 		[Sync(Flags = SyncFlags.FromHost)]
 		public BoardCharacter CurrentTurn { get; set; }
 
+		[Rpc.Host(Flags = NetFlags.HostOnly)]
+		void IBoardEvent.OnTurnStarted(BoardCharacter character)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		[Rpc.Host(Flags = NetFlags.HostOnly)]
+		void IBoardEvent.OnDestinationReached(BoardCharacter character)
+		{
+			if (!this.OnDestinationReached_Validate(character))
+			{
+				return;
+			}
+
+			// TODO: Implement OnDestinationReached Handling
+			// Instead make the following call only once the player has confirmed that they want to end their turn or it times out.
+			IBoardEvent.Post(x => x.OnTurnEnded(character));
+		}
+
+		[Rpc.Host(Flags = NetFlags.HostOnly)]
+		void IBoardEvent.OnTurnEnded(BoardCharacter character)
+		{
+			if (!this.OnTurnEnded_Validate(character))
+			{
+				return;
+			}
+
+			this.TurnNumber++;
+
+			this.CurrentTurn = this.Characters.ElementAt(this.TurnNumber % this.Characters.Count).Value;
+		}
+
+		protected override GameObject GetPlayerPrefab()
+			=> SceneResource.GetSceneResource(this.Scene, SceneResource.Boards).GetPlayerPrefab();
+
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
@@ -29,38 +64,14 @@ namespace SandboxParty.Components.State
 			cameraObject.WorldRotation = Rotation.Slerp(cameraObject.WorldRotation, newRotation, Time.Delta * 2.5f);
 
 			if (!this.Network.IsOwner)
+			{
 				return;
+			}
 
 			if (this.Characters.Count > 0)
+			{
 				this.CurrentTurn ??= this.Characters.ElementAt(this.TurnNumber % this.Characters.Count).Value;
-		}
-
-		[Rpc.Host(Flags = NetFlags.HostOnly)]
-		void IBoardEvent.OnTurnStarted(BoardCharacter character)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		[Rpc.Host(Flags = NetFlags.HostOnly)]
-		void IBoardEvent.OnDestinationReached(BoardCharacter character)
-		{
-			if (!this.OnDestinationReached_Validate(character))
-				return;
-
-			// TODO: Implement OnDestinationReached Handling
-			// Instead make the following call only once the player has confirmed that they want to end their turn or it times out. 
-			IBoardEvent.Post(x => x.OnTurnEnded(character));
-		}
-
-		[Rpc.Host(Flags = NetFlags.HostOnly)]
-		void IBoardEvent.OnTurnEnded(BoardCharacter character)
-		{
-			if (!this.OnTurnEnded_Validate(character))
-				return;
-
-			this.TurnNumber++;
-
-			this.CurrentTurn = this.Characters.ElementAt(this.TurnNumber % this.Characters.Count).Value;
+			}
 		}
 
 		private bool OnDestinationReached_Validate(BoardCharacter character)
@@ -72,8 +83,5 @@ namespace SandboxParty.Components.State
 		{
 			return this.CurrentTurn == character;
 		}
-
-		protected override GameObject GetPlayerPrefab()
-			=> SceneResource.GetSceneResource(this.Scene, SceneResource.Boards).GetPlayerPrefab();
 	}
 }

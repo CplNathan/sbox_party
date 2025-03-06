@@ -1,8 +1,11 @@
-﻿// <copyright file="BoardComponent.cs" company="Nathan Ford">
+﻿// <copyright file="BoardPathComponent.cs" company="Nathan Ford">
 // Copyright (c) Nathan Ford. All rights reserved.
 // </copyright>
 
-namespace SandboxParty.Components.Board
+using System;
+using SandboxParty.Components.World.Board;
+
+namespace SandboxParty.Structs
 {
 	internal struct BoardPathComponent(BoardComponent component)
 	{
@@ -23,12 +26,16 @@ namespace SandboxParty.Components.Board
 			nextTile = null;
 
 			if (this.SelectionMade)
+			{
 				return false;
+			}
 
 			if (this.SelectionRequired)
 			{
 				if (!requestedComponent.IsValid())
+				{
 					return false;
+				}
 
 				if (this.NextComponents.Contains(requestedComponent))
 				{
@@ -55,7 +62,7 @@ namespace SandboxParty.Components.Board
 			return currentPosition.Distance(component.WorldPosition) <= maxDistance;
 		}
 
-		public bool CanSendDestinationNotification(GameObject target)
+		public bool CanSendDestinationNotification()
 		{
 			if (this.SelectionMade || this.DestinationNotificationSent)
 			{
@@ -64,20 +71,6 @@ namespace SandboxParty.Components.Board
 
 			this.DestinationNotificationSent = true;
 			return true;
-		}
-	}
-
-	[Title("Board Component")]
-	public class BoardComponent : Component, Component.ExecuteInEditor
-	{
-		[Property]
-		public GameObject[] NextComponent { get; set; }
-
-		protected override void OnUpdate()
-		{
-			base.OnUpdate();
-
-			Gizmo.Draw.Lines(this.NextComponent.Select(x => new Line(this.WorldPosition, x.WorldPosition)));
 		}
 	}
 }

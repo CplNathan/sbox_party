@@ -2,22 +2,20 @@
 // Copyright (c) Nathan Ford. All rights reserved.
 // </copyright>
 
+using SandboxParty.Enums;
+
 namespace SandboxParty.Resources
 {
-	public enum SceneType
-	{
-		Board,
-		Minigame
-	}
-
 	[GameResource("Scene Config", "config", "Config data relating to active scenes")]
 	public partial class SceneResource : GameResource
 	{
-		public static IReadOnlyList<SceneResource> Boards => boards;
-		internal static List<SceneResource> boards = [];
+		private static readonly List<SceneResource> BoardList = [];
 
-		public static IReadOnlyList<SceneResource> Minigames => minigames;
-		internal static List<SceneResource> minigames = [];
+		private static readonly List<SceneResource> MinigameList = [];
+
+		public static IReadOnlyList<SceneResource> Boards => BoardList;
+
+		public static IReadOnlyList<SceneResource> Minigames => MinigameList;
 
 		[ResourceType("scene")]
 		public string Scene { get; set; }
@@ -43,12 +41,18 @@ namespace SandboxParty.Resources
 			switch (this.SceneType)
 			{
 				case SceneType.Board:
-					if (!boards.Contains(this))
-						boards.Add(this);
+					if (!BoardList.Contains(this))
+					{
+						BoardList.Add(this);
+					}
+
 					break;
 				case SceneType.Minigame:
-					if (!minigames.Contains(this))
-						minigames.Add(this);
+					if (!MinigameList.Contains(this))
+					{
+						MinigameList.Add(this);
+					}
+
 					break;
 			}
 		}

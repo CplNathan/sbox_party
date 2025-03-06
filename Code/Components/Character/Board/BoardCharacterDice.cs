@@ -2,17 +2,21 @@
 // Copyright (c) Nathan Ford. All rights reserved.
 // </copyright>
 
-using Sandbox.Diagnostics;
-using SandboxParty.Components.Board.Dice;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Sandbox.Diagnostics;
+using SandboxParty.Components.World.Board.Dice;
 
 namespace SandboxParty.Components.Character.Board
 {
 	[Title("Board Dice")]
 	public class BoardCharacterDice : Component
 	{
+		private List<GameObject> spawnedDice = [];
+
+		private CancellationTokenSource cancellationTokenSource = new();
+
 		[Property]
 		public GameObject DicePrefab { get; init; }
 
@@ -28,11 +32,7 @@ namespace SandboxParty.Components.Character.Board
 		[Sync(Flags = SyncFlags.FromHost)]
 		public int LastRoll { get; private set; } = 0;
 
-		private List<GameObject> ValidDice { get => [.. this._spawnedDice?.Where(x => x.IsValid) ?? []]; }
-
-		private List<GameObject> _spawnedDice = [];
-
-		private CancellationTokenSource _cancellationTokenSource = new();
+		private List<GameObject> ValidDice { get => [.. this.spawnedDice?.Where(x => x.IsValid) ?? []]; }
 
 		public async Task<int> RollDice(Vector3 effectLocation)
 		{
@@ -47,7 +47,7 @@ namespace SandboxParty.Components.Character.Board
 
 			try
 			{
-				await this.Task.DelaySeconds(this.DiceLifetimeSeconds, this._cancellationTokenSource.Token);
+				await this.Task.DelaySeconds(this.DiceLifetimeSeconds, this.cancellationTokenSource.Token);
 
 				var diceReaders = dice.Select(x => x.GetComponent<BoardDiceReader>()).ToList();
 				return diceReaders.Sum(x => x.ReadNumber());
@@ -69,7 +69,7 @@ namespace SandboxParty.Components.Character.Board
 			Assert.NotNull(this.DicePrefab);
 
 			GameObject[] newDice = new GameObject[count];
-			this._spawnedDice?.EnsureCapacity(this._spawnedDice.Count + count);
+			this.spawnedDice?.EnsureCapacity(this.spawnedDice.Count + count);
 
 			for (int i = 0; i < count; i++)
 			{
@@ -78,37 +78,26 @@ namespace SandboxParty.Components.Character.Board
 				diceObject.GetComponent<Rigidbody>().ApplyForceAt(Vector3.Random, -(this.WorldPosition - vector) * 20000);
 
 				newDice[i] = diceObject;
-				this._spawnedDice?.Add(diceObject);
+				this.spawnedDice?.Add(diceObject);
 			}
 
 			return newDice;
 		}
 
-		private void DestroyDice(GameObject[] destroyDice)
+		protected void Cleanup()
 		{
-			foreach (var dice in destroyDice)
-			{
-				if (dice.IsValid)
-					dice.Destroy();
-
-				this._spawnedDice?.Remove(dice);
-			}
-		}
-
-		private void Cleanup()
-		{
-			this._cancellationTokenSource?.Cancel();
-			this._cancellationTokenSource = null;
+			this.cancellationTokenSource?.Cancel();
+			this.cancellationTokenSource = null;
 
 			this.ValidDice?.ForEach(x => x.Destroy());
-			this._spawnedDice = null;
+			this.spawnedDice = null;
 		}
 
 		protected override void OnStart()
 		{
 			base.OnStart();
 
-			this._cancellationTokenSource ??= new();
+			this.cancellationTokenSource ??= new();
 		}
 
 		protected override void OnDestroy()
@@ -121,6 +110,19 @@ namespace SandboxParty.Components.Character.Board
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
+		}
+
+		private void DestroyDice(GameObject[] destroyDice)
+		{
+			foreach (var dice in destroyDice)
+			{
+				if (dice.IsValid)
+				{
+					dice.Destroy();
+				}
+
+				this.spawnedDice?.Remove(dice);
+			}
 		}
 	}
 }

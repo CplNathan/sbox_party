@@ -2,8 +2,9 @@
 // Copyright (c) Nathan Ford. All rights reserved.
 // </copyright>
 
-using SandboxParty.Components.Board;
+using SandboxParty.Components.World.Board;
 using SandboxParty.Events;
+using SandboxParty.Structs;
 
 namespace SandboxParty.Components.Character.Board
 {
@@ -70,8 +71,6 @@ namespace SandboxParty.Components.Character.Board
 				}
 			}
 
-			// IBoardCharacterEvent.PostToGameObject( GameObject, x => x.OnDestinationReached() );
-
 			if (this.Steps > 0 && this.CurrentTile.Reached(this.NavigationAgent.AgentPosition) && this.CurrentTile.MoveNext(requestedComponent, out BoardPathComponent? nextTile))
 			{
 				this.CurrentTile = nextTile.Value;
@@ -79,7 +78,7 @@ namespace SandboxParty.Components.Character.Board
 
 				this.Steps = -1;
 			}
-			else if (this.Steps == 0 && this.CurrentTile.CanSendDestinationNotification(this.GameObject))
+			else if (this.Steps == 0 && this.CurrentTile.CanSendDestinationNotification())
 			{
 				IBoardCharacterEvent.PostToGameObject(this.GameObject, x => x.OnDestinationReached());
 			}

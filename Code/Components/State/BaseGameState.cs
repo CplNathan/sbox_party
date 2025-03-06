@@ -2,9 +2,9 @@
 // Copyright (c) Nathan Ford. All rights reserved.
 // </copyright>
 
+using System;
 using SandboxParty.Components.Character;
 using SandboxParty.Components.Information;
-using System;
 
 namespace SandboxParty.Components.State
 {

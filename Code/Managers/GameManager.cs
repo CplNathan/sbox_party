@@ -9,12 +9,6 @@ namespace SandboxParty.Managers
 {
 	public sealed class GameManager : GameObjectSystem<GameManager>, ISceneStartup, ISceneLoadingEvents
 	{
-		public CameraComponent WorldCamera { get; private set; }
-
-		public BoardGameState BoardState { get; private set; }
-
-		private IReadOnlyDictionary<Scene, MinigameGameState> MinigameStates { get => this.minigameStates; }
-
 		private readonly Dictionary<Scene, MinigameGameState> minigameStates;
 
 		private readonly SceneLoadOptions lobbyOptions;
@@ -23,7 +17,13 @@ namespace SandboxParty.Managers
 
 		private readonly SceneLoadOptions minigameOptions;
 
-		public GameManager(Scene scene) : base(scene)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GameManager"/> class.
+		/// Setup scene loading options.
+		/// </summary>
+		/// <param name="scene">The initial scene.</param>
+		public GameManager(Scene scene)
+			: base(scene)
 		{
 			this.lobbyOptions = new SceneLoadOptions
 			{
@@ -35,19 +35,28 @@ namespace SandboxParty.Managers
 			{
 				IsAdditive = false,
 				DeleteEverything = false,
-				ShowLoadingScreen = true
+				ShowLoadingScreen = true,
 			};
 
 			this.minigameOptions = new SceneLoadOptions
 			{
 				IsAdditive = true,
 				DeleteEverything = false,
-				ShowLoadingScreen = true
+				ShowLoadingScreen = true,
 			};
 
 			this.lobbyOptions.SetScene("scenes/start.scene");
 		}
 
+		public CameraComponent WorldCamera { get; private set; }
+
+		public BoardGameState BoardState { get; private set; }
+
+		private IReadOnlyDictionary<Scene, MinigameGameState> MinigameStates { get => this.minigameStates; }
+
+		/// <summary>
+		/// Called on the host to initialize the lobby and load the game.
+		/// </summary>
 		void ISceneStartup.OnHostInitialize()
 		{
 			this.Scene.Load(this.lobbyOptions);
@@ -61,6 +70,10 @@ namespace SandboxParty.Managers
 			this.LoadBoard();
 		}
 
+		/// <summary>
+		/// Called on all clients to sync GameManager once the scene has loaded.
+		/// </summary>
+		/// <param name="scene">The current scene after it has loaded.</param>
 		void ISceneLoadingEvents.AfterLoad(Scene scene)
 		{
 			var cameraObject = scene.CreateObject(true);
@@ -69,8 +82,8 @@ namespace SandboxParty.Managers
 			this.WorldCamera.FovAxis = CameraComponent.Axis.Vertical;
 			this.WorldCamera.FieldOfView = 70;
 
-			var occlusionObject = this.WorldCamera.AddComponent<AmbientOcclusion>();
-			occlusionObject.Intensity = 1;
+			var occlusionComponent = this.WorldCamera.AddComponent<AmbientOcclusion>();
+			occlusionComponent.Intensity = 1;
 
 			this.BoardState = scene.GetComponentInChildren<BoardGameState>();
 		}
