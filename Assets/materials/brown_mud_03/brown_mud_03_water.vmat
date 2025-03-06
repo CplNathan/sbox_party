@@ -4,7 +4,7 @@ Layer0
 {
 	shader "materials/shaders/water blend.shader"
 
-	AO "materials/brown_mud_03/brown_mud_03_ao_1k.jpg"
+	ARM "materials/brown_mud_03/brown_mud_03_arm_1k.jpg"
 	Colour "materials/brown_mud_03/brown_mud_03_diff_1k.jpg"
 	g_flWaterBlendClamp "0.230"
 	g_flWaterEdgeHardness "1.000"
@@ -13,8 +13,7 @@ Layer0
 	Height "materials/brown_mud_03/brown_mud_03_disp_1k.jpg"
 	Normal "materials/brown_mud_03/brown_mud_03_nor_dx_1k.jpg"
 	Parallax "materials/brown_mud_03/brown_mud_03_disp_1k.jpg"
-	Roughness "materials/brown_mud_03/brown_mud_03_rough_1k.jpg"
-	Texture_ps_0 "materials/leafy_grass/leafy_grass_diff_1k.jpg"
+	TopColor "materials/leafy_grass/leafy_grass_diff_1k.jpg"
 
 	//---- Fog ----
 	g_bFogEnabled "1"

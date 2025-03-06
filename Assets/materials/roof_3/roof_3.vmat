@@ -1,0 +1,15 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/packed_parallax.shader"
+
+	ARM "materials/roof_3/roof_3_arm_1k.jpg"
+	Color "materials/roof_3/roof_3_diff_1k.jpg"
+	g_flHeight "0.550"
+	Height "materials/roof_3/roof_3_disp_1k.jpg"
+	Normal "materials/roof_3/roof_3_nor_dx_1k.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

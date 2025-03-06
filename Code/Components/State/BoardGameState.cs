@@ -17,7 +17,7 @@ namespace SandboxParty.Components.State
 
 			var cameraObject = GameManager.Current.WorldCamera.GameObject;
 			var cameraFocus = CurrentTurn?.WorldPosition ?? Vector3.Zero;
-			var newPosition = cameraFocus + new Vector3( -150, 0, 275 );
+			var newPosition = cameraFocus + new Vector3( -150, 0, 250 );
 			var newRotation = Rotation.LookAt( cameraFocus + new Vector3( 0, 0, 64 ) - cameraObject.WorldPosition );
 			cameraObject.WorldPosition = Vector3.Lerp( cameraObject.WorldPosition, newPosition, Time.Delta * 5f );
 			cameraObject.WorldRotation = Rotation.Slerp( cameraObject.WorldRotation, newRotation, Time.Delta * 2.5f );

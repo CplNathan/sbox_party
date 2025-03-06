@@ -790,7 +790,7 @@
               "__guid": "b0497ffc-dd64-4d11-92b0-280cb1e26182",
               "FogMode": "Enabled",
               "FogStrength": 1,
-              "LightColor": "0.02792,0.02792,0.02792,1",
+              "LightColor": "0.05584,0.05584,0.05584,1",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -798,7 +798,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "Shadows": true,
-              "SkyColor": "0.0354,0.0354,0.0492,1"
+              "SkyColor": "0.0708,0.0708,0.0984,1"
             }
           ]
         },
@@ -844,7 +844,7 @@
               "OnComponentUpdate": null,
               "SkyIndirectLighting": true,
               "SkyMaterial": "materials/skybox/skybox_dark_01.vmat",
-              "Tint": "0.02826,0.02578,0.0372,1"
+              "Tint": "0.05652,0.05156,0.0744,1"
             }
           ]
         }
@@ -1362,9 +1362,9 @@
       "__guid": "98a2fba4-51d3-41bf-b614-c3598e6d428f",
       "Flags": 0,
       "Name": "awning_07",
-      "Position": "-192,40,60",
+      "Position": "-189,39,57",
       "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.25,0.25,0.25",
+      "Scale": "0.225,0.225,0.225",
       "Enabled": true,
       "Components": [
         {
@@ -1396,9 +1396,9 @@
       "__guid": "2ef3ebfe-7c2c-4fa7-961c-0194ef616042",
       "Flags": 0,
       "Name": "awning_07 (1)",
-      "Position": "-320,40,60",
+      "Position": "-320,42,63",
       "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.25,0.25,0.25",
+      "Scale": "0.225,0.225,0.225",
       "Enabled": true,
       "Components": [
         {
@@ -1752,9 +1752,9 @@
       "__guid": "dacb404f-504b-4c66-b8f3-eaedf968814f",
       "Flags": 0,
       "Name": "awning_small (1)",
-      "Position": "-66,8,60",
+      "Position": "-69,6,60",
       "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.4,0.4,0.4",
+      "Scale": "0.3,0.3,0.3",
       "Enabled": true,
       "Components": [
         {
@@ -2021,6 +2021,61 @@
           },
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "7d8f0ab9-face-4d8f-9c7e-da5b562f07c2",
+      "Flags": 0,
+      "Name": "Plane",
+      "Position": "577.5672,-30.97054,-18.30445",
+      "Rotation": "-0.08715574,0,0,0.9961947",
+      "Scale": "1,2,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "b8d6b390-af93-427c-8012-ed0e5c76aac7",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.PlaneCollider",
+          "__guid": "8bc509dc-4413-4887-8abb-0a3f96267c96",
+          "Center": "0,0,0",
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Scale": "100,100",
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     }

@@ -73,18 +73,18 @@ PS
 	#include "common/pixel.hlsl"
 	
 	SamplerState g_sSampler0 < Filter( ANISO ); AddressU( WRAP ); AddressV( WRAP ); >;
-	CreateInputTexture2D( Texture_ps_0, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	CreateInputTexture2D( TopColor, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( Parallax, Srgb, 8, "None", "_mask", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( Normal, Srgb, 8, "None", "_normal", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( Height, Srgb, 8, "None", "_mask", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( Colour, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	CreateInputTexture2D( Roughness, Srgb, 8, "None", "_rough", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	Texture2D g_tTexture_ps_0 < Channel( RGBA, Box( Texture_ps_0 ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	CreateInputTexture2D( ARM, Srgb, 8, "None", "_mask", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	Texture2D g_tTopColor < Channel( RGBA, Box( TopColor ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
 	Texture2D g_tParallax < Channel( RGBA, Box( Parallax ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
 	Texture2D g_tNormal < Channel( RGBA, Box( Normal ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
 	Texture2D g_tHeight < Channel( RGBA, Box( Height ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
 	Texture2D g_tColour < Channel( RGBA, Box( Colour ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tRoughness < Channel( RGBA, Box( Roughness ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	Texture2D g_tARM < Channel( RGBA, Box( ARM ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
 	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tColour )
 	TextureAttribute( RepresentativeTexture, g_tColour )
 	float4 g_vWaterColour < UiType( Color ); UiGroup( ",0/,0/0" ); Default4( 0.14, 0.14, 0.09, 1.00 ); >;
@@ -112,7 +112,7 @@ PS
 		float l_3 = 1.0f - VoronoiNoise( i.vTextureCoords.xy, 3.1415925, 2 );
 		float l_4 = lerp( l_2.r, 0.5, l_3 );
 		float l_5 = l_4 / 2;
-		float l_6 = l_4 * 0.6;
+		float l_6 = l_4 * 0.55;
 		float l_7 = l_5 - l_6;
 		float3 l_8 = CalculatePositionToCameraDirWs( i.vPositionWithOffsetWs.xyz + g_vHighPrecisionLightingOffsetWs.xyz );
 		float3 l_9 = Vec3WsToTs( l_8, i.vNormalWs, i.vTangentUWs, i.vTangentVWs );
@@ -124,7 +124,7 @@ PS
 		float2 l_15 = l_12 / float2( l_14, l_14 );
 		float2 l_16 = float2( l_7, l_7 ) * l_15;
 		float2 l_17 = l_0 + l_16;
-		float4 l_18 = Tex2DS( g_tTexture_ps_0, g_sSampler0, l_17 );
+		float4 l_18 = Tex2DS( g_tTopColor, g_sSampler0, l_17 );
 		float4 l_19 = g_vWaterColour;
 		float4 l_20 = l_19 * float4( 2, 2, 2, 2 );
 		float4 l_21 = float4( 0, 0, 1, 1 );
@@ -144,16 +144,18 @@ PS
 		float4 l_35 = l_33 + l_34;
 		float4 l_36 = lerp( l_35, l_34, l_28 );
 		float4 l_37 = lerp( l_18, l_36, l_3 );
-		float4 l_38 = Tex2DS( g_tRoughness, g_sSampler0, l_17 );
-		float l_39 = 1 - l_38.r;
+		float4 l_38 = Tex2DS( g_tARM, g_sSampler0, l_17 );
+		float l_39 = l_38.g * 2;
 		float l_40 = lerp( 0, l_39, l_30 );
+		float l_41 = lerp( 0, l_38.b, l_30 );
+		float l_42 = lerp( 1, l_38.r, l_30 );
 		
 		m.Albedo = l_37.xyz;
 		m.Opacity = 1;
 		m.Normal = l_31.xyz;
 		m.Roughness = l_40;
-		m.Metalness = 0;
-		m.AmbientOcclusion = 1;
+		m.Metalness = l_41;
+		m.AmbientOcclusion = l_42;
 		
 		
 		m.AmbientOcclusion = saturate( m.AmbientOcclusion );

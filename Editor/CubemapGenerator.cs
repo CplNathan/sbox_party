@@ -1,14 +1,6 @@
-﻿using Editor.Inspectors;
-using Sandbox;
-using Sandbox.Resources;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SandboxParty
 {
@@ -25,7 +17,7 @@ namespace SandboxParty
 
 		private static readonly int CubemapFaceSize = 512;
 
-		private List<CubemapData> Directions = new()
+		private static readonly List<CubemapData> Directions = new()
 		{
 			{ new CubemapData(Vector3.Left, new Point( 0, CubemapFaceSize) ) },
 			{ new CubemapData(Vector3.Forward, new Point( CubemapFaceSize, CubemapFaceSize ) ) },
@@ -91,11 +83,12 @@ namespace SandboxParty
 			var cameraObject = Scene.CreateObject();
 			try
 			{
-				var cameraComponent = cameraObject.AddComponent<CameraComponent>();
-				cameraComponent.Orthographic = true;
-				cameraComponent.OrthographicHeight = CubemapFaceSize / 2;
-				cameraComponent.CustomSize = new Vector2( 1, 1 );
+				var camera = cameraObject.AddComponent<CameraComponent>();
+				camera.Orthographic = true;
+				camera.OrthographicHeight = CubemapFaceSize / 2;
+				camera.CustomSize = new Vector2( 1, 1 );
 
+				var ambientOcclusion = cameraObject.AddComponent<AmbientOcclusion>();
 
 				foreach ( var data in Directions )
 				{
@@ -103,7 +96,7 @@ namespace SandboxParty
 					cameraObject.WorldRotation = Rotation.LookAt( data.CameraDirection, Vector3.Up );
 
 					var texture = Texture.CreateRenderTarget().WithSize( CubemapFaceSize, CubemapFaceSize ).Create();
-					cameraComponent.RenderToTexture( texture );
+					camera.RenderToTexture( texture );
 
 					cubeTexture.Update( texture.GetPixels(), data.CubeOffset.X, data.CubeOffset.Y, CubemapFaceSize, CubemapFaceSize );
 				}

@@ -1,0 +1,357 @@
+{
+  "IsSubgraph": true,
+  "Path": "materials/shaders/interior uv.shdrfunc",
+  "Model": null,
+  "Title": "Interior Cube UV",
+  "Description": "",
+  "Category": null,
+  "Icon": null,
+  "AddToNodeLibrary": false,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "FunctionResult",
+      "FunctionOutputs": [
+        {
+          "Id": "5cd3061e-36c8-452f-8342-16978c13bfc8",
+          "Name": "Cube UV",
+          "Type": "Vector3"
+        }
+      ],
+      "Identifier": "0",
+      "Position": "-24,-108",
+      "HandleOffsets": {},
+      "Cube UV": {
+        "Identifier": "25",
+        "Output": "Output"
+      }
+    },
+    {
+      "_class": "ViewDirection",
+      "Identifier": "1",
+      "Position": "-2688,-192",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "1468,224",
+      "Color": "Green",
+      "Title": "Tiling",
+      "Description": "",
+      "Layer": 1,
+      "Identifier": "2",
+      "Position": "-3336,60",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "CombineVector",
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 1,
+      "DefaultW": 0,
+      "Identifier": "3",
+      "Position": "-2052,132",
+      "HandleOffsets": {},
+      "X": {
+        "Identifier": "4",
+        "Output": "X"
+      },
+      "Y": {
+        "Identifier": "4",
+        "Output": "Y"
+      }
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "4",
+      "Position": "-2280,132",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "20",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "5",
+      "Position": "-1428,-108",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "23",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Round",
+      "Identifier": "6",
+      "Position": "-3120,204",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "24",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Min",
+      "DefaultA": 0,
+      "DefaultB": 0,
+      "Identifier": "7",
+      "Position": "-984,-108",
+      "HandleOffsets": {},
+      "InputA": {
+        "Identifier": "14",
+        "Output": "Result"
+      },
+      "InputB": {
+        "Identifier": "21",
+        "Output": "Z"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "8",
+      "Position": "-300,-108",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "12",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "9",
+        "Output": "XYZ"
+      }
+    },
+    {
+      "_class": "CombineVector",
+      "DefaultX": -1,
+      "DefaultY": -1,
+      "DefaultZ": -1,
+      "DefaultW": 0,
+      "Identifier": "9",
+      "Position": "-480,-12",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": -1,
+      "Identifier": "10",
+      "Position": "-2016,-192",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Abs",
+      "Identifier": "11",
+      "Position": "-1560,-108",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "15",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "12",
+      "Position": "-396,-108",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "16",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "3",
+        "Output": "XYZ"
+      }
+    },
+    {
+      "_class": "TransformNormal",
+      "InputSpace": "World",
+      "OutputSpace": "Tangent",
+      "DecodeNormal": false,
+      "Identifier": "13",
+      "Position": "-2508,-192",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Min",
+      "DefaultA": 0,
+      "DefaultB": 0,
+      "Identifier": "14",
+      "Position": "-1152,-108",
+      "HandleOffsets": {},
+      "InputA": {
+        "Identifier": "21",
+        "Output": "X"
+      },
+      "InputB": {
+        "Identifier": "21",
+        "Output": "Y"
+      }
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 1,
+      "DefaultB": 1,
+      "Identifier": "15",
+      "Position": "-1704,-60",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "10",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "16",
+      "Position": "-636,-204",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "10",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "7",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TileAndOffset",
+      "DefaultTile": "1,1",
+      "DefaultOffset": "0,0",
+      "WrapTo01": false,
+      "Identifier": "17",
+      "Position": "-2784,132",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "19",
+        "Output": "Result"
+      },
+      "Tile": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Frac",
+      "Identifier": "18",
+      "Position": "-2604,132",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "17",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "19",
+      "Position": "-3300,132",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Subtract",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "20",
+      "Position": "-2376,132",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "22",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "21",
+      "Position": "-1332,-108",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "5",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 2,
+      "Identifier": "22",
+      "Position": "-2472,132",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "18",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 2,
+      "Identifier": "23",
+      "Position": "-1560,-24",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "15",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "3",
+        "Output": "XYZ"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 1,
+      "Name": "Tiling",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "24",
+      "Position": "-3300,204",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "SwizzleVector",
+      "RedOut": "Red",
+      "GreenOut": "Blue",
+      "BlueOut": "Green",
+      "AlphaOut": "Alpha",
+      "Identifier": "25",
+      "Position": "-204,-108",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "8",
+        "Output": "Result"
+      }
+    }
+  ]
+}

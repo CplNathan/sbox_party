@@ -1,0 +1,13 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/packed.shader"
+
+	ARM "materials/brick_wall_11/brick_wall_11_arm_1k.jpg"
+	Color "materials/brick_wall_11/brick_wall_11_diff_1k.jpg"
+	Normal "materials/brick_wall_11/brick_wall_11_nor_dx_1k.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

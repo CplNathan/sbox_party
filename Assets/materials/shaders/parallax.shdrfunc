@@ -21,7 +21,7 @@
       "_class": "FunctionResult",
       "FunctionOutputs": [
         {
-          "Id": "6e66f534-1573-41a8-9563-09c338baf4a4",
+          "Id": "c268a52e-dfaf-49f7-a9f8-179a06b8072d",
           "Name": "TexCoord",
           "Type": "Vector2"
         }

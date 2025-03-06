@@ -11,13 +11,20 @@
       "Resources": null,
       "PackageReferences": [],
       "EditorReferences": [
+        "creation.autodoor#19548",
+        "creation.rollerdoortiny1#19546",
         "eurorp.door01_right_01#12553",
+        "facepunch.airduct_a_vent_16x32#47234",
         "facepunch.atm#33652",
+        "facepunch.brick_corner_32#88519",
+        "facepunch.brick_group_02#47562",
+        "facepunch.electricshort01#90019",
+        "facepunch.fire_exit_light#33598",
         "facepunch.trolley#33629",
         "facepunch.wooden_door_01a#43540",
         "fish.shop_shelves#89032"
       ],
-      "IsWhitelistDisabled": false,
+      "IsStandaloneOnly": false,
       "Metadata": {
         "SingleAssetSource": "maps/supermarket_interior.vmap"
       }

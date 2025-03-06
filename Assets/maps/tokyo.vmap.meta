@@ -12,7 +12,6 @@
       "PackageReferences": [],
       "EditorReferences": [
         "apetavern.parkfountain#46382",
-        "eurorp.door01_right_01#12553",
         "facepunch.aircon_mount#50051",
         "facepunch.aircon_unit_large_64x64_a#33649",
         "facepunch.aircon_unit_large_64x64_b#33651",
@@ -45,7 +44,7 @@
         "rust.electrical_box_e#25171",
         "tfassets.awning002#22714"
       ],
-      "IsWhitelistDisabled": false,
+      "IsStandaloneOnly": false,
       "Metadata": {
         "SingleAssetSource": "maps/tokyo.vmap"
       }

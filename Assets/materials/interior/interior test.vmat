@@ -5,10 +5,11 @@ Layer0
 	shader "materials/shaders/interior.shader"
 
 	Cubemap "materials/interior/supermarket.png"
-	g_flTiling "1.000"
+	g_flOverlayOffset "0.599"
+	OverlapARM "materials/rusted_shutter/rusted_shutter_arm_1k.jpg"
 	Overlay "materials/rusted_shutter/rusted_shutter_diff_1k.jpg"
+	OverlayHeight "materials/rusted_shutter/rusted_shutter_disp_1k.jpg"
 	OverlayNormal "materials/rusted_shutter/rusted_shutter_nor_dx_1k.jpg"
-	Texture_ps_2 "materials/rusted_shutter/rusted_shutter_disp_1k.jpg"
 
 	//---- Fog ----
 	g_bFogEnabled "1"

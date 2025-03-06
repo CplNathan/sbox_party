@@ -27,15 +27,23 @@
       "Position": "-1752,84",
       "HandleOffsets": {},
       "Albedo": {
-        "Identifier": "6",
+        "Identifier": "5",
         "Output": "Result"
       },
       "Normal": {
-        "Identifier": "12",
+        "Identifier": "11",
         "Output": "Result"
       },
       "Roughness": {
-        "Identifier": "8",
+        "Identifier": "7",
+        "Output": "Result"
+      },
+      "Metalness": {
+        "Identifier": "24",
+        "Output": "Result"
+      },
+      "AmbientOcclusion": {
+        "Identifier": "23",
         "Output": "Result"
       }
     },
@@ -43,7 +51,7 @@
       "_class": "SubgraphNode",
       "SubgraphPath": "materials/shaders/parallax.shdrfunc",
       "DefaultValues": {
-        "Depth": 0.6,
+        "Depth": 0.55,
         "Heightmap": 0,
         "TexCoord": "0,0"
       },
@@ -51,7 +59,7 @@
       "Position": "-3348,108",
       "HandleOffsets": {},
       "Heightmap": {
-        "Identifier": "31",
+        "Identifier": "28",
         "Output": "Result"
       },
       "TexCoord": {
@@ -97,7 +105,7 @@
         "SrgbRead": true
       },
       "Identifier": "4",
-      "Position": "-3912,108",
+      "Position": "-3900,84",
       "HandleOffsets": {},
       "Coords": {
         "Identifier": "2",
@@ -105,33 +113,23 @@
       }
     },
     {
-      "_class": "OneMinus",
-      "Identifier": "5",
-      "Position": "-2964,540",
-      "HandleOffsets": {},
-      "In": {
-        "Identifier": "20",
-        "Output": "R"
-      }
-    },
-    {
       "_class": "Lerp",
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "6",
+      "Identifier": "5",
       "Position": "-2160,84",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "7",
+        "Identifier": "6",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "10",
+        "Identifier": "9",
         "Output": "Result"
       },
       "C": {
-        "Identifier": "13",
+        "Identifier": "12",
         "Output": "Result"
       }
     },
@@ -140,11 +138,12 @@
       "Image": "materials/leafy_grass/leafy_grass_diff_1k.jpg",
       "Sampler": {},
       "UI": {
+        "Name": "Top Color",
         "Default": "1,1,1,1",
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "7",
+      "Identifier": "6",
       "Position": "-3132,-360",
       "HandleOffsets": {},
       "Coords": {
@@ -157,15 +156,15 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "8",
-      "Position": "-2160,516",
+      "Identifier": "7",
+      "Position": "-2160,480",
       "HandleOffsets": {},
       "B": {
-        "Identifier": "5",
-        "Output": "Out"
+        "Identifier": "31",
+        "Output": "Result"
       },
       "C": {
-        "Identifier": "16",
+        "Identifier": "15",
         "Output": "Result"
       }
     },
@@ -173,15 +172,15 @@
       "_class": "Power",
       "DefaultA": 1,
       "DefaultB": 4,
-      "Identifier": "9",
+      "Identifier": "8",
       "Position": "-2964,1116",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "17",
+        "Identifier": "16",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "22",
+        "Identifier": "20",
         "Output": "Result"
       }
     },
@@ -190,11 +189,11 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "10",
+      "Identifier": "9",
       "Position": "-2340,84",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "32",
+        "Identifier": "29",
         "Output": "Result"
       },
       "B": {
@@ -202,7 +201,7 @@
         "Output": "Result"
       },
       "C": {
-        "Identifier": "15",
+        "Identifier": "14",
         "Output": "Result"
       }
     },
@@ -214,7 +213,7 @@
       "UI": {
         "Type": "Color"
       },
-      "Identifier": "11",
+      "Identifier": "10",
       "Position": "-2340,288",
       "HandleOffsets": {}
     },
@@ -223,19 +222,19 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "12",
+      "Identifier": "11",
       "Position": "-2160,288",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "11",
+        "Identifier": "10",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "19",
+        "Identifier": "18",
         "Output": "Result"
       },
       "C": {
-        "Identifier": "16",
+        "Identifier": "15",
         "Output": "Result"
       }
     },
@@ -244,7 +243,7 @@
       "AngleOffset": 3.1415925,
       "CellDensity": 2,
       "Worley": true,
-      "Identifier": "13",
+      "Identifier": "12",
       "Position": "-3132,-468",
       "HandleOffsets": {}
     },
@@ -256,17 +255,17 @@
       "Name": "",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "14",
+      "Identifier": "13",
       "Position": "-2652,1080",
       "HandleOffsets": {}
     },
     {
       "_class": "Saturate",
-      "Identifier": "15",
+      "Identifier": "14",
       "Position": "-2868,1116",
       "HandleOffsets": {},
       "Input": {
-        "Identifier": "9",
+        "Identifier": "8",
         "Output": "Result"
       }
     },
@@ -277,23 +276,23 @@
       "Operator": "LessThan",
       "Enabled": false,
       "UI": {},
-      "Identifier": "16",
+      "Identifier": "15",
       "Position": "-2436,1080",
       "HandleOffsets": {},
       "True": {
-        "Identifier": "14",
+        "Identifier": "13",
         "Output": "Result"
       },
       "False": {
-        "Identifier": "15",
+        "Identifier": "14",
         "Output": "Result"
       },
       "A": {
-        "Identifier": "15",
+        "Identifier": "14",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "18",
+        "Identifier": "17",
         "Output": "Result"
       }
     },
@@ -301,15 +300,15 @@
       "_class": "Divide",
       "DefaultA": 0,
       "DefaultB": 0.3,
-      "Identifier": "17",
+      "Identifier": "16",
       "Position": "-2964,1200",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "23",
+        "Identifier": "21",
         "Output": "R"
       },
       "B": {
-        "Identifier": "21",
+        "Identifier": "19",
         "Output": "Result"
       }
     },
@@ -321,7 +320,7 @@
       "Name": "Water Blend Clamp",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "18",
+      "Identifier": "17",
       "Position": "-2652,1200",
       "HandleOffsets": {}
     },
@@ -336,27 +335,8 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "19",
+      "Identifier": "18",
       "Position": "-3132,312",
-      "HandleOffsets": {},
-      "Coords": {
-        "Identifier": "1",
-        "Output": "TexCoord"
-      }
-    },
-    {
-      "_class": "TextureSampler",
-      "Image": "materials/brown_mud_03/brown_mud_03_rough_1k.jpg",
-      "Sampler": {},
-      "UI": {
-        "Name": "Roughness",
-        "Default": "1,1,1,1",
-        "Extension": "Rough",
-        "ShowExtension": true,
-        "SrgbRead": true
-      },
-      "Identifier": "20",
-      "Position": "-3132,516",
       "HandleOffsets": {},
       "Coords": {
         "Identifier": "1",
@@ -371,7 +351,7 @@
       "Name": "Water Height Threshold",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "21",
+      "Identifier": "19",
       "Position": "-3132,1212",
       "HandleOffsets": {}
     },
@@ -383,7 +363,7 @@
       "Name": "Water Edge Hardness",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "22",
+      "Identifier": "20",
       "Position": "-3132,1152",
       "HandleOffsets": {}
     },
@@ -398,8 +378,8 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "23",
-      "Position": "-3132,924",
+      "Identifier": "21",
+      "Position": "-3132,720",
       "HandleOffsets": {},
       "Coords": {
         "Identifier": "2",
@@ -414,64 +394,52 @@
       "UI": {
         "Type": "Color"
       },
-      "Identifier": "24",
+      "Identifier": "22",
       "Position": "-3132,-48",
       "HandleOffsets": {}
-    },
-    {
-      "_class": "TextureSampler",
-      "Image": "materials/brown_mud_03/brown_mud_03_ao_1k.jpg",
-      "Sampler": {},
-      "UI": {
-        "Name": "AO",
-        "Default": "1,1,1,1",
-        "Extension": "AO",
-        "ShowExtension": true,
-        "SrgbRead": true
-      },
-      "Identifier": "25",
-      "Position": "-3132,720",
-      "HandleOffsets": {},
-      "Coords": {
-        "Identifier": "2",
-        "Output": "Result"
-      }
     },
     {
       "_class": "Lerp",
       "DefaultA": 1,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "26",
+      "Identifier": "23",
       "Position": "-2160,720",
       "HandleOffsets": {},
       "B": {
-        "Identifier": "25",
+        "Identifier": "30",
         "Output": "R"
       },
       "C": {
-        "Identifier": "16",
+        "Identifier": "15",
         "Output": "Result"
       }
     },
     {
-      "_class": "SplitVector",
-      "Identifier": "27",
-      "Position": "-1980,720",
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "24",
+      "Position": "-2160,600",
       "HandleOffsets": {},
-      "Input": {
-        "Identifier": "26",
+      "B": {
+        "Identifier": "30",
+        "Output": "B"
+      },
+      "C": {
+        "Identifier": "15",
         "Output": "Result"
       }
     },
     {
       "_class": "Fresnel",
       "DefaultPower": 10,
-      "Identifier": "28",
+      "Identifier": "25",
       "Position": "-2700,168",
       "HandleOffsets": {},
       "Normal": {
-        "Identifier": "12",
+        "Identifier": "11",
         "Output": "Result"
       }
     },
@@ -479,11 +447,11 @@
       "_class": "Multiply",
       "DefaultA": 0,
       "DefaultB": 2,
-      "Identifier": "29",
+      "Identifier": "26",
       "Position": "-2868,24",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "24",
+        "Identifier": "22",
         "Output": "Result"
       }
     },
@@ -492,19 +460,19 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "30",
+      "Identifier": "27",
       "Position": "-2700,12",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "24",
+        "Identifier": "22",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "29",
+        "Identifier": "26",
         "Output": "Result"
       },
       "C": {
-        "Identifier": "28",
+        "Identifier": "25",
         "Output": "Result"
       }
     },
@@ -513,7 +481,7 @@
       "DefaultA": 0.5,
       "DefaultB": 0.5,
       "Fraction": 0.5,
-      "Identifier": "31",
+      "Identifier": "28",
       "Position": "-3576,-192",
       "HandleOffsets": {},
       "A": {
@@ -521,7 +489,7 @@
         "Output": "R"
       },
       "C": {
-        "Identifier": "13",
+        "Identifier": "12",
         "Output": "Result"
       }
     },
@@ -529,16 +497,47 @@
       "_class": "Add",
       "DefaultA": 0,
       "DefaultB": 1,
-      "Identifier": "32",
+      "Identifier": "29",
       "Position": "-2520,12",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "30",
+        "Identifier": "27",
         "Output": "Result"
       },
       "B": {
         "Identifier": "3",
         "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brown_mud_03/brown_mud_03_arm_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "ARM",
+        "Default": "1,1,1,1",
+        "Extension": "Mask",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "30",
+      "Position": "-3132,516",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "1",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 2,
+      "Identifier": "31",
+      "Position": "-2724,432",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "30",
+        "Output": "G"
       }
     }
   ]

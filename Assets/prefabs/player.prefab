@@ -73,6 +73,7 @@
         "__type": "Sandbox.NavMeshAgent",
         "__guid": "89fb0076-32ba-4f55-9be4-e4ec20765f1e",
         "Acceleration": 240,
+        "AutoTraverseLinks": true,
         "Height": 90,
         "MaxSpeed": 120,
         "OnComponentDestroy": null,

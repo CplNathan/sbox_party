@@ -67,7 +67,7 @@ namespace SandboxParty.Components.Character.Board
 
 			Dice.RollDice( vector ).ContinueWith(newRoll =>
 			{
-				MovementHelper.MoveForward( newRoll.Result );
+				MovementHelper.Steps = newRoll.Result;
 			} );
 		}
 

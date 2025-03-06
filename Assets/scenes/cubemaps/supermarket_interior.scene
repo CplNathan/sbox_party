@@ -50,8 +50,7 @@
           "ZFar": 4096,
           "ZNear": 16
         }
-      ],
-      "Children": []
+      ]
     }
   ],
   "SceneProperties": {
