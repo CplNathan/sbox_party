@@ -7,17 +7,17 @@ using SandboxParty.Components.World.Board;
 
 namespace SandboxParty.Structs
 {
-	internal struct BoardPathComponent(BoardComponent component)
+	public struct BoardPathComponent(BoardComponent component)
 	{
 		public BoardComponent SelectedComponent { get; private set; }
 
 		public readonly BoardComponent Component => component;
 
-		public readonly BoardComponent[] NextComponents => [.. component.NextComponent.Select(x => x.GetComponent<BoardComponent>())];
+		public readonly List<BoardComponent> NextComponents => [.. component.NextComponent.Select(x => x.GetComponent<BoardComponent>())];
 
 		public readonly bool SelectionMade => this.SelectedComponent != null;
 
-		public readonly bool SelectionRequired => this.NextComponents.Length > 1;
+		public readonly bool SelectionRequired => this.NextComponents.Count > 1;
 
 		private bool DestinationNotificationSent { get; set; } = false;
 
@@ -52,7 +52,7 @@ namespace SandboxParty.Structs
 			return true;
 		}
 
-		public readonly bool Reached(Vector3 currentPosition, int maxDistance = 25)
+		public readonly bool Reached(Vector3 currentPosition, int maxDistance = 50)
 		{
 			if (this.SelectionMade)
 			{

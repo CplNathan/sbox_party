@@ -7,8 +7,8 @@
     "NetworkMode": 1,
     "Components": [
       {
-        "__type": "SandboxParty.Components.Board.Dice.BoardDiceReader",
-        "__guid": "e68b942b-e5cf-4804-b3fb-8dee6d497325",
+        "__type": "SandboxParty.Components.World.Board.Dice.BoardDiceReader",
+        "__guid": "78fd5472-e990-40cb-8ca7-3c26c3d8bbab",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -97,8 +97,8 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
-            "__guid": "8d626f21-53da-47cb-8fc4-70f877abe5b3",
+            "__type": "SandboxParty.Components.World.Board.Dice.BoardDiceNumber",
+            "__guid": "19787456-de36-4acc-89ce-bd8e79a0f059",
             "DiceNumber": 1,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -117,8 +117,8 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
-            "__guid": "deb21ff2-30c8-4526-b70f-f2dec5169c91",
+            "__type": "SandboxParty.Components.World.Board.Dice.BoardDiceNumber",
+            "__guid": "8800ca76-e114-4bd5-8971-4c9ebd9fd456",
             "DiceNumber": 2,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -137,8 +137,8 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
-            "__guid": "67bdbbb6-7ebd-48c2-917d-550f0fb9cd90",
+            "__type": "SandboxParty.Components.World.Board.Dice.BoardDiceNumber",
+            "__guid": "bf72f5c0-7e2d-4715-af24-b6913ccf7872",
             "DiceNumber": 3,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -157,8 +157,8 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
-            "__guid": "60498fca-ce6c-4422-8310-0c3fb40556c1",
+            "__type": "SandboxParty.Components.World.Board.Dice.BoardDiceNumber",
+            "__guid": "3c64207e-340c-4ee4-afcc-7de83dfa3fa4",
             "DiceNumber": 4,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -177,8 +177,8 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
-            "__guid": "17bab953-b122-4619-a8f0-cb414c468534",
+            "__type": "SandboxParty.Components.World.Board.Dice.BoardDiceNumber",
+            "__guid": "20b30222-4176-47bd-973f-df9257b2ac48",
             "DiceNumber": 5,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -197,8 +197,8 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "SandboxParty.Components.Board.Dice.BoardDiceNumber",
-            "__guid": "6a9611d9-0044-4ce3-bc64-40cc36acb25d",
+            "__type": "SandboxParty.Components.World.Board.Dice.BoardDiceNumber",
+            "__guid": "eb672231-8f15-4cd5-b540-1b107b7c252f",
             "DiceNumber": 6,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,

@@ -11,7 +11,6 @@
       "Resources": null,
       "PackageReferences": [],
       "EditorReferences": [
-        "apetavern.parkfountain#46382",
         "facepunch.aircon_mount#50051",
         "facepunch.aircon_unit_large_64x64_a#33649",
         "facepunch.aircon_unit_large_64x64_b#33651",
@@ -40,7 +39,12 @@
         "facepunch.tallgrass_a#29065",
         "facepunch.tallgrass_b#29066",
         "facepunch.wooden_door_01a#43540",
+        "japancitymodels.awning_05#31982",
+        "japancitymodels.awning_07#31984",
+        "japancitymodels.awning_08#31985",
+        "japancitymodels.entrance_01#31997",
         "japancitymodels.entrance_02#31998",
+        "japancitymodels.entrance_03#31999",
         "rust.electrical_box_e#25171",
         "tfassets.awning002#22714"
       ],

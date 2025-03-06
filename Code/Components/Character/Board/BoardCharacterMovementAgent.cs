@@ -29,7 +29,7 @@ namespace SandboxParty.Components.Character.Board
 		[Sync(Flags = SyncFlags.FromHost | SyncFlags.Interpolate)]
 		public Rotation DesiredRotation { get; set; }
 
-		private BoardPathComponent CurrentTile { get; set; }
+		public BoardPathComponent CurrentTile;
 
 		protected override void OnStart()
 		{
@@ -37,7 +37,6 @@ namespace SandboxParty.Components.Character.Board
 
 			this.NavigationAgent.SetAgentPosition(this.GameObject.WorldPosition);
 			this.NavigationAgent.MoveTo(this.GameObject.WorldPosition);
-			this.NavigationAgent.Stop();
 
 			this.CurrentTile = new BoardPathComponent(this.Scene.Components.GetAll<BoardComponent>().First());
 		}
@@ -51,6 +50,17 @@ namespace SandboxParty.Components.Character.Board
 
 			this.DebugRendering();
 
+			if (Networking.IsHost)
+			{
+				this.HandleNavigation();
+			}
+
+			this.HandleMovement();
+			this.HandleRotation();
+		}
+
+		private void HandleNavigation()
+		{
 			BoardComponent requestedComponent = null;
 			if (this.CurrentTile.SelectionRequired && !this.CurrentTile.SelectionMade)
 			{
@@ -71,7 +81,8 @@ namespace SandboxParty.Components.Character.Board
 				}
 			}
 
-			if (this.Steps > 0 && this.CurrentTile.Reached(this.NavigationAgent.AgentPosition) && this.CurrentTile.MoveNext(requestedComponent, out BoardPathComponent? nextTile))
+			var destinationReached = this.CurrentTile.Reached(this.NavigationAgent.AgentPosition);
+			if (this.Steps > 0 && destinationReached && this.CurrentTile.MoveNext(requestedComponent, out BoardPathComponent? nextTile))
 			{
 				this.CurrentTile = nextTile.Value;
 				this.NavigationAgent.MoveTo(nextTile.Value.Component.WorldPosition);
@@ -81,10 +92,8 @@ namespace SandboxParty.Components.Character.Board
 			else if (this.Steps == 0 && this.CurrentTile.CanSendDestinationNotification())
 			{
 				IBoardCharacterEvent.PostToGameObject(this.GameObject, x => x.OnDestinationReached());
+				// this.NavigationAgent.Stop();
 			}
-
-			this.HandleMovement();
-			this.HandleRotation();
 		}
 
 		private void HandleMovement()
@@ -118,12 +127,12 @@ namespace SandboxParty.Components.Character.Board
 		{
 			var previousTile = tile;
 
-			for (int step = 1; step < this.Steps; step++)
+			for (int step = 1; step <= this.Steps; step++)
 			{
 				var requiresDecision = tile.SelectionRequired && !tile.SelectionMade;
 				if (requiresDecision)
 				{
-					for (int branch = 0; branch < previousTile.NextComponents.Length; branch++)
+					for (int branch = 0; branch < previousTile.NextComponents.Count; branch++)
 					{
 						Gizmo.Draw.Color = (branch % 2) == 0 ? Color.Red : Color.Blue;
 						this.RenderPath(new BoardPathComponent(previousTile.NextComponents[branch]), steps - step - 1);

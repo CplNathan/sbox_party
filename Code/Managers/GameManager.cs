@@ -73,31 +73,43 @@ namespace SandboxParty.Managers
 		/// <summary>
 		/// Called on all clients to sync GameManager once the scene has loaded.
 		/// </summary>
-		/// <param name="scene">The current scene after it has loaded.</param>
+		/// <param name="scene">The current scene after it has been loaded.</param>
 		void ISceneLoadingEvents.AfterLoad(Scene scene)
 		{
+			Log.Info("Syncing client");
 			var cameraObject = scene.CreateObject(true);
 			this.WorldCamera = cameraObject.AddComponent<CameraComponent>();
 			this.WorldCamera.IsMainCamera = true;
 			this.WorldCamera.FovAxis = CameraComponent.Axis.Vertical;
-			this.WorldCamera.FieldOfView = 70;
+			this.WorldCamera.FieldOfView = 90;
 
 			var occlusionComponent = this.WorldCamera.AddComponent<AmbientOcclusion>();
 			occlusionComponent.Intensity = 1;
 
 			this.BoardState = scene.GetComponentInChildren<BoardGameState>();
+			Log.Info($"Synced {this.BoardState}");
 		}
 
 		private void LoadBoard()
 		{
 			var board = SceneResource.Boards[0];
 
+			Log.Info($"Loading {board.SceneType} {board.Scene}");
 			this.boardOptions.SetScene(board.Scene);
-			this.Scene.Load(this.boardOptions);
+			var sceneLoaded = this.Scene.Load(this.boardOptions);
 
-			var stateObject = this.Scene.CreateObject();
-			this.BoardState = stateObject.AddComponent<BoardGameState>();
-			stateObject.NetworkSpawn();
+			if (sceneLoaded)
+			{
+				Log.Info($"Loaded {board.SceneType} {board.Scene}");
+				var stateObject = this.Scene.CreateObject();
+				this.BoardState = stateObject.AddComponent<BoardGameState>();
+				stateObject.NetworkSpawn();
+				Log.Info($"Created {nameof(BoardGameState)}");
+			}
+			else
+			{
+				Log.Error($"Failed to load {board.SceneType} {board.Scene}!");
+			}
 		}
 	}
 }

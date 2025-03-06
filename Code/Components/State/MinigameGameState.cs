@@ -11,5 +11,15 @@ namespace SandboxParty.Components.State
 	{
 		protected override GameObject GetPlayerPrefab()
 			=> SceneResource.GetSceneResource(this.Scene, SceneResource.Minigames).GetPlayerPrefab();
+
+		protected override void OnConnected(Connection channel)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		protected override void OnDisconnected(Connection channel)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

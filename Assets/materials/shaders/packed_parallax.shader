@@ -12,7 +12,7 @@ FEATURES
 MODES
 {
 	Forward();
-	Depth();
+	Depth( S_MODE_DEPTH );
 	ToolsShadingComplexity( "tools_shading_complexity.shader" );
 }
 
@@ -76,14 +76,15 @@ PS
 	CreateInputTexture2D( Color, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( Height, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( Normal, Srgb, 8, "None", "_normal", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	CreateInputTexture2D( ARM, Srgb, 8, "None", "_mask", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	CreateInputTexture2D( ARM, Linear, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	Texture2D g_tColor < Channel( RGBA, Box( Color ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
 	Texture2D g_tHeight < Channel( RGBA, Box( Height ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tNormal < Channel( RGBA, Box( Normal ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tARM < Channel( RGBA, Box( ARM ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	Texture2D g_tNormal < Channel( RGBA, Box( Normal ), Linear ); OutputFormat( DXT5 ); SrgbRead( False ); >;
+	Texture2D g_tARM < Channel( RGBA, Box( ARM ), Linear ); OutputFormat( DXT5 ); SrgbRead( False ); >;
 	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tHeight )
 	TextureAttribute( RepresentativeTexture, g_tHeight )
 	float g_flHeight < UiGroup( ",0/,0/0" ); Default1( 0.6 ); Range1( 0, 1 ); >;
+	float g_flRoughnessStrength < UiGroup( ",0/,0/0" ); Default1( 1 ); Range1( 0, 1 ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{
@@ -119,13 +120,15 @@ PS
 		float4 l_17 = Tex2DS( g_tColor, g_sSampler0, l_16 );
 		float4 l_18 = Tex2DS( g_tNormal, g_sSampler0, l_16 );
 		float4 l_19 = Tex2DS( g_tARM, g_sSampler0, l_16 );
+		float l_20 = g_flRoughnessStrength;
+		float l_21 = l_19.g * l_20;
 		
 		m.Albedo = l_17.xyz;
 		m.Opacity = 1;
 		m.Normal = l_18.xyz;
-		m.Roughness = l_19.g;
+		m.Roughness = l_21;
 		m.Metalness = l_19.b;
-		m.AmbientOcclusion = l_19.r;
+		m.AmbientOcclusion = 1;
 		
 		
 		m.AmbientOcclusion = saturate( m.AmbientOcclusion );

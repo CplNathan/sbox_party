@@ -35,8 +35,8 @@
         "Output": "Result"
       },
       "Roughness": {
-        "Identifier": "3",
-        "Output": "G"
+        "Identifier": "6",
+        "Output": "Result"
       },
       "Metalness": {
         "Identifier": "3",
@@ -76,9 +76,7 @@
       "UI": {
         "Name": "ARM",
         "Default": "1,1,1,1",
-        "Extension": "Mask",
-        "ShowExtension": true,
-        "SrgbRead": true
+        "ShowExtension": true
       },
       "Identifier": "3",
       "Position": "-972,192",
@@ -96,14 +94,41 @@
         "Name": "Normal",
         "Default": "1,1,1,1",
         "Extension": "Normal",
-        "ShowExtension": true,
-        "SrgbRead": true
+        "ShowExtension": true
       },
       "Identifier": "4",
       "Position": "-972,396",
       "HandleOffsets": {},
       "Coords": {
         "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 2,
+      "Value": 1,
+      "Name": "Roughness Strength",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "5",
+      "Position": "-636,516",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "6",
+      "Position": "-120,480",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "3",
+        "Output": "G"
+      },
+      "B": {
+        "Identifier": "5",
         "Output": "Result"
       }
     }

@@ -41,10 +41,6 @@
       "Metalness": {
         "Identifier": "26",
         "Output": "Result"
-      },
-      "AmbientOcclusion": {
-        "Identifier": "27",
-        "Output": "Result"
       }
     },
     {
@@ -226,7 +222,7 @@
     {
       "_class": "TextureCoord",
       "UseSecondaryCoord": false,
-      "Tiling": "0.85,0.85",
+      "Tiling": "2,2",
       "Identifier": "13",
       "Position": "1320,1344",
       "HandleOffsets": {}
@@ -257,7 +253,7 @@
       "_class": "Float",
       "Min": 0,
       "Max": 1,
-      "Value": 1,
+      "Value": 0,
       "Name": "",
       "IsAttribute": false,
       "UI": {},
@@ -308,7 +304,7 @@
       "_class": "Float",
       "Min": 0,
       "Max": 1,
-      "Value": 0,
+      "Value": 1,
       "Name": "",
       "IsAttribute": false,
       "UI": {},

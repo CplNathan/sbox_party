@@ -6,7 +6,8 @@ Layer0
 
 	ARM "materials/roof_3/roof_3_arm_1k.jpg"
 	Color "materials/roof_3/roof_3_diff_1k.jpg"
-	g_flHeight "0.550"
+	g_flHeight "0.419"
+	g_flRoughnessStrength "0.422"
 	Height "materials/roof_3/roof_3_disp_1k.jpg"
 	Normal "materials/roof_3/roof_3_nor_dx_1k.jpg"
 

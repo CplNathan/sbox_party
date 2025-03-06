@@ -41,10 +41,6 @@
       "Metalness": {
         "Identifier": "24",
         "Output": "Result"
-      },
-      "AmbientOcclusion": {
-        "Identifier": "23",
-        "Output": "Result"
       }
     },
     {
@@ -58,12 +54,16 @@
       "Identifier": "1",
       "Position": "-3348,108",
       "HandleOffsets": {},
+      "Depth": {
+        "Identifier": "37",
+        "Output": "Result"
+      },
       "Heightmap": {
         "Identifier": "28",
         "Output": "Result"
       },
       "TexCoord": {
-        "Identifier": "2",
+        "Identifier": "33",
         "Output": "Result"
       }
     },
@@ -101,14 +101,13 @@
         "Name": "Parallax",
         "Default": "1,1,1,1",
         "Extension": "Mask",
-        "ShowExtension": true,
-        "SrgbRead": true
+        "ShowExtension": true
       },
       "Identifier": "4",
       "Position": "-3900,84",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "2",
+        "Identifier": "33",
         "Output": "Result"
       }
     },
@@ -118,7 +117,7 @@
       "DefaultB": 1,
       "Fraction": 0.5,
       "Identifier": "5",
-      "Position": "-2160,84",
+      "Position": "-2136,84",
       "HandleOffsets": {},
       "A": {
         "Identifier": "6",
@@ -144,7 +143,7 @@
         "SrgbRead": true
       },
       "Identifier": "6",
-      "Position": "-3132,-360",
+      "Position": "-3132,-744",
       "HandleOffsets": {},
       "Coords": {
         "Identifier": "1",
@@ -159,6 +158,10 @@
       "Identifier": "7",
       "Position": "-2160,480",
       "HandleOffsets": {},
+      "A": {
+        "Identifier": "35",
+        "Output": "G"
+      },
       "B": {
         "Identifier": "31",
         "Output": "Result"
@@ -214,7 +217,7 @@
         "Type": "Color"
       },
       "Identifier": "10",
-      "Position": "-2340,288",
+      "Position": "-2376,276",
       "HandleOffsets": {}
     },
     {
@@ -226,11 +229,11 @@
       "Position": "-2160,288",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "10",
+        "Identifier": "18",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "18",
+        "Identifier": "36",
         "Output": "Result"
       },
       "C": {
@@ -244,8 +247,12 @@
       "CellDensity": 2,
       "Worley": true,
       "Identifier": "12",
-      "Position": "-3132,-468",
-      "HandleOffsets": {}
+      "Position": "-3132,-852",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "32",
+        "Output": "Result"
+      }
     },
     {
       "_class": "Float",
@@ -256,7 +263,7 @@
       "IsAttribute": false,
       "UI": {},
       "Identifier": "13",
-      "Position": "-2652,1080",
+      "Position": "-2664,1020",
       "HandleOffsets": {}
     },
     {
@@ -316,7 +323,7 @@
       "_class": "Float",
       "Min": 0,
       "Max": 1,
-      "Value": 0.23017989,
+      "Value": 0.3977271,
       "Name": "Water Blend Clamp",
       "IsAttribute": false,
       "UI": {},
@@ -332,8 +339,7 @@
         "Name": "Normal",
         "Default": "1,1,1,1",
         "Extension": "Normal",
-        "ShowExtension": true,
-        "SrgbRead": true
+        "ShowExtension": true
       },
       "Identifier": "18",
       "Position": "-3132,312",
@@ -347,7 +353,7 @@
       "_class": "Float",
       "Min": 0,
       "Max": 1,
-      "Value": 0.25,
+      "Value": 0.4379501,
       "Name": "Water Height Threshold",
       "IsAttribute": false,
       "UI": {},
@@ -359,7 +365,7 @@
       "_class": "Float",
       "Min": 0,
       "Max": 1,
-      "Value": 2,
+      "Value": 0.7589459,
       "Name": "Water Edge Hardness",
       "IsAttribute": false,
       "UI": {},
@@ -382,7 +388,7 @@
       "Position": "-3132,720",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "2",
+        "Identifier": "33",
         "Output": "Result"
       }
     },
@@ -406,6 +412,10 @@
       "Identifier": "23",
       "Position": "-2160,720",
       "HandleOffsets": {},
+      "A": {
+        "Identifier": "35",
+        "Output": "R"
+      },
       "B": {
         "Identifier": "30",
         "Output": "R"
@@ -423,6 +433,10 @@
       "Identifier": "24",
       "Position": "-2160,600",
       "HandleOffsets": {},
+      "A": {
+        "Identifier": "35",
+        "Output": "B"
+      },
       "B": {
         "Identifier": "30",
         "Output": "B"
@@ -516,9 +530,7 @@
       "UI": {
         "Name": "ARM",
         "Default": "1,1,1,1",
-        "Extension": "Mask",
-        "ShowExtension": true,
-        "SrgbRead": true
+        "ShowExtension": true
       },
       "Identifier": "30",
       "Position": "-3132,516",
@@ -539,6 +551,94 @@
         "Identifier": "30",
         "Output": "G"
       }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 1,
+      "Name": "Top Mask Density",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "32",
+      "Position": "-3324,-804",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TileAndOffset",
+      "DefaultTile": "1,1",
+      "DefaultOffset": "0,0",
+      "WrapTo01": false,
+      "Identifier": "33",
+      "Position": "-3816,456",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "Tile": {
+        "Identifier": "34",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float2",
+      "Min": "0,0",
+      "Max": "2,2",
+      "Value": "1,1",
+      "Name": "Blend Tiling",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "34",
+      "Position": "-4032,684",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/leafy_grass/leafy_grass_arm_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Top ARM",
+        "Default": "1,1,1,1",
+        "ShowExtension": true
+      },
+      "Identifier": "35",
+      "Position": "-3132,-540",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "1",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/leafy_grass/leafy_grass_nor_dx_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Top Normal",
+        "Default": "1,1,1,1",
+        "Extension": "Normal",
+        "ShowExtension": true
+      },
+      "Identifier": "36",
+      "Position": "-3132,-336",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "1",
+        "Output": "TexCoord"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.6,
+      "Name": "Parallax Height",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "37",
+      "Position": "-3576,60",
+      "HandleOffsets": {}
     }
   ]
 }

@@ -6,6 +6,7 @@ Layer0
 
 	ARM "materials/brick_wall_11/brick_wall_11_arm_1k.jpg"
 	Color "materials/brick_wall_11/brick_wall_11_diff_1k.jpg"
+	g_flRoughnessStrength "0.297"
 	Normal "materials/brick_wall_11/brick_wall_11_nor_dx_1k.jpg"
 
 	//---- Fog ----

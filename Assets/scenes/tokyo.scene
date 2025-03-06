@@ -49,22 +49,6 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "3ab4c198-7121-4f83-8187-e317f4581121",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "d8172028-939e-4b3b-b22f-f008404eab2d"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
-            {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ce4e8783-488d-4ce8-a02c-61110cfa7c64",
               "BodyGroups": 18446744073709551615,
@@ -86,6 +70,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "f8837d33-8e12-4531-b446-74612c340ba5",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "d8172028-939e-4b3b-b22f-f008404eab2d"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -96,26 +96,6 @@
           "Position": "-144,-448,-0.000001000979",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "9e3ab9bd-7545-4b1f-b9f1-7ce53d6d555e",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "62750e18-74de-4ba1-ad5b-9087f97e2f74"
-                },
-                {
-                  "_type": "gameobject",
-                  "go": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "a48efcc6-34ef-4bbb-82aa-e7759884a48b",
@@ -138,6 +118,26 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "244a1e4b-4f0e-4a79-afa5-53c55106b203",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "62750e18-74de-4ba1-ad5b-9087f97e2f74"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -148,26 +148,6 @@
           "Position": "398,-450,-0.00004886097",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "a271d5ee-3a2f-4459-a534-2af657fc469a",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "dfe4f5c5-2fb5-4f5e-b60f-6e17ef0aa99f"
-                },
-                {
-                  "_type": "gameobject",
-                  "go": "0e21e69a-3a04-4616-a733-751e58627084"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "34159066-d648-43fc-afb4-976d1fe612a9",
@@ -190,6 +170,26 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "6ccc0263-eab1-496e-b9ea-4e70cae79b1b",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "0e21e69a-3a04-4616-a733-751e58627084"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "dfe4f5c5-2fb5-4f5e-b60f-6e17ef0aa99f"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -200,22 +200,6 @@
           "Position": "46,-450,-0.00001808814",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "d4e2aa9c-c76f-4a40-8df6-7238ee81facd",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "1893ca57-4694-4a57-abb1-af1961940b30"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "e5135ef0-486a-4c44-b91d-505cf578f7ed",
@@ -238,6 +222,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "a3b29571-d9b1-4f97-a665-195d3b29bc49",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "1893ca57-4694-4a57-abb1-af1961940b30"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -248,22 +248,6 @@
           "Position": "350,-322,-0.00004466467",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "88c7e6db-9e95-461e-b3e9-06aaeaf4e4e6",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "9de80c61-9c06-4c0a-8c9c-2e3281defec2"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "8434ee8a-1e25-4dbc-9dbb-db7ea82363fb",
@@ -286,6 +270,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "d9fa41cb-40b2-49cb-91bd-8e2b982d1060",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "9de80c61-9c06-4c0a-8c9c-2e3281defec2"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -296,22 +296,6 @@
           "Position": "94,-578,-0.00002228444",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "ee27612c-e116-47af-b7f5-81e24fb81595",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "740dcc66-623c-4380-a8f7-fdaa21115e83"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "21243d1f-061e-43c1-82ce-1a8cf6949de4",
@@ -334,19 +318,10 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "51a88593-9dfc-40ed-860f-b9c80b3a8688",
-          "Flags": 0,
-          "Name": "component_2_a3",
-          "Position": "94,-322,-0.00002228444",
-          "Enabled": true,
-          "Components": [
+            },
             {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "a410632c-bfa7-455b-bc44-731d005d7bd2",
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "99be31a6-ba7f-4533-b938-951cdc1b8d4d",
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -359,7 +334,16 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null
-            },
+            }
+          ]
+        },
+        {
+          "__guid": "51a88593-9dfc-40ed-860f-b9c80b3a8688",
+          "Flags": 0,
+          "Name": "component_2_a3",
+          "Position": "94,-322,-0.00002228444",
+          "Enabled": true,
+          "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "883f5471-1030-4dee-bb7e-a3677d858962",
@@ -382,6 +366,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "913bc8b1-ad20-46a6-a4b0-127251f305a7",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "740dcc66-623c-4380-a8f7-fdaa21115e83"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -392,22 +392,6 @@
           "Position": "222,-626,-0.00003347455",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "8c58da94-93db-4fe2-a88d-4ef7e06f9a73",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "733443ec-8460-4925-b99d-36edebfdb817"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "6859ad96-9cbb-4955-8762-2e00974c21d7",
@@ -430,6 +414,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "b84e709b-32b0-4cc7-a1d4-52ef31f9ba87",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "733443ec-8460-4925-b99d-36edebfdb817"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -440,22 +440,6 @@
           "Position": "222,-274,-0.00003347455",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "614a0eb2-28d9-49a8-ba5b-f49af0933451",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "51a88593-9dfc-40ed-860f-b9c80b3a8688"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "36104e1c-98e2-4526-84c4-d287b27db22c",
@@ -478,6 +462,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "d4536d17-6cc4-44ba-bb17-f9a591eef3b1",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "51a88593-9dfc-40ed-860f-b9c80b3a8688"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -488,22 +488,6 @@
           "Position": "350,-578,-0.00004466467",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "6f6c7c97-b1d6-4be5-adc0-52b1d8781545",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "de7d4786-6397-4122-9010-0268f65e1b4e"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "c1031991-ac3b-417a-94a1-cb544f9fb062",
@@ -526,23 +510,14 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f",
-          "Flags": 0,
-          "Name": "component_3_b",
-          "Position": "-320,-450,-0.0000003965215",
-          "Enabled": true,
-          "Components": [
+            },
             {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "142ddbc4-7ec6-4288-89fa-5294b2f260a9",
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "9bf738a2-efb6-4c7c-9efe-b65a86a29df8",
               "NextComponent": [
                 {
                   "_type": "gameobject",
-                  "go": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b"
+                  "go": "de7d4786-6397-4122-9010-0268f65e1b4e"
                 }
               ],
               "OnComponentDestroy": null,
@@ -551,7 +526,16 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null
-            },
+            }
+          ]
+        },
+        {
+          "__guid": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f",
+          "Flags": 0,
+          "Name": "component_3_b",
+          "Position": "-320,-318,-0.0000003965215",
+          "Enabled": true,
+          "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "bf46f903-f8a5-456f-b5ed-9bf0bea60eda",
@@ -574,6 +558,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "3f574a5d-181a-43c3-a997-1725f016d01b",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -584,22 +584,6 @@
           "Position": "-576,-318,0.0000141159",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "4f0d9c72-e7f7-4c9b-9353-3b2463c8c304",
-              "NextComponent": [
-                {
-                  "_type": "gameobject",
-                  "go": "e3ce3cef-04d5-4950-b954-9903db39698d"
-                }
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "5a7ea53c-578c-4d31-8e83-48f26f030640",
@@ -622,23 +606,14 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "e3ce3cef-04d5-4950-b954-9903db39698d",
-          "Flags": 0,
-          "Name": "component_5",
-          "Position": "-576,78,32.50005",
-          "Enabled": true,
-          "Components": [
+            },
             {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "c5be1bc9-8bc4-4cf6-9f33-9760b17075b2",
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "25d9246d-0268-40e1-b5a8-927017ff0f53",
               "NextComponent": [
                 {
                   "_type": "gameobject",
-                  "go": "9fd015e5-041b-44cc-a663-7669f0265a92"
+                  "go": "3b2851ce-265b-4d08-ad32-8ff243488dbd"
                 }
               ],
               "OnComponentDestroy": null,
@@ -647,7 +622,64 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "3b2851ce-265b-4d08-ad32-8ff243488dbd",
+          "Flags": 0,
+          "Name": "component_4",
+          "Position": "-576,-144,0.0000141159",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "65de62f0-dc6d-44dc-b292-8e0caea4492d",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
             },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "52ce94c4-5315-464a-af9e-686cb8d91b52",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "694ff195-574f-4a40-ac66-5538b00ca8bc"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "e3ce3cef-04d5-4950-b954-9903db39698d",
+          "Flags": 0,
+          "Name": "component_5",
+          "Position": "-576,66,32.50005",
+          "Enabled": true,
+          "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "8a8d4c14-beaf-48ba-b26e-b71b529d523e",
@@ -670,23 +702,14 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "9fd015e5-041b-44cc-a663-7669f0265a92",
-          "Flags": 0,
-          "Name": "component_6",
-          "Position": "720,78,-0.00006246756",
-          "Enabled": true,
-          "Components": [
+            },
             {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "b82a9c78-0a36-46ad-bb03-bf9b06fd91e4",
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "fad20332-7b11-45ac-993d-7436695b2858",
               "NextComponent": [
                 {
                   "_type": "gameobject",
-                  "go": "b243997d-1635-497d-b002-1062d566aac0"
+                  "go": "0157ab07-8f89-4bc3-9841-e47a986e8354"
                 }
               ],
               "OnComponentDestroy": null,
@@ -695,7 +718,112 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "0157ab07-8f89-4bc3-9841-e47a986e8354",
+          "Flags": 0,
+          "Name": "component_5",
+          "Position": "-402,66,32.50003",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ed8ddee6-e95d-44a1-940f-4fa213742d17",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
             },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "f8189f54-b139-4e57-8b6c-c75c9d09b318",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "c2f09f1b-3c4e-4dba-998e-f9577b2a15c9"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "694ff195-574f-4a40-ac66-5538b00ca8bc",
+          "Flags": 0,
+          "Name": "component_5",
+          "Position": "-576,-90,32.50005",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "be14835f-81d2-4e3f-ba72-74f9177ca74e",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "673c6bf2-c2be-4347-b29d-270714d0b71e",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "e3ce3cef-04d5-4950-b954-9903db39698d"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "9fd015e5-041b-44cc-a663-7669f0265a92",
+          "Flags": 0,
+          "Name": "component_6",
+          "Position": "720,66,-0.00006246756",
+          "Enabled": true,
+          "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3268e836-71a7-4cd4-9936-5d028d2267fe",
@@ -718,23 +846,14 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "62750e18-74de-4ba1-ad5b-9087f97e2f74",
-          "Flags": 0,
-          "Name": "component_3a",
-          "Position": "-128,-318,-0.00001145965",
-          "Enabled": true,
-          "Components": [
+            },
             {
-              "__type": "SandboxParty.Components.Board.BoardComponent",
-              "__guid": "752ee890-1f61-4980-9414-ff783d4cc2d9",
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "7db5c154-a290-4303-a937-211954abe1aa",
               "NextComponent": [
                 {
                   "_type": "gameobject",
-                  "go": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b"
+                  "go": "b243997d-1635-497d-b002-1062d566aac0"
                 }
               ],
               "OnComponentDestroy": null,
@@ -743,7 +862,164 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "c2f09f1b-3c4e-4dba-998e-f9577b2a15c9",
+          "Flags": 0,
+          "Name": "component_6",
+          "Position": "-114,66,0.00001044303",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2f7e803e-304e-4ce3-a72a-c6badb3ead4e",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
             },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "4f5df6ec-0281-40c8-af6a-a105db07f7a4",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "41556662-81fd-4bcd-9b67-952651053385"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "41556662-81fd-4bcd-9b67-952651053385",
+          "Flags": 0,
+          "Name": "component_6",
+          "Position": "72,66,-0.000005817603",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7a86d27b-0635-4964-b960-51138d4a2a9c",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "c2aaaa33-4147-4254-bd42-3f644c8896f6",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "9fd015e5-041b-44cc-a663-7669f0265a92"
+                },
+                {
+                  "_type": "gameobject",
+                  "go": "a6b092f4-fa07-46bf-bada-df9aadd6605c"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "a6b092f4-fa07-46bf-bada-df9aadd6605c",
+          "Flags": 0,
+          "Name": "component_6",
+          "Position": "72,222,-0.000005817603",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "bd242993-f138-46a0-9fa2-bdff49fa01b8",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/food-kit/foodkit_plate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "897482f4-50ff-4183-a927-1130a9e314c5",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "41556662-81fd-4bcd-9b67-952651053385"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "62750e18-74de-4ba1-ad5b-9087f97e2f74",
+          "Flags": 0,
+          "Name": "component_3a",
+          "Position": "-144,-318,-0.00001006088",
+          "Enabled": true,
+          "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3c452501-6677-4e48-8eae-bd25b54759ec",
@@ -766,6 +1042,22 @@
               },
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SandboxParty.Components.World.Board.BoardComponent",
+              "__guid": "78664c1f-5a1d-46bf-a97b-19ae2184cf27",
+              "NextComponent": [
+                {
+                  "_type": "gameobject",
+                  "go": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f"
+                }
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         }
@@ -790,7 +1082,7 @@
               "__guid": "b0497ffc-dd64-4d11-92b0-280cb1e26182",
               "FogMode": "Enabled",
               "FogStrength": 1,
-              "LightColor": "0.05584,0.05584,0.05584,1",
+              "LightColor": "0.01396,0.01396,0.01396,1",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -798,7 +1090,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "Shadows": true,
-              "SkyColor": "0.0708,0.0708,0.0984,1"
+              "SkyColor": "0.02655,0.02655,0.0369,1"
             }
           ]
         },
@@ -844,7 +1136,7 @@
               "OnComponentUpdate": null,
               "SkyIndirectLighting": true,
               "SkyMaterial": "materials/skybox/skybox_dark_01.vmat",
-              "Tint": "0.05652,0.05156,0.0744,1"
+              "Tint": "0.02826,0.02578,0.0372,1"
             }
           ]
         }
@@ -1359,142 +1651,6 @@
       ]
     },
     {
-      "__guid": "98a2fba4-51d3-41bf-b614-c3598e6d428f",
-      "Flags": 0,
-      "Name": "awning_07",
-      "Position": "-189,39,57",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.225,0.225,0.225",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "07f36c09-fa03-40ce-b336-88d193d12995",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/awning_07.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "2ef3ebfe-7c2c-4fa7-961c-0194ef616042",
-      "Flags": 0,
-      "Name": "awning_07 (1)",
-      "Position": "-320,42,63",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.225,0.225,0.225",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "4288021c-b4d5-46b3-93e2-63def7a054d6",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/awning_08.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "c6d1ef4b-d5e6-462f-9cc7-c3225fca7ede",
-      "Flags": 0,
-      "Name": "entrance_02",
-      "Position": "-192,32,36",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.25,0.25,0.25",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6b8d6e55-2970-4996-9bac-0f02ba4ff3ff",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/entrance_03.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "cc799519-4e48-4f1a-b6ef-68cdf9695efd",
-      "Flags": 0,
-      "Name": "entrance_02 (1)",
-      "Position": "-322,32,36",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.25,0.25,0.25",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "8da89097-3f8e-4617-bc08-a0e108a30336",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/japan_props_001/entrance_03.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "4f7b3036-465e-4fc0-b742-eb21901cf504",
       "Flags": 0,
       "Name": "sign_03",
@@ -1749,56 +1905,6 @@
       ]
     },
     {
-      "__guid": "dacb404f-504b-4c66-b8f3-eaedf968814f",
-      "Flags": 0,
-      "Name": "awning_small (1)",
-      "Position": "-69,6,60",
-      "Rotation": "0,0,0.7071068,0.7071068",
-      "Scale": "0.3,0.3,0.3",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SkinnedModelRenderer",
-          "__guid": "6fce4225-fca9-40ee-9b31-61601774c12c",
-          "AnimationGraph": null,
-          "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": null,
-          "CreateAttachments": false,
-          "CreateBoneObjects": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/props_farm/awning001.vmdl",
-          "Morphs": {},
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Parameters": {
-            "bools": {},
-            "ints": {},
-            "floats": {},
-            "vectors": {},
-            "rotations": {}
-          },
-          "PlaybackRate": 1,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Sequence": {
-            "Name": null
-          },
-          "Tint": "1,1,1,1",
-          "UseAnimGraph": true
-        }
-      ]
-    },
-    {
       "__guid": "a65189dc-2410-42eb-a062-3d5f345c794b",
       "Flags": 0,
       "Name": "awning_small (2)",
@@ -2025,57 +2131,25 @@
       ]
     },
     {
-      "__guid": "7d8f0ab9-face-4d8f-9c7e-da5b562f07c2",
+      "__guid": "fc4d4bcc-107e-430e-bff9-4eab323f3b28",
       "Flags": 0,
-      "Name": "Plane",
-      "Position": "577.5672,-30.97054,-18.30445",
-      "Rotation": "-0.08715574,0,0,0.9961947",
-      "Scale": "1,2,1",
+      "Name": "Navigation Hint",
+      "Position": "576,-144,0",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "b8d6b390-af93-427c-8012-ed0e5c76aac7",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/plane.vmdl",
+          "__type": "Sandbox.NavMeshLink",
+          "__guid": "52d2d708-3b31-4e25-a5c7-781f0c812e1d",
+          "ConnectionRadius": 12,
+          "IsBiDirectional": false,
+          "LocalEndPosition": "0,55,-30",
+          "LocalStartPosition": "0,0,0",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.PlaneCollider",
-          "__guid": "8bc509dc-4413-4887-8abb-0a3f96267c96",
-          "Center": "0,0,0",
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "Scale": "100,100",
-          "Static": true,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
+          "OnComponentUpdate": null
         }
       ]
     }
@@ -2114,11 +2188,8 @@
     "facepunch.bike_rack#37050",
     "facepunch.catwalk_ladder#48202",
     "facepunch.pine_bush_low_b#29106",
-    "japancitymodels.awning_07#31984",
-    "japancitymodels.awning_08#31985",
     "japancitymodels.door_02#31989",
     "japancitymodels.electricpole_part_04#31996",
-    "japancitymodels.entrance_03#31999",
     "japancitymodels.sign_03#32025",
     "japancitymodels.sign_08#32028",
     "japancitymodels.supportoverpass_01#32041",

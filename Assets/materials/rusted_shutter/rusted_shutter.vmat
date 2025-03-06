@@ -1,0 +1,13 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/packed.shader"
+
+	ARM "materials/rusted_shutter/rusted_shutter_arm_1k.jpg"
+	Color "materials/rusted_shutter/rusted_shutter_diff_1k.jpg"
+	Normal "materials/rusted_shutter/rusted_shutter_nor_dx_1k.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

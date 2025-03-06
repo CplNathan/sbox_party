@@ -12,7 +12,7 @@ FEATURES
 MODES
 {
 	Forward();
-	Depth();
+	Depth( S_MODE_DEPTH );
 	ToolsShadingComplexity( "tools_shading_complexity.shader" );
 }
 
@@ -131,8 +131,8 @@ PS
 		float4 l_27 = l_26 * float4( 0.2, 0.2, 0.2, 0.2 );
 		float3 l_28 = pow( 1.0 - dot( normalize( i.vNormalWs ), normalize( CalculatePositionToCameraDirWs( i.vPositionWithOffsetWs.xyz + g_vHighPrecisionLightingOffsetWs.xyz ) ) ), 2 );
 		float4 l_29 = lerp( l_26, l_27, float4( l_28, 0 ) );
-		float2 l_30 = i.vTextureCoords.xy * float2( 0.85, 0.85 );
-		float2 l_31 = i.vTextureCoords.xy * float2( 0.85, 0.85 );
+		float2 l_30 = i.vTextureCoords.xy * float2( 2, 2 );
+		float2 l_31 = i.vTextureCoords.xy * float2( 2, 2 );
 		float4 l_32 = Tex2DS( g_tOverlayHeight, g_sSampler0, l_31 );
 		float l_33 = l_32.r / 2;
 		float l_34 = l_32.r * 0.525;
@@ -151,7 +151,7 @@ PS
 		float l_47 = l_31.y;
 		float l_48 = pow( l_47, 0.3 );
 		float l_49 = g_flOverlayOffset;
-		float l_50 = l_48 > l_49 ? 1 : 0;
+		float l_50 = l_48 > l_49 ? 0 : 1;
 		float4 l_51 = lerp( l_29, l_46, l_50 );
 		float3 l_52 = float3( 0, 0, 1 );
 		float4 l_53 = Tex2DS( g_tOverlayNormal, g_sSampler0, l_45 );
@@ -161,14 +161,13 @@ PS
 		float4 l_57 = Tex2DS( g_tOverlapARM, g_sSampler0, l_45 );
 		float l_58 = lerp( l_56, l_57.g, l_50 );
 		float l_59 = lerp( 0, l_57.b, l_50 );
-		float l_60 = lerp( 1, l_57.r, l_50 );
 		
 		m.Albedo = l_51.xyz;
 		m.Opacity = 1;
 		m.Normal = l_54.xyz;
 		m.Roughness = l_58;
 		m.Metalness = l_59;
-		m.AmbientOcclusion = l_60;
+		m.AmbientOcclusion = 1;
 		
 		
 		m.AmbientOcclusion = saturate( m.AmbientOcclusion );

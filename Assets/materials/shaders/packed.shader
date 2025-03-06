@@ -12,7 +12,7 @@ FEATURES
 MODES
 {
 	Forward();
-	Depth();
+	Depth( S_MODE_DEPTH );
 	ToolsShadingComplexity( "tools_shading_complexity.shader" );
 }
 
@@ -75,12 +75,13 @@ PS
 	SamplerState g_sSampler0 < Filter( ANISO ); AddressU( WRAP ); AddressV( WRAP ); >;
 	CreateInputTexture2D( Color, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	CreateInputTexture2D( Normal, Srgb, 8, "None", "_normal", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
-	CreateInputTexture2D( ARM, Srgb, 8, "None", "_mask", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
+	CreateInputTexture2D( ARM, Srgb, 8, "None", "_color", ",0/,0/0", Default4( 1.00, 1.00, 1.00, 1.00 ) );
 	Texture2D g_tColor < Channel( RGBA, Box( Color ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tNormal < Channel( RGBA, Box( Normal ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
-	Texture2D g_tARM < Channel( RGBA, Box( ARM ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
+	Texture2D g_tNormal < Channel( RGBA, Box( Normal ), Linear ); OutputFormat( DXT5 ); SrgbRead( False ); >;
+	Texture2D g_tARM < Channel( RGBA, Box( ARM ), Linear ); OutputFormat( DXT5 ); SrgbRead( False ); >;
 	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tColor )
 	TextureAttribute( RepresentativeTexture, g_tColor )
+	float g_flRoughnessStrength < UiGroup( ",0/,0/0" ); Default1( 1 ); Range1( 0, 2 ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{
@@ -100,11 +101,13 @@ PS
 		float4 l_1 = Tex2DS( g_tColor, g_sSampler0, l_0 );
 		float4 l_2 = Tex2DS( g_tNormal, g_sSampler0, l_0 );
 		float4 l_3 = Tex2DS( g_tARM, g_sSampler0, l_0 );
+		float l_4 = g_flRoughnessStrength;
+		float l_5 = l_3.g * l_4;
 		
 		m.Albedo = l_1.xyz;
 		m.Opacity = 1;
 		m.Normal = l_2.xyz;
-		m.Roughness = l_3.g;
+		m.Roughness = l_5;
 		m.Metalness = l_3.b;
 		m.AmbientOcclusion = 1;
 		

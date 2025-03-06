@@ -35,16 +35,12 @@
         "Output": "Result"
       },
       "Roughness": {
-        "Identifier": "1",
-        "Output": "G"
+        "Identifier": "9",
+        "Output": "Result"
       },
       "Metalness": {
         "Identifier": "1",
         "Output": "B"
-      },
-      "AmbientOcclusion": {
-        "Identifier": "1",
-        "Output": "R"
       }
     },
     {
@@ -54,9 +50,8 @@
       "UI": {
         "Name": "ARM",
         "Default": "1,1,1,1",
-        "Extension": "Mask",
         "ShowExtension": true,
-        "SrgbRead": true
+        "ColorSpace": "Linear"
       },
       "Identifier": "1",
       "Position": "-420,108",
@@ -142,8 +137,7 @@
         "Name": "Normal",
         "Default": "1,1,1,1",
         "Extension": "Normal",
-        "ShowExtension": true,
-        "SrgbRead": true
+        "ShowExtension": true
       },
       "Identifier": "6",
       "Position": "-420,312",
@@ -164,6 +158,34 @@
       "Identifier": "7",
       "Position": "-840,-168",
       "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 1,
+      "Name": "Roughness Strength",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "8",
+      "Position": "-168,384",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "9",
+      "Position": "276,396",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "1",
+        "Output": "G"
+      },
+      "B": {
+        "Identifier": "8",
+        "Output": "Result"
+      }
     }
   ]
 }

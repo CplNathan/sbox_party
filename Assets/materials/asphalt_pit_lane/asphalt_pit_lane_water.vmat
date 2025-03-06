@@ -1,0 +1,25 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/water blend.shader"
+
+	ARM "materials/asphalt_02/asphalt_02_arm_1k.jpg"
+	Colour "materials/asphalt_02/asphalt_02_diff_1k.jpg"
+	g_flParallaxHeight "0.600"
+	g_flTopMaskDensity "0.546"
+	g_flWaterBlendClamp "0.444"
+	g_flWaterEdgeHardness "0.759"
+	g_flWaterHeightThreshold "0.438"
+	g_vBlendTiling "[2.000 2.000]"
+	g_vWaterColour "[0.141176 0.141176 0.090196 1.000000]"
+	Height "materials/brown_mud_03/brown_mud_03_disp_1k.jpg"
+	Normal "materials/brown_mud_03/brown_mud_03_nor_dx_1k.jpg"
+	Parallax "materials/brown_mud_03/brown_mud_03_disp_1k.jpg"
+	TopARM "materials/asphalt_pit_lane/asphalt_pit_lane_arm_1k.jpg"
+	TopColor "materials/asphalt_pit_lane/asphalt_pit_lane_diff_1k.jpg"
+	TopNormal "materials/asphalt_pit_lane/asphalt_pit_lane_nor_dx_1k.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}
