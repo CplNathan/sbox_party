@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="CubemapGenerator.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
 using System.Drawing;
 using System.IO;
 
@@ -31,7 +35,7 @@ namespace SandboxParty
 		{
 			base.OnDisabled();
 
-			var window = new WidgetWindow( SceneOverlay );
+			var window = new WidgetWindow( this.SceneOverlay );
 			window.Layout = Layout.Column();
 			window.Layout.Margin = 16;
 			window.WindowTitle = "Cubemap Generator";
@@ -41,23 +45,23 @@ namespace SandboxParty
 			textureWidget.FixedHeight = 512;
 
 			var buttonWidget = new Button( "Capture Cube" );
-			buttonWidget.Pressed = () => RenderCubemap( textureWidget );
+			buttonWidget.Pressed = () => this.RenderCubemap( textureWidget );
 
 			var saveButton = new Button( "Save Cubemap" );
 			saveButton.Pressed = () =>
 			{
-				if ( Cubemap == null )
+				if ( this.Cubemap == null )
 					return;
 
 				saveButton.Pressed = () =>
 				{
-					if ( Cubemap == null )
+					if ( this.Cubemap == null )
 						return;
 
 					var fullPath = EditorUtility.SaveFileDialog( "Save Cubemap Location", "png", Path.Combine( MainAssetBrowser.Instance.CurrentLocation.Path, "Cubemap" ) );
 					if ( !string.IsNullOrEmpty( fullPath ) )
 					{
-						File.WriteAllBytes( fullPath, Cubemap.GetBitmap( 0 ).ToPng() );
+						File.WriteAllBytes( fullPath, this.Cubemap.GetBitmap( 0 ).ToPng() );
 					}
 				};
 			};
@@ -66,7 +70,7 @@ namespace SandboxParty
 			window.Layout.Add( textureWidget );
 			window.Layout.Add( saveButton );
 
-			AddOverlay( window, TextFlag.RightTop, 10 );
+			this.AddOverlay( window, TextFlag.RightTop, 10 );
 		}
 
 		public override void OnUpdate()
@@ -78,9 +82,9 @@ namespace SandboxParty
 		private void RenderCubemap( TextureWidget output )
 		{
 			var cubeTexture = Texture.CreateRenderTarget().WithSize( CubemapFaceSize * 4, CubemapFaceSize * 3 ).Create();
-			var activeObject = GetSelectedComponent<Component>();
+			var activeObject = this.GetSelectedComponent<Component>();
 
-			var cameraObject = Scene.CreateObject();
+			var cameraObject = this.Scene.CreateObject();
 			try
 			{
 				var camera = cameraObject.AddComponent<CameraComponent>();
@@ -104,7 +108,7 @@ namespace SandboxParty
 				output.Texture = cubeTexture;
 				output.Update();
 
-				Cubemap = cubeTexture;
+				this.Cubemap = cubeTexture;
 			}
 			catch ( Exception )
 			{

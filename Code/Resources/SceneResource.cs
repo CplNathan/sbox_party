@@ -1,4 +1,8 @@
-﻿namespace SandboxParty.Resources
+﻿// <copyright file="SceneResource.cs" company="Nathan Ford">
+// Copyright (c) Nathan Ford. All rights reserved.
+// </copyright>
+
+namespace SandboxParty.Resources
 {
 	public enum SceneType
 	{
@@ -6,7 +10,7 @@
 		Minigame
 	}
 
-	[GameResource( "Scene Config", "config", "Config data relating to active scenes" )]
+	[GameResource("Scene Config", "config", "Config data relating to active scenes")]
 	public partial class SceneResource : GameResource
 	{
 		public static IReadOnlyList<SceneResource> Boards => boards;
@@ -15,36 +19,36 @@
 		public static IReadOnlyList<SceneResource> Minigames => minigames;
 		internal static List<SceneResource> minigames = [];
 
-		[ResourceType( "scene" )]
+		[ResourceType("scene")]
 		public string Scene { get; set; }
 
 		public SceneType SceneType { get; set; }
 
-		[ResourceType( "prefab" )]
+		[ResourceType("prefab")]
 		public string PlayerPrefab { get; set; }
 
-		public static SceneResource GetSceneResource( Scene scene, IReadOnlyList<SceneResource> dataSource )
-			=> dataSource.First( source => source.Scene == scene.Source.ResourcePath );
+		public static SceneResource GetSceneResource(Scene scene, IReadOnlyList<SceneResource> dataSource)
+			=> dataSource.First(source => source.Scene == scene.Source.ResourcePath);
 
 		public SceneFile GetSceneFile()
-			=> ResourceLibrary.Get<SceneFile>( Scene );
+			=> ResourceLibrary.Get<SceneFile>(this.Scene);
 
 		public GameObject GetPlayerPrefab()
-			=> GameObject.GetPrefab( PlayerPrefab );
+			=> GameObject.GetPrefab(this.PlayerPrefab);
 
 		protected override void PostLoad()
 		{
 			base.PostLoad();
 
-			switch ( SceneType )
+			switch (this.SceneType)
 			{
 				case SceneType.Board:
-					if ( !boards.Contains( this ) )
-						boards.Add( this );
+					if (!boards.Contains(this))
+						boards.Add(this);
 					break;
 				case SceneType.Minigame:
-					if ( !minigames.Contains( this ) )
-						minigames.Add( this );
+					if (!minigames.Contains(this))
+						minigames.Add(this);
 					break;
 			}
 		}

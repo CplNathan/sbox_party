@@ -1,67 +1,73 @@
-﻿using SandboxParty.Events;
+﻿// <copyright file="BoardComponent.cs" company="Nathan Ford">
+// Copyright (c) Nathan Ford. All rights reserved.
+// </copyright>
 
 namespace SandboxParty.Components.Board
 {
-	internal struct BoardPathComponent( BoardComponent component )
+	internal struct BoardPathComponent(BoardComponent component)
 	{
 		public BoardComponent SelectedComponent { get; private set; }
 
 		public readonly BoardComponent Component => component;
 
-		public readonly BoardComponent[] NextComponents => [.. component.NextComponent.Select( x => x.GetComponent<BoardComponent>() )];
+		public readonly BoardComponent[] NextComponents => [.. component.NextComponent.Select(x => x.GetComponent<BoardComponent>())];
 
-		public readonly bool SelectionMade => SelectedComponent != null;
+		public readonly bool SelectionMade => this.SelectedComponent != null;
 
-		public readonly bool SelectionRequired => NextComponents.Length > 1;
+		public readonly bool SelectionRequired => this.NextComponents.Length > 1;
 
 		private bool DestinationNotificationSent { get; set; } = false;
 
-		public bool MoveNext( BoardComponent requestedComponent, out BoardPathComponent? nextTile )
+		public bool MoveNext(BoardComponent requestedComponent, out BoardPathComponent? nextTile)
 		{
 			nextTile = null;
 
-			if ( SelectionMade )
+			if (this.SelectionMade)
 				return false;
 
-			if ( SelectionRequired )
+			if (this.SelectionRequired)
 			{
-				if ( !requestedComponent.IsValid() )
+				if (!requestedComponent.IsValid())
 					return false;
 
-				if ( NextComponents.Contains( requestedComponent ) )
+				if (this.NextComponents.Contains(requestedComponent))
 				{
-					SelectedComponent = requestedComponent;
+					this.SelectedComponent = requestedComponent;
 				}
 			}
 			else
 			{
-				SelectedComponent = NextComponents.First();
+				this.SelectedComponent = this.NextComponents.First();
 			}
 
-			nextTile = new BoardPathComponent( SelectedComponent );
+			nextTile = new BoardPathComponent(this.SelectedComponent);
 
 			return true;
 		}
 
-		public readonly bool Reached( Vector3 currentPosition, int maxDistance = 25 )
+		public readonly bool Reached(Vector3 currentPosition, int maxDistance = 25)
 		{
-			if ( SelectionMade )
+			if (this.SelectionMade)
+			{
 				return true;
+			}
 
-			return currentPosition.Distance( component.WorldPosition ) <= maxDistance;
+			return currentPosition.Distance(component.WorldPosition) <= maxDistance;
 		}
 
-		public bool CanSendDestinationNotification( GameObject target )
+		public bool CanSendDestinationNotification(GameObject target)
 		{
-			if ( SelectionMade || DestinationNotificationSent )
+			if (this.SelectionMade || this.DestinationNotificationSent)
+			{
 				return false;
+			}
 
-			DestinationNotificationSent = true;
+			this.DestinationNotificationSent = true;
 			return true;
 		}
 	}
 
-	[Title( "Board Component" )]
+	[Title("Board Component")]
 	public class BoardComponent : Component, Component.ExecuteInEditor
 	{
 		[Property]
@@ -71,7 +77,7 @@ namespace SandboxParty.Components.Board
 		{
 			base.OnUpdate();
 
-			Gizmo.Draw.Lines( NextComponent.Select( x => new Line( WorldPosition, x.WorldPosition ) ) );
+			Gizmo.Draw.Lines(this.NextComponent.Select(x => new Line(this.WorldPosition, x.WorldPosition)));
 		}
 	}
 }

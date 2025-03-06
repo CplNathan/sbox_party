@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="BoardDiceReader.cs" company="Nathan Ford">
+// Copyright (c) Nathan Ford. All rights reserved.
+// </copyright>
 
 namespace SandboxParty.Components.Board.Dice
 {
@@ -11,10 +9,10 @@ namespace SandboxParty.Components.Board.Dice
 	{
 		public int ReadNumber()
 		{
-			var diceNumbers = GetComponentsInChildren<BoardDiceNumber>();
+			var diceNumbers = this.GetComponentsInChildren<BoardDiceNumber>();
 
-			var normalizedVectors = diceNumbers.ToDictionary( x => x.DiceNumber, x => GameObject.WorldPosition - x.WorldPosition );
-			var sortedVectors = normalizedVectors.OrderByDescending( x => Vector3.DistanceBetween( x.Value, Vector3.Up ) );
+			var normalizedVectors = diceNumbers.ToDictionary(x => x.DiceNumber, x => this.GameObject.WorldPosition - x.WorldPosition);
+			var sortedVectors = normalizedVectors.OrderByDescending(x => Vector3.DistanceBetween(x.Value, Vector3.Up));
 
 			return sortedVectors.First().Key;
 		}

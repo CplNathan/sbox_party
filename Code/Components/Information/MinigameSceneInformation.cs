@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="MinigameSceneInformation.cs" company="Nathan Ford">
+// Copyright (c) Nathan Ford. All rights reserved.
+// </copyright>
 
 namespace SandboxParty.Components.Information
 {

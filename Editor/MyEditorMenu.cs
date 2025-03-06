@@ -1,3 +1,7 @@
+// <copyright file="MyEditorMenu.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 public static class MyEditorMenu
 {
 	[Menu("Editor", "$title/My Menu Option")]
