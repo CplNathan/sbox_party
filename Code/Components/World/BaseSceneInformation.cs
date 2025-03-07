@@ -2,7 +2,7 @@
 // Copyright (c) Nathan Ford. All rights reserved.
 // </copyright>
 
-namespace SandboxParty.Components.Information
+namespace SandboxParty.Components.World
 {
 	public class BaseSceneInformation : SceneInformation
 	{

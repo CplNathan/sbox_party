@@ -5,7 +5,7 @@
 using System;
 using System.Threading.Channels;
 using SandboxParty.Components.Character;
-using SandboxParty.Components.Information;
+using SandboxParty.Components.World;
 
 namespace SandboxParty.Components.State
 {

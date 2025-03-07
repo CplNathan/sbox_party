@@ -8,8 +8,8 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "SandboxParty.Components.Information.BoardSceneInformation",
-          "__guid": "151fa0f5-9f51-4ae4-8470-82ebf49c7224",
+          "__type": "SandboxParty.Components.World.Board.BoardSceneInformation",
+          "__guid": "db5ca515-1005-46cf-a1f8-bf6de1f5611d",
           "Author": null,
           "Changes": "",
           "Description": "",
@@ -21,7 +21,7 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "RespawnPoints": [],
-          "SceneTags": "board",
+          "SceneTags": "",
           "SpawnPoints": [
             {
               "_type": "gameobject",
@@ -2164,8 +2164,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "Metadata": {
-      "Title": "Tokyo",
-      "Tags": "board"
+      "Title": "Tokyo"
     },
     "NavMesh": {
       "Enabled": true,
