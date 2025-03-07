@@ -9,7 +9,7 @@ using GameManager = SandboxParty.Managers.GameManager;
 
 namespace SandboxParty.Components.State
 {
-	public sealed class BoardGameState : BaseGameState<BoardCharacter>, IBoardEvent
+	public sealed class BoardGameState : BaseGameState<BoardCharacter>, IBoardTurnEvent
 	{
 		[Sync(Flags = SyncFlags.FromHost)]
 		public int TurnNumber { get; private set; } = 0;
@@ -24,7 +24,7 @@ namespace SandboxParty.Components.State
 				Log.Warning($"Connected user starting turn {channel.DisplayName}");
 
 				var character = this.Characters[channel.Id];
-				IBoardEvent.Post(x => x.OnTurnStarted(character));
+				IBoardTurnEvent.Post(x => x.OnTurnStarted(character));
 			}
 		}
 
@@ -34,12 +34,12 @@ namespace SandboxParty.Components.State
 			{
 				Log.Warning($"Disconnected user ending turn {channel.DisplayName}");
 
-				IBoardEvent.Post(x => x.OnTurnEnded(this.CurrentTurn));
+				IBoardTurnEvent.Post(x => x.OnTurnEnded(this.CurrentTurn));
 			}
 		}
 
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
-		void IBoardEvent.OnTurnStarted(BoardCharacter character)
+		void IBoardTurnEvent.OnTurnStarted(BoardCharacter character)
 		{
 			if (!this.OnTurnStarted_Validate(character))
 			{
@@ -54,7 +54,7 @@ namespace SandboxParty.Components.State
 		}
 
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
-		void IBoardEvent.OnDestinationReached(BoardCharacter character)
+		void IBoardTurnEvent.OnDestinationReached(BoardCharacter character)
 		{
 			if (!this.OnDestinationReached_Validate(character))
 			{
@@ -66,11 +66,11 @@ namespace SandboxParty.Components.State
 
 			// TODO: Implement OnDestinationReached Handling
 			// Instead make the following call only once the player has confirmed that they want to end their turn or it times out.
-			IBoardEvent.Post(x => x.OnTurnEnded(character));
+			IBoardTurnEvent.Post(x => x.OnTurnEnded(character));
 		}
 
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
-		void IBoardEvent.OnTurnEnded(BoardCharacter character)
+		void IBoardTurnEvent.OnTurnEnded(BoardCharacter character)
 		{
 			if (!this.OnTurnEnded_Validate(character))
 			{
@@ -80,7 +80,14 @@ namespace SandboxParty.Components.State
 
 			Log.Info($"Turn ended for {character.Network.Owner.DisplayName}");
 
-			IBoardEvent.Post(x => x.OnTurnStarted(this.Characters.ElementAt(this.TurnNumber % this.Characters.Count).Value));
+			if ((this.TurnNumber % this.Characters.Count) == 0 && this.TurnNumber > this.Characters.Count)
+			{
+				IBoardRoundEvent.Post(x => x.OnRoundEnded());
+			}
+			else
+			{
+				IBoardTurnEvent.Post(x => x.OnTurnStarted(this.Characters.ElementAt(this.TurnNumber % this.Characters.Count).Value));
+			}
 		}
 
 		protected override GameObject GetPlayerPrefab()
@@ -126,6 +133,11 @@ namespace SandboxParty.Components.State
 			}
 
 			return this.CurrentTurn == character;
+		}
+
+		public void OnRoundEnded()
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

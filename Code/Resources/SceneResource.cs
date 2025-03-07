@@ -9,13 +9,13 @@ namespace SandboxParty.Resources
 	[GameResource("Scene Config", "config", "Config data relating to active scenes")]
 	public partial class SceneResource : GameResource
 	{
-		private static readonly List<SceneResource> BoardList = [];
+		private static readonly List<SceneResource> _boardList = [];
 
-		private static readonly List<SceneResource> MinigameList = [];
+		private static readonly List<SceneResource> _minigameList = [];
 
-		public static IReadOnlyList<SceneResource> Boards => BoardList;
+		public static IReadOnlyList<SceneResource> Boards => _boardList;
 
-		public static IReadOnlyList<SceneResource> Minigames => MinigameList;
+		public static IReadOnlyList<SceneResource> Minigames => _minigameList;
 
 		[ResourceType("scene")]
 		public string Scene { get; set; }
@@ -41,16 +41,16 @@ namespace SandboxParty.Resources
 			switch (this.SceneType)
 			{
 				case SceneType.Board:
-					if (!BoardList.Contains(this))
+					if (!_boardList.Contains(this))
 					{
-						BoardList.Add(this);
+						_boardList.Add(this);
 					}
 
 					break;
 				case SceneType.Minigame:
-					if (!MinigameList.Contains(this))
+					if (!_minigameList.Contains(this))
 					{
-						MinigameList.Add(this);
+						_minigameList.Add(this);
 					}
 
 					break;

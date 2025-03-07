@@ -23,7 +23,7 @@ namespace SandboxParty.Components.Character.Board
 
 		void IBoardCharacterEvent.OnDestinationReached()
 		{
-			IBoardEvent.Post(x => x.OnDestinationReached(this));
+			IBoardTurnEvent.Post(x => x.OnDestinationReached(this));
 		}
 
 		[Rpc.Host(Flags = NetFlags.OwnerOnly)]
@@ -52,7 +52,7 @@ namespace SandboxParty.Components.Character.Board
 				return;
 			}
 
-			IBoardEvent.Post(x => x.OnTurnEnded(this));
+			IBoardTurnEvent.Post(x => x.OnTurnEnded(this));
 		}
 
 		public bool RollDice_Validate()

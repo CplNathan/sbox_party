@@ -6,7 +6,7 @@ using SandboxParty.Components.Character.Board;
 
 namespace SandboxParty.Events
 {
-	public interface IBoardEvent : ISceneEvent<IBoardEvent>
+	public interface IBoardTurnEvent : ISceneEvent<IBoardTurnEvent>
 	{
 		void OnTurnStarted(BoardCharacter character);
 

@@ -3,14 +3,14 @@
 // </copyright>
 
 using SandboxParty.Components.State;
+using SandboxParty.Events;
 using SandboxParty.Resources;
+using static Sandbox.Services.Leaderboards;
 
 namespace SandboxParty.Managers
 {
-	public sealed class GameManager : GameObjectSystem<GameManager>, ISceneStartup, ISceneLoadingEvents
+	public sealed class GameManager : GameObjectSystem<GameManager>, ISceneStartup, ISceneLoadingEvents, IBoardRoundEvent
 	{
-		private readonly Dictionary<Scene, MinigameGameState> minigameStates;
-
 		private readonly SceneLoadOptions lobbyOptions;
 
 		private readonly SceneLoadOptions boardOptions;
@@ -40,8 +40,8 @@ namespace SandboxParty.Managers
 
 			this.minigameOptions = new SceneLoadOptions
 			{
-				IsAdditive = true,
-				DeleteEverything = false,
+				IsAdditive = false,
+				DeleteEverything = true,
 				ShowLoadingScreen = true,
 			};
 
@@ -52,7 +52,7 @@ namespace SandboxParty.Managers
 
 		public BoardGameState BoardState { get; private set; }
 
-		private IReadOnlyDictionary<Scene, MinigameGameState> MinigameStates { get => this.minigameStates; }
+		private MinigameGameState MinigameState { get; set; }
 
 		/// <summary>
 		/// Called on the host to initialize the lobby and load the game.
@@ -86,15 +86,30 @@ namespace SandboxParty.Managers
 			var occlusionComponent = this.WorldCamera.AddComponent<AmbientOcclusion>();
 			occlusionComponent.Intensity = 1;
 
-			this.BoardState = scene.GetComponentInChildren<BoardGameState>();
+			this.BoardState ??= scene.GetComponentInChildren<BoardGameState>();
 			Log.Info($"Synced {this.BoardState}");
+
+			this.MinigameState = scene.GetComponentInChildren<MinigameGameState>();
+			Log.Info($"Synced {this.MinigameState}");
+		}
+
+		void IBoardRoundEvent.OnRoundEnded()
+		{
+			if (!OnRoundEnded_Validate())
+			{
+				Log.Warning($"Failed to validate OnRoundEnded RPC");
+				return;
+			}
+
+			LoadMinigame();
 		}
 
 		private void LoadBoard()
 		{
+			// TODO: Select board
 			var board = SceneResource.Boards[0];
 
-			Log.Info($"Loading {board.SceneType} {board.Scene}");
+			Log.Info($"Loading board {board.SceneType} {board.Scene}");
 			this.boardOptions.SetScene(board.Scene);
 			var sceneLoaded = this.Scene.Load(this.boardOptions);
 
@@ -110,6 +125,34 @@ namespace SandboxParty.Managers
 			{
 				Log.Error($"Failed to load {board.SceneType} {board.Scene}!");
 			}
+		}
+
+		private void LoadMinigame()
+		{
+			// TODO: Select minigame
+			var minigame = SceneResource.Minigames[0];
+
+			Log.Info($"Loading minigame {minigame.SceneType} {minigame.Scene}");
+			this.minigameOptions.SetScene(minigame.Scene);
+			var sceneLoaded = this.Scene.Load(this.minigameOptions);
+
+			if (sceneLoaded)
+			{
+				Log.Info($"Loaded {minigame.SceneType} {minigame.Scene}");
+				var stateObject = this.Scene.CreateObject();
+				this.MinigameState = stateObject.AddComponent<MinigameGameState>();
+				stateObject.NetworkSpawn();
+				Log.Info($"Created {nameof(MinigameGameState)}");
+			}
+			else
+			{
+				Log.Error($"Failed to load {minigame.SceneType} {minigame.Scene}!");
+			}
+		}
+
+		private bool OnRoundEnded_Validate()
+		{
+			return true;
 		}
 	}
 }
