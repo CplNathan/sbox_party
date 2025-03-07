@@ -1,0 +1,14 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/packed.shader"
+
+	ARM "materials/asphalt_pit_lane/asphalt_pit_lane_arm_1k.jpg"
+	Color "materials/asphalt_pit_lane/asphalt_pit_lane_diff_1k.jpg"
+	g_flRoughnessStrength "1.000"
+	Normal "materials/asphalt_pit_lane/asphalt_pit_lane_nor_dx_1k.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

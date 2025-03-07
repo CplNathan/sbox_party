@@ -23,7 +23,8 @@
       ],
       "IsStandaloneOnly": false,
       "Metadata": {
-        "SingleAssetSource": "maps/supermarket_interior.vmap"
+        "SingleAssetSource": "maps/supermarket_interior.vmap",
+        "ParentPackage": "cplnathan.sbox_party"
       }
     }
   }

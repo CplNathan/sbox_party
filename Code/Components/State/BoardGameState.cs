@@ -3,6 +3,8 @@
 // </copyright>
 
 using SandboxParty.Components.Character.Board;
+using SandboxParty.Components.World;
+using SandboxParty.Components.World.Board;
 using SandboxParty.Events;
 using SandboxParty.Resources;
 using GameManager = SandboxParty.Managers.GameManager;
@@ -19,7 +21,7 @@ namespace SandboxParty.Components.State
 
 		protected override void OnConnected(Connection channel)
 		{
-			if (CurrentTurn == default)
+			if (CurrentTurn == default || CurrentTurn.IsValid() == false)
 			{
 				Log.Warning($"Connected user starting turn {channel.DisplayName}");
 
@@ -80,7 +82,7 @@ namespace SandboxParty.Components.State
 
 			Log.Info($"Turn ended for {character.Network.Owner.DisplayName}");
 
-			if ((TurnNumber % Characters.Count) == 0 && TurnNumber > Characters.Count)
+			if ((TurnNumber % Characters.Count) == 0 && TurnNumber - 1 >= Characters.Count)
 			{
 				IBoardRoundEvent.Post(x => x.OnRoundEnded());
 			}
@@ -93,13 +95,21 @@ namespace SandboxParty.Components.State
 		protected override GameObject GetPlayerPrefab()
 			=> SceneResource.GetSceneResource(Scene, SceneResource.Boards).GetPlayerPrefab();
 
+		protected override Vector3 GetSpawnLocation()
+		{
+			return Scene.GetComponentsInChildren<BoardComponent>()
+				.Where(component => component.IsSpawn).First()
+				.GameObject
+				.WorldPosition;
+		}
+
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
 
 			var cameraObject = GameManager.Current.WorldCamera.GameObject;
 			var cameraFocus = CurrentTurn?.WorldPosition ?? Vector3.Zero;
-			var newPosition = cameraFocus + new Vector3(-100, 0, 150);
+			var newPosition = cameraFocus + new Vector3(-150, 0, 150);
 			var newRotation = Rotation.LookAt(cameraFocus + new Vector3(0, 0, 64) - cameraObject.WorldPosition);
 			cameraObject.WorldPosition = Vector3.Lerp(cameraObject.WorldPosition, newPosition, Time.Delta * 5f);
 			cameraObject.WorldRotation = Rotation.Slerp(cameraObject.WorldRotation, newRotation, Time.Delta * 2.5f);

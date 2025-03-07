@@ -12,6 +12,11 @@ namespace SandboxParty.Components.State
 		protected override GameObject GetPlayerPrefab()
 			=> SceneResource.GetSceneResource(Scene, SceneResource.Minigames).GetPlayerPrefab();
 
+		protected override Vector3 GetSpawnLocation()
+		{
+			throw new System.NotImplementedException();
+		}
+
 		protected override void OnConnected(Connection channel)
 		{
 			throw new System.NotImplementedException();

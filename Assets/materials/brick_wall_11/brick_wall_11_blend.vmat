@@ -1,0 +1,18 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "materials/shaders/height blend.shader"
+
+	BlendHeight "materials/brown_mud_03/brown_mud_03_disp_1k.jpg"
+	BlendHeight_0 "materials/peeling_painted_wall/peeling_painted_wall_disp_1k.jpg"
+	BottomARM "materials/painted_plaster_wall/painted_plaster_wall_arm_1k.jpg"
+	BottomColor "materials/painted_plaster_wall/painted_plaster_wall_diff_1k.jpg"
+	BottomNormal "materials/painted_plaster_wall/painted_plaster_wall_nor_dx_1k.jpg"
+	TopARM "materials/brick_wall_11/brick_wall_11_arm_1k.jpg"
+	TopColor "materials/brick_wall_11/brick_wall_11_diff_1k.jpg"
+	TopNormal "materials/brick_wall_11/brick_wall_11_nor_dx_1k.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

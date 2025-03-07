@@ -10,6 +10,9 @@ namespace SandboxParty.Components.World.Board
 		[Property]
 		public GameObject[] NextComponent { get; set; }
 
+		[Property]
+		public bool IsSpawn { get; set; }
+
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();

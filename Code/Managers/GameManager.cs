@@ -81,7 +81,7 @@ namespace SandboxParty.Managers
 			WorldCamera = cameraObject.AddComponent<CameraComponent>();
 			WorldCamera.IsMainCamera = true;
 			WorldCamera.FovAxis = CameraComponent.Axis.Vertical;
-			WorldCamera.FieldOfView = 90;
+			WorldCamera.FieldOfView = 75;
 
 			var occlusionComponent = WorldCamera.AddComponent<AmbientOcclusion>();
 			occlusionComponent.Intensity = 1;

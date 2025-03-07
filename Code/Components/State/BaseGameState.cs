@@ -3,7 +3,6 @@
 // </copyright>
 
 using System;
-using System.Threading.Channels;
 using SandboxParty.Components.Character;
 using SandboxParty.Components.World;
 
@@ -49,7 +48,8 @@ namespace SandboxParty.Components.State
 
 			Log.Info($"Spawning new character for {displayName}");
 
-			var player = GetPlayerPrefab().Clone(GetSpawnTransform(), name: displayName);
+			var player = GetPlayerPrefab().Clone(GetSpawnLocation(), Rotation.FromYaw(0));
+			player.Name = displayName;
 			player.Network.SetOrphanedMode(NetworkOrphaned.Host);
 			player.NetworkSpawn(channel);
 
@@ -72,9 +72,6 @@ namespace SandboxParty.Components.State
 
 		protected abstract GameObject GetPlayerPrefab();
 
-		protected Transform GetSpawnTransform()
-		{
-			return BaseSceneInformation.GetSpawnPoints(Scene)[0].WorldTransform.WithScale(1).WithRotation(Rotation.FromYaw(0));
-		}
+		protected abstract Vector3 GetSpawnLocation();
 	}
 }

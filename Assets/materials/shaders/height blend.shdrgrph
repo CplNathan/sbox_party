@@ -1,0 +1,413 @@
+{
+  "IsSubgraph": false,
+  "Path": "materials/shaders/height blend.shdrgrph",
+  "Model": "models/dev/plane.vmdl",
+  "Title": null,
+  "Description": "",
+  "Category": null,
+  "Icon": null,
+  "AddToNodeLibrary": false,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "EnableShadows": true,
+    "ShowSkybox": true,
+    "BackgroundColor": "0,0,0,1",
+    "Tint": "1,1,1,1"
+  },
+  "nodes": [
+    {
+      "_class": "Result",
+      "DefaultOpacity": 1,
+      "DefaultRoughness": 1,
+      "DefaultMetalness": 0,
+      "DefaultAmbientOcclusion": 1,
+      "Identifier": "0",
+      "Position": "420,-96",
+      "HandleOffsets": {},
+      "Albedo": {
+        "Identifier": "1",
+        "Output": "Result"
+      },
+      "Normal": {
+        "Identifier": "10",
+        "Output": "Result"
+      },
+      "Roughness": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "1",
+      "Position": "144,-96",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "12",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brick_wall_11/brick_wall_11_diff_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Top Color",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "2",
+      "Position": "-1056,-552",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/asphalt_02/asphalt_02_disp_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Blend Height",
+        "Default": "1,1,1,1",
+        "Extension": "Mask",
+        "ShowExtension": true
+      },
+      "Identifier": "3",
+      "Position": "-984,1524",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "17",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/painted_plaster_wall/painted_plaster_wall_diff_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Bottom Color",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "4",
+      "Position": "-1056,-348",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brick_wall_11/brick_wall_11_arm_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Top ARM",
+        "Default": "1,1,1,1",
+        "ShowExtension": true
+      },
+      "Identifier": "5",
+      "Position": "-1056,-144",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "6",
+      "Position": "144,24",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "5",
+        "Output": "G"
+      },
+      "B": {
+        "Identifier": "8",
+        "Output": "G"
+      },
+      "C": {
+        "Identifier": "12",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "OneMinus",
+      "Identifier": "7",
+      "Position": "-756,1752",
+      "HandleOffsets": {},
+      "In": {
+        "Identifier": "23",
+        "Output": "R"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/painted_plaster_wall/painted_plaster_wall_arm_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Bottom ARM",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "8",
+      "Position": "-1056,60",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/painted_plaster_wall/painted_plaster_wall_nor_dx_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Bottom Normal",
+        "Default": "1,1,1,1",
+        "Extension": "Normal",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "9",
+      "Position": "-1056,468",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "10",
+      "Position": "144,144",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "9",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "12",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/brick_wall_11/brick_wall_11_nor_dx_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Top Normal",
+        "Default": "1,1,1,1",
+        "Extension": "Normal",
+        "ShowExtension": true,
+        "SrgbRead": true
+      },
+      "Identifier": "11",
+      "Position": "-1056,264",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Saturate",
+      "Identifier": "12",
+      "Position": "-192,624",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "14",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "2,2",
+      "Identifier": "13",
+      "Position": "-1680,132",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Fraction": 0.5,
+      "Identifier": "14",
+      "Position": "-276,1332",
+      "HandleOffsets": {},
+      "B": {
+        "Identifier": "15",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "16",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Lerp",
+      "DefaultA": 0,
+      "DefaultB": 0,
+      "Fraction": 0.5,
+      "Identifier": "15",
+      "Position": "-276,1452",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "22",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "18",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "VoronoiNoise",
+      "AngleOffset": 3.1415925,
+      "CellDensity": 0.35670826,
+      "Worley": true,
+      "Identifier": "16",
+      "Position": "-600,1332",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "24",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "0.5,0.5",
+      "Identifier": "17",
+      "Position": "-1164,1524",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Branch",
+      "Name": "",
+      "IsAttribute": true,
+      "Operator": "GreaterThan",
+      "Enabled": false,
+      "UI": {},
+      "Identifier": "18",
+      "Position": "-600,1500",
+      "HandleOffsets": {},
+      "True": {
+        "Identifier": "20",
+        "Output": "Result"
+      },
+      "False": {
+        "Identifier": "21",
+        "Output": "Result"
+      },
+      "A": {
+        "Identifier": "3",
+        "Output": "R"
+      },
+      "B": {
+        "Identifier": "19",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0.5727221,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "19",
+      "Position": "-804,1596",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 1,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "20",
+      "Position": "-804,1476",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float",
+      "Min": 0,
+      "Max": 1,
+      "Value": 0,
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "21",
+      "Position": "-804,1536",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "22",
+      "Position": "-516,1752",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "7",
+        "Output": "Out"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/leafy_grass/leafy_grass_disp_1k.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Blend Height",
+        "Default": "1,1,1,1",
+        "Extension": "Mask",
+        "ShowExtension": true
+      },
+      "Identifier": "23",
+      "Position": "-984,1728",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "24",
+      "Position": "-804,1332",
+      "HandleOffsets": {}
+    }
+  ]
+}

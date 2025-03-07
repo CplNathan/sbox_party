@@ -2,42 +2,9 @@
   "__guid": "9ee57130-2179-4346-b139-7be4580788b0",
   "GameObjects": [
     {
-      "__guid": "a7a9b1ae-a5eb-407e-bc5d-a0a0c64cb3fe",
-      "Flags": 0,
-      "Name": "Scene Information",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "SandboxParty.Components.World.Board.BoardSceneInformation",
-          "__guid": "db5ca515-1005-46cf-a1f8-bf6de1f5611d",
-          "Author": null,
-          "Changes": "",
-          "Description": "",
-          "Group": null,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RespawnPoints": [],
-          "SceneTags": "",
-          "SpawnPoints": [
-            {
-              "_type": "gameobject",
-              "go": "b243997d-1635-497d-b002-1062d566aac0"
-            }
-          ],
-          "Title": "Tokyo",
-          "Version": null
-        }
-      ]
-    },
-    {
       "__guid": "d22b314a-10f4-4325-80a8-7300396e7f59",
       "Flags": 0,
       "Name": "Board",
-      "Position": "0.0000002634708,0,2.5",
       "Rotation": "0,-1,0,-0.00000004371139",
       "Enabled": true,
       "Children": [
@@ -45,7 +12,7 @@
           "__guid": "b243997d-1635-497d-b002-1062d566aac0",
           "Flags": 0,
           "Name": "component_1",
-          "Position": "720,-448,-0.0000629444",
+          "Position": "720,-448,-1.250044",
           "Enabled": true,
           "Components": [
             {
@@ -74,6 +41,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "f8837d33-8e12-4531-b446-74612c340ba5",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -93,7 +61,7 @@
           "__guid": "1893ca57-4694-4a57-abb1-af1961940b30",
           "Flags": 0,
           "Name": "component_2",
-          "Position": "-144,-448,-0.000001000979",
+          "Position": "-144,-448,-1.249982",
           "Enabled": true,
           "Components": [
             {
@@ -122,6 +90,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "244a1e4b-4f0e-4a79-afa5-53c55106b203",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -145,7 +114,7 @@
           "__guid": "d8172028-939e-4b3b-b22f-f008404eab2d",
           "Flags": 0,
           "Name": "component_2",
-          "Position": "398,-450,-0.00004886097",
+          "Position": "398,-450,-1.25003",
           "Enabled": true,
           "Components": [
             {
@@ -174,6 +143,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "6ccc0263-eab1-496e-b9ea-4e70cae79b1b",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -197,7 +167,7 @@
           "__guid": "740dcc66-623c-4380-a8f7-fdaa21115e83",
           "Flags": 0,
           "Name": "component_2_4",
-          "Position": "46,-450,-0.00001808814",
+          "Position": "46,-450,-1.249999",
           "Enabled": true,
           "Components": [
             {
@@ -226,6 +196,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "a3b29571-d9b1-4f97-a665-195d3b29bc49",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -245,7 +216,7 @@
           "__guid": "0e21e69a-3a04-4616-a733-751e58627084",
           "Flags": 0,
           "Name": "component_2_a1",
-          "Position": "350,-322,-0.00004466467",
+          "Position": "350,-322,-1.250026",
           "Enabled": true,
           "Components": [
             {
@@ -274,6 +245,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "d9fa41cb-40b2-49cb-91bd-8e2b982d1060",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -293,7 +265,7 @@
           "__guid": "733443ec-8460-4925-b99d-36edebfdb817",
           "Flags": 0,
           "Name": "component_2_b3",
-          "Position": "94,-578,-0.00002228444",
+          "Position": "94,-578,-1.250003",
           "Enabled": true,
           "Components": [
             {
@@ -322,6 +294,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "99be31a6-ba7f-4533-b938-951cdc1b8d4d",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -341,7 +314,7 @@
           "__guid": "51a88593-9dfc-40ed-860f-b9c80b3a8688",
           "Flags": 0,
           "Name": "component_2_a3",
-          "Position": "94,-322,-0.00002228444",
+          "Position": "94,-322,-1.250003",
           "Enabled": true,
           "Components": [
             {
@@ -370,6 +343,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "913bc8b1-ad20-46a6-a4b0-127251f305a7",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -389,7 +363,7 @@
           "__guid": "de7d4786-6397-4122-9010-0268f65e1b4e",
           "Flags": 0,
           "Name": "component_2_b2",
-          "Position": "222,-626,-0.00003347455",
+          "Position": "222,-626,-1.250014",
           "Enabled": true,
           "Components": [
             {
@@ -418,6 +392,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "b84e709b-32b0-4cc7-a1d4-52ef31f9ba87",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -437,7 +412,7 @@
           "__guid": "9de80c61-9c06-4c0a-8c9c-2e3281defec2",
           "Flags": 0,
           "Name": "component_2_a2",
-          "Position": "222,-274,-0.00003347455",
+          "Position": "222,-274,-1.250014",
           "Enabled": true,
           "Components": [
             {
@@ -466,6 +441,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "d4536d17-6cc4-44ba-bb17-f9a591eef3b1",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -485,7 +461,7 @@
           "__guid": "dfe4f5c5-2fb5-4f5e-b60f-6e17ef0aa99f",
           "Flags": 0,
           "Name": "component_2_b1",
-          "Position": "350,-578,-0.00004466467",
+          "Position": "350,-578,-1.250026",
           "Enabled": true,
           "Components": [
             {
@@ -514,6 +490,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "9bf738a2-efb6-4c7c-9efe-b65a86a29df8",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -533,7 +510,7 @@
           "__guid": "fe06d305-6f73-43aa-9545-fc3bcb1d8c2f",
           "Flags": 0,
           "Name": "component_3_b",
-          "Position": "-320,-318,-0.0000003965215",
+          "Position": "-320,-318,-1.249982",
           "Enabled": true,
           "Components": [
             {
@@ -562,6 +539,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "3f574a5d-181a-43c3-a997-1725f016d01b",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -581,7 +559,7 @@
           "__guid": "6f52a8c9-6a40-4d6b-8571-c6e4e6cf9d9b",
           "Flags": 0,
           "Name": "component_4",
-          "Position": "-576,-318,0.0000141159",
+          "Position": "-576,-318,-1.249967",
           "Enabled": true,
           "Components": [
             {
@@ -610,6 +588,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "25d9246d-0268-40e1-b5a8-927017ff0f53",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -629,7 +608,7 @@
           "__guid": "3b2851ce-265b-4d08-ad32-8ff243488dbd",
           "Flags": 0,
           "Name": "component_4",
-          "Position": "-576,-150,0.0000141159",
+          "Position": "-576,-150,-1.249967",
           "Enabled": true,
           "Components": [
             {
@@ -658,6 +637,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "52ce94c4-5315-464a-af9e-686cb8d91b52",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -677,7 +657,7 @@
           "__guid": "e3ce3cef-04d5-4950-b954-9903db39698d",
           "Flags": 0,
           "Name": "component_5",
-          "Position": "-576,66,32.50005",
+          "Position": "-576,66,31.25006",
           "Enabled": true,
           "Components": [
             {
@@ -706,6 +686,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "fad20332-7b11-45ac-993d-7436695b2858",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -725,7 +706,7 @@
           "__guid": "0157ab07-8f89-4bc3-9841-e47a986e8354",
           "Flags": 0,
           "Name": "component_5",
-          "Position": "-402,66,32.50003",
+          "Position": "-402,66,31.25005",
           "Enabled": true,
           "Components": [
             {
@@ -754,6 +735,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "f8189f54-b139-4e57-8b6c-c75c9d09b318",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -773,7 +755,7 @@
           "__guid": "694ff195-574f-4a40-ac66-5538b00ca8bc",
           "Flags": 0,
           "Name": "component_5",
-          "Position": "-576,-96,32.50005",
+          "Position": "-576,-96,31.25006",
           "Enabled": true,
           "Components": [
             {
@@ -802,6 +784,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "673c6bf2-c2be-4347-b29d-270714d0b71e",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -821,7 +804,7 @@
           "__guid": "9fd015e5-041b-44cc-a663-7669f0265a92",
           "Flags": 0,
           "Name": "component_6",
-          "Position": "720,66,-0.00006246756",
+          "Position": "720,66,-1.250043",
           "Enabled": true,
           "Components": [
             {
@@ -850,6 +833,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "7db5c154-a290-4303-a937-211954abe1aa",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -869,7 +853,7 @@
           "__guid": "c2f09f1b-3c4e-4dba-998e-f9577b2a15c9",
           "Flags": 0,
           "Name": "component_6",
-          "Position": "-114,66,0.00001044303",
+          "Position": "-114,66,-1.24997",
           "Enabled": true,
           "Components": [
             {
@@ -898,6 +882,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "4f5df6ec-0281-40c8-af6a-a105db07f7a4",
+              "IsSpawn": true,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -917,7 +902,7 @@
           "__guid": "41556662-81fd-4bcd-9b67-952651053385",
           "Flags": 0,
           "Name": "component_6",
-          "Position": "72,66,-0.000005817603",
+          "Position": "72,66,-1.249987",
           "Enabled": true,
           "Components": [
             {
@@ -946,6 +931,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "c2aaaa33-4147-4254-bd42-3f644c8896f6",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -969,7 +955,7 @@
           "__guid": "a6b092f4-fa07-46bf-bada-df9aadd6605c",
           "Flags": 0,
           "Name": "component_6",
-          "Position": "72,222,-0.000005817603",
+          "Position": "72,222,-1.249987",
           "Enabled": true,
           "Components": [
             {
@@ -998,6 +984,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "897482f4-50ff-4183-a927-1130a9e314c5",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -1017,7 +1004,7 @@
           "__guid": "62750e18-74de-4ba1-ad5b-9087f97e2f74",
           "Flags": 0,
           "Name": "component_3a",
-          "Position": "-144,-318,-0.00001006088",
+          "Position": "-144,-318,-1.249991",
           "Enabled": true,
           "Components": [
             {
@@ -1046,6 +1033,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "78664c1f-5a1d-46bf-a97b-19ae2184cf27",
+              "IsSpawn": false,
               "NextComponent": [
                 {
                   "_type": "gameobject",
@@ -1917,6 +1905,67 @@
           "OnComponentUpdate": null
         }
       ]
+    },
+    {
+      "__guid": "db144471-d0fa-4475-b11c-97072ba62a70",
+      "Flags": 0,
+      "Name": "Plane",
+      "Position": "-434.8975,174,48",
+      "Scale": "2,2,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "bb27f43a-360e-4fa8-94ed-f9536942c620",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/brick_wall_11/brick_wall_11_blend.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "fcb67e9b-25a7-488b-b08b-259185ecb095",
+          "Flags": 0,
+          "Name": "Point Light",
+          "Position": "0,0,30",
+          "Tags": "light_point,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.PointLight",
+              "__guid": "cd46fbec-1bd7-455b-874d-c630ddae061d",
+              "Attenuation": 1,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.91373,0.98039,1,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Radius": 400,
+              "Shadows": true
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1928,9 +1977,7 @@
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
-    "Metadata": {
-      "Title": "Tokyo"
-    },
+    "Metadata": {},
     "NavMesh": {
       "Enabled": true,
       "IncludeStaticBodies": true,
@@ -1945,7 +1992,7 @@
     }
   },
   "ResourceVersion": 2,
-  "Title": "Tokyo",
+  "Title": null,
   "Description": null,
   "__references": [
     "facepunch.beech_bush_medium#60671",
