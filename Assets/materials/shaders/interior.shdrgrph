@@ -27,11 +27,11 @@
       "Position": "3180,840",
       "HandleOffsets": {},
       "Albedo": {
-        "Identifier": "11",
+        "Identifier": "10",
         "Output": "Result"
       },
       "Normal": {
-        "Identifier": "20",
+        "Identifier": "19",
         "Output": "Result"
       },
       "Roughness": {
@@ -39,7 +39,7 @@
         "Output": "Result"
       },
       "Metalness": {
-        "Identifier": "24",
+        "Identifier": "23",
         "Output": "Result"
       }
     },
@@ -52,7 +52,7 @@
       "Position": "2832,1080",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "8",
+        "Identifier": "7",
         "Output": "Result"
       },
       "B": {
@@ -60,7 +60,7 @@
         "Output": "G"
       },
       "C": {
-        "Identifier": "17",
+        "Identifier": "16",
         "Output": "Result"
       }
     },
@@ -79,15 +79,9 @@
       "Position": "2208,420",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "13",
+        "Identifier": "12",
         "Output": "Result"
       }
-    },
-    {
-      "_class": "Depth",
-      "Identifier": "3",
-      "Position": "1608,828",
-      "HandleOffsets": {}
     },
     {
       "_class": "TextureCube",
@@ -99,32 +93,32 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "4",
+      "Identifier": "3",
       "Position": "1344,504",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "23",
+        "Identifier": "22",
         "Output": "Cube UV"
       }
     },
     {
       "_class": "Fresnel",
       "DefaultPower": 2,
-      "Identifier": "5",
+      "Identifier": "4",
       "Position": "1188,1008",
       "HandleOffsets": {},
       "Normal": {
-        "Identifier": "10",
+        "Identifier": "9",
         "Output": "Result"
       }
     },
     {
       "_class": "OneMinus",
-      "Identifier": "6",
+      "Identifier": "5",
       "Position": "1320,1128",
       "HandleOffsets": {},
       "In": {
-        "Identifier": "5",
+        "Identifier": "4",
         "Output": "Result"
       }
     },
@@ -132,11 +126,11 @@
       "_class": "Multiply",
       "DefaultA": 0,
       "DefaultB": 0.2,
-      "Identifier": "7",
+      "Identifier": "6",
       "Position": "1632,660",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "4",
+        "Identifier": "3",
         "Output": "Result"
       }
     },
@@ -145,11 +139,11 @@
       "DefaultA": 0,
       "DefaultB": 0.05,
       "Fraction": 0.5,
-      "Identifier": "8",
+      "Identifier": "7",
       "Position": "1464,1080",
       "HandleOffsets": {},
       "C": {
-        "Identifier": "6",
+        "Identifier": "5",
         "Output": "Out"
       }
     },
@@ -158,25 +152,25 @@
       "DefaultA": 0,
       "DefaultB": 0.25,
       "Fraction": 0.5,
-      "Identifier": "9",
+      "Identifier": "8",
       "Position": "2208,840",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "4",
+        "Identifier": "3",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "7",
+        "Identifier": "6",
         "Output": "Result"
       },
       "C": {
-        "Identifier": "5",
+        "Identifier": "4",
         "Output": "Result"
       }
     },
     {
       "_class": "WorldNormal",
-      "Identifier": "10",
+      "Identifier": "9",
       "Position": "1008,1008",
       "HandleOffsets": {}
     },
@@ -185,19 +179,19 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "11",
+      "Identifier": "10",
       "Position": "2832,840",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "9",
+        "Identifier": "8",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "12",
+        "Identifier": "11",
         "Output": "Result"
       },
       "C": {
-        "Identifier": "17",
+        "Identifier": "16",
         "Output": "Result"
       }
     },
@@ -211,11 +205,11 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "12",
+      "Identifier": "11",
       "Position": "2208,228",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "13",
+        "Identifier": "12",
         "Output": "Result"
       }
     },
@@ -223,17 +217,17 @@
       "_class": "TextureCoord",
       "UseSecondaryCoord": false,
       "Tiling": "2,2",
-      "Identifier": "13",
+      "Identifier": "12",
       "Position": "1320,1344",
       "HandleOffsets": {}
     },
     {
       "_class": "SplitVector",
-      "Identifier": "14",
+      "Identifier": "13",
       "Position": "1512,1548",
       "HandleOffsets": {},
       "Input": {
-        "Identifier": "13",
+        "Identifier": "12",
         "Output": "Result"
       }
     },
@@ -241,11 +235,11 @@
       "_class": "Power",
       "DefaultA": 1,
       "DefaultB": 0.3,
-      "Identifier": "15",
+      "Identifier": "14",
       "Position": "2148,1368",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "14",
+        "Identifier": "13",
         "Output": "Y"
       }
     },
@@ -257,7 +251,7 @@
       "Name": "",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "16",
+      "Identifier": "15",
       "Position": "2280,1260",
       "HandleOffsets": {}
     },
@@ -268,35 +262,35 @@
       "Operator": "GreaterThan",
       "Enabled": false,
       "UI": {},
-      "Identifier": "17",
+      "Identifier": "16",
       "Position": "2484,1320",
       "HandleOffsets": {},
       "True": {
-        "Identifier": "16",
-        "Output": "Result"
-      },
-      "False": {
-        "Identifier": "19",
-        "Output": "Result"
-      },
-      "A": {
         "Identifier": "15",
         "Output": "Result"
       },
-      "B": {
+      "False": {
         "Identifier": "18",
+        "Output": "Result"
+      },
+      "A": {
+        "Identifier": "14",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "17",
         "Output": "Result"
       }
     },
     {
       "_class": "Float",
-      "Min": 0,
+      "Min": -1,
       "Max": 1,
       "Value": 0.59875226,
       "Name": "Overlay Offset",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "18",
+      "Identifier": "17",
       "Position": "2280,1512",
       "HandleOffsets": {}
     },
@@ -308,7 +302,7 @@
       "Name": "",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "19",
+      "Identifier": "18",
       "Position": "2280,1320",
       "HandleOffsets": {}
     },
@@ -317,19 +311,19 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "20",
+      "Identifier": "19",
       "Position": "2832,960",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "22",
-        "Output": "Result"
-      },
-      "B": {
         "Identifier": "21",
         "Output": "Result"
       },
+      "B": {
+        "Identifier": "20",
+        "Output": "Result"
+      },
       "C": {
-        "Identifier": "17",
+        "Identifier": "16",
         "Output": "Result"
       }
     },
@@ -344,11 +338,11 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "21",
+      "Identifier": "20",
       "Position": "2208,612",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "13",
+        "Identifier": "12",
         "Output": "Result"
       }
     },
@@ -360,7 +354,7 @@
       "Name": "",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "22",
+      "Identifier": "21",
       "Position": "2208,960",
       "HandleOffsets": {}
     },
@@ -370,7 +364,7 @@
       "DefaultValues": {
         "Tiling": 1
       },
-      "Identifier": "23",
+      "Identifier": "22",
       "Position": "1164,504",
       "HandleOffsets": {}
     },
@@ -379,7 +373,7 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "24",
+      "Identifier": "23",
       "Position": "2832,1200",
       "HandleOffsets": {},
       "B": {
@@ -387,7 +381,7 @@
         "Output": "B"
       },
       "C": {
-        "Identifier": "17",
+        "Identifier": "16",
         "Output": "Result"
       }
     },
@@ -396,7 +390,7 @@
       "DefaultA": 1,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "25",
+      "Identifier": "24",
       "Position": "2832,1320",
       "HandleOffsets": {},
       "B": {
@@ -404,7 +398,7 @@
         "Output": "R"
       },
       "C": {
-        "Identifier": "17",
+        "Identifier": "16",
         "Output": "Result"
       }
     }

@@ -11,6 +11,8 @@
       "Resources": null,
       "PackageReferences": [],
       "EditorReferences": [
+        "creation.rollerdoorsmall1#19544",
+        "creation.rollerdoortiny1#19546",
         "facepunch.aircon_mount#50051",
         "facepunch.aircon_unit_large_64x64_a#33649",
         "facepunch.aircon_unit_large_64x64_b#33651",
@@ -27,14 +29,13 @@
         "facepunch.cctv_globe#33660",
         "facepunch.corrugated_wall_a_128#29159",
         "facepunch.dirtpile_strt_02#37655",
-        "facepunch.dumpster_dev#58153",
         "facepunch.gutter_roof_pipe_a#60918",
         "facepunch.metal_fences_gate_small#33553",
+        "facepunch.old_window#29068",
         "facepunch.plywood_stack#61842",
         "facepunch.railing#28892",
         "facepunch.roof_vent_1#34192",
         "facepunch.roof_vent_5#34894",
-        "facepunch.satellite_dish#28934",
         "facepunch.sewer_grid_a#33676",
         "facepunch.tallgrass_a#29065",
         "facepunch.tallgrass_b#29066",
@@ -45,12 +46,15 @@
         "japancitymodels.entrance_01#31997",
         "japancitymodels.entrance_02#31998",
         "japancitymodels.entrance_03#31999",
+        "japancitymodels.sign_03#32025",
+        "japancitymodels.sign_08#32028",
         "rust.electrical_box_e#25171",
         "tfassets.awning002#22714"
       ],
       "IsStandaloneOnly": false,
       "Metadata": {
-        "SingleAssetSource": "maps/tokyo.vmap"
+        "SingleAssetSource": "maps/tokyo.vmap",
+        "ParentPackage": "cplnathan.sbox_party"
       }
     }
   }

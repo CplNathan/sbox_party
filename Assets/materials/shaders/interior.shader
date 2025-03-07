@@ -83,7 +83,7 @@ PS
 	Texture2D g_tOverlapARM < Channel( RGBA, Box( OverlapARM ), Srgb ); OutputFormat( DXT5 ); SrgbRead( True ); >;
 	TextureAttribute( LightSim_DiffuseAlbedoTexture, g_tOverlay )
 	TextureAttribute( RepresentativeTexture, g_tOverlay )
-	float g_flOverlayOffset < UiGroup( ",0/,0/0" ); Default1( 0.59875226 ); Range1( 0, 1 ); >;
+	float g_flOverlayOffset < UiGroup( ",0/,0/0" ); Default1( 0.59875226 ); Range1( -1, 1 ); >;
 	
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{

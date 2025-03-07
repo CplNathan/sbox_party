@@ -1,7 +1,7 @@
 {
   "Title": "sbox Party!",
   "Type": "game",
-  "Org": "local",
+  "Org": "cplnathan",
   "Ident": "sbox_party",
   "Schema": 1,
   "IncludeSourceFiles": false,
@@ -36,6 +36,8 @@
       "AssemblyReferences": [],
       "IgnoreFolders": [],
       "DistinctAssemblyReferences": []
-    }
+    },
+    "DedicatedServerStartupScene": "scenes/start.scene",
+    "StartupScene": "scenes/start.scene"
   }
 }
