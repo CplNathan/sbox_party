@@ -29,25 +29,25 @@ namespace SandboxParty.Components.Character.Board
 		[Rpc.Host(Flags = NetFlags.OwnerOnly)]
 		public void RollDice()
 		{
-			if (!this.RollDice_Validate())
+			if (!RollDice_Validate())
 			{
 				return;
 			}
 
-			Vector3 forwardVector = this.AnimationHelper.Target.WorldRotation.Forward;
+			Vector3 forwardVector = AnimationHelper.Target.WorldRotation.Forward;
 			Vector3 upVector = Vector3.Up;
-			Vector3 vector = this.GameObject.WorldPosition + (forwardVector * 50) + (upVector * 25);
+			Vector3 vector = GameObject.WorldPosition + (forwardVector * 50) + (upVector * 25);
 
-			this.Dice.RollDice(vector).ContinueWith(newRoll =>
+			Dice.RollDice(vector).ContinueWith(newRoll =>
 			{
-				this.MovementHelper.Steps = newRoll.Result;
+				MovementHelper.Steps += newRoll.Result;
 			});
 		}
 
 		[Rpc.Host(Flags = NetFlags.OwnerOnly)]
 		public void EndTurn()
 		{
-			if (!this.EndTurn_Validate())
+			if (!EndTurn_Validate())
 			{
 				return;
 			}
@@ -57,50 +57,50 @@ namespace SandboxParty.Components.Character.Board
 
 		public bool RollDice_Validate()
 		{
-			return this.IsOurTurn;
+			return IsOurTurn;
 		}
 
 		public bool EndTurn_Validate()
 		{
-			return this.IsOurTurn;
+			return IsOurTurn;
 		}
 
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
 
-			this.UpdateAnimations();
-			this.UpdateLocation();
-			this.UpdateRotation();
+			UpdateAnimations();
+			UpdateLocation();
+			UpdateRotation();
 
-			if (this.IsProxy)
+			if (IsProxy)
 			{
 				return;
 			}
 
-			Gizmo.Draw.ScreenText($"You rolled {this.Dice.LastRoll}", new Vector2(50, 50));
+			Gizmo.Draw.ScreenText($"You rolled {Dice.LastRoll}", new Vector2(50, 50));
 
-			if (Input.Pressed("jump") && this.RollDice_Validate())
+			if (Input.Pressed("jump") && RollDice_Validate())
 			{
-				this.RollDice();
+				RollDice();
 			}
 		}
 
 		private void UpdateAnimations()
 		{
-			this.AnimationHelper.WithVelocity(this.MovementHelper.Velocity);
-			this.AnimationHelper.WithWishVelocity(this.MovementHelper.WishVelocity);
-			this.AnimationHelper.Sitting = this.IsOurTurn ? CitizenAnimationHelper.SittingStyle.None : CitizenAnimationHelper.SittingStyle.Floor;
+			AnimationHelper.WithVelocity(MovementHelper.Velocity);
+			AnimationHelper.WithWishVelocity(MovementHelper.WishVelocity);
+			AnimationHelper.Sitting = IsOurTurn ? CitizenAnimationHelper.SittingStyle.None : CitizenAnimationHelper.SittingStyle.Floor;
 		}
 
 		private void UpdateLocation()
 		{
-			this.GameObject.WorldPosition = this.MovementHelper.DesiredLocation;
+			GameObject.WorldPosition = MovementHelper.DesiredLocation;
 		}
 
 		private void UpdateRotation()
 		{
-			this.GameObject.WorldRotation = Rotation.Slerp(this.GameObject.WorldRotation, this.MovementHelper.DesiredRotation, Time.Delta * 3f);
+			GameObject.WorldRotation = Rotation.Slerp(GameObject.WorldRotation, MovementHelper.DesiredRotation, Time.Delta * 3f);
 		}
 	}
 }

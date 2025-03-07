@@ -629,7 +629,7 @@
           "__guid": "3b2851ce-265b-4d08-ad32-8ff243488dbd",
           "Flags": 0,
           "Name": "component_4",
-          "Position": "-576,-144,0.0000141159",
+          "Position": "-576,-150,0.0000141159",
           "Enabled": true,
           "Components": [
             {
@@ -773,7 +773,7 @@
           "__guid": "694ff195-574f-4a40-ac66-5538b00ca8bc",
           "Flags": 0,
           "Name": "component_5",
-          "Position": "-576,-90,32.50005",
+          "Position": "-576,-96,32.50005",
           "Enabled": true,
           "Components": [
             {
@@ -2134,7 +2134,7 @@
       "__guid": "fc4d4bcc-107e-430e-bff9-4eab323f3b28",
       "Flags": 0,
       "Name": "Navigation Hint",
-      "Position": "576,-144,0",
+      "Position": "576,-150,0",
       "Enabled": true,
       "Components": [
         {
@@ -2172,7 +2172,7 @@
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
       "AgentHeight": 90,
-      "AgentRadius": 24,
+      "AgentRadius": 6,
       "AgentStepSize": 2,
       "AgentMaxSlope": 45,
       "ExcludedBodies": "",

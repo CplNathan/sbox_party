@@ -10,7 +10,7 @@ namespace SandboxParty.Components.State
 	public sealed class MinigameGameState : BaseGameState<BaseCharacter>
 	{
 		protected override GameObject GetPlayerPrefab()
-			=> SceneResource.GetSceneResource(this.Scene, SceneResource.Minigames).GetPlayerPrefab();
+			=> SceneResource.GetSceneResource(Scene, SceneResource.Minigames).GetPlayerPrefab();
 
 		protected override void OnConnected(Connection channel)
 		{

@@ -25,27 +25,27 @@ namespace SandboxParty.Managers
 		public GameManager(Scene scene)
 			: base(scene)
 		{
-			this.lobbyOptions = new SceneLoadOptions
+			lobbyOptions = new SceneLoadOptions
 			{
 				IsAdditive = false,
 				DeleteEverything = true,
 			};
 
-			this.boardOptions = new SceneLoadOptions
+			boardOptions = new SceneLoadOptions
 			{
 				IsAdditive = false,
 				DeleteEverything = false,
 				ShowLoadingScreen = true,
 			};
 
-			this.minigameOptions = new SceneLoadOptions
+			minigameOptions = new SceneLoadOptions
 			{
 				IsAdditive = false,
 				DeleteEverything = true,
 				ShowLoadingScreen = true,
 			};
 
-			this.lobbyOptions.SetScene("scenes/start.scene");
+			lobbyOptions.SetScene("scenes/start.scene");
 		}
 
 		public CameraComponent WorldCamera { get; private set; }
@@ -59,7 +59,7 @@ namespace SandboxParty.Managers
 		/// </summary>
 		void ISceneStartup.OnHostInitialize()
 		{
-			this.Scene.Load(this.lobbyOptions);
+			Scene.Load(lobbyOptions);
 
 			if (!Networking.IsActive)
 			{
@@ -67,7 +67,7 @@ namespace SandboxParty.Managers
 				Networking.CreateLobby(new());
 			}
 
-			this.LoadBoard();
+			LoadBoard();
 		}
 
 		/// <summary>
@@ -78,19 +78,19 @@ namespace SandboxParty.Managers
 		{
 			Log.Info("Syncing client");
 			var cameraObject = scene.CreateObject(true);
-			this.WorldCamera = cameraObject.AddComponent<CameraComponent>();
-			this.WorldCamera.IsMainCamera = true;
-			this.WorldCamera.FovAxis = CameraComponent.Axis.Vertical;
-			this.WorldCamera.FieldOfView = 90;
+			WorldCamera = cameraObject.AddComponent<CameraComponent>();
+			WorldCamera.IsMainCamera = true;
+			WorldCamera.FovAxis = CameraComponent.Axis.Vertical;
+			WorldCamera.FieldOfView = 90;
 
-			var occlusionComponent = this.WorldCamera.AddComponent<AmbientOcclusion>();
+			var occlusionComponent = WorldCamera.AddComponent<AmbientOcclusion>();
 			occlusionComponent.Intensity = 1;
 
-			this.BoardState ??= scene.GetComponentInChildren<BoardGameState>();
-			Log.Info($"Synced {this.BoardState}");
+			BoardState ??= scene.GetComponentInChildren<BoardGameState>();
+			Log.Info($"Synced {BoardState}");
 
-			this.MinigameState = scene.GetComponentInChildren<MinigameGameState>();
-			Log.Info($"Synced {this.MinigameState}");
+			MinigameState = scene.GetComponentInChildren<MinigameGameState>();
+			Log.Info($"Synced {MinigameState}");
 		}
 
 		void IBoardRoundEvent.OnRoundEnded()
@@ -110,14 +110,14 @@ namespace SandboxParty.Managers
 			var board = SceneResource.Boards[0];
 
 			Log.Info($"Loading board {board.SceneType} {board.Scene}");
-			this.boardOptions.SetScene(board.Scene);
-			var sceneLoaded = this.Scene.Load(this.boardOptions);
+			boardOptions.SetScene(board.Scene);
+			var sceneLoaded = Scene.Load(boardOptions);
 
 			if (sceneLoaded)
 			{
 				Log.Info($"Loaded {board.SceneType} {board.Scene}");
-				var stateObject = this.Scene.CreateObject();
-				this.BoardState = stateObject.AddComponent<BoardGameState>();
+				var stateObject = Scene.CreateObject();
+				BoardState = stateObject.AddComponent<BoardGameState>();
 				stateObject.NetworkSpawn();
 				Log.Info($"Created {nameof(BoardGameState)}");
 			}
@@ -133,14 +133,14 @@ namespace SandboxParty.Managers
 			var minigame = SceneResource.Minigames[0];
 
 			Log.Info($"Loading minigame {minigame.SceneType} {minigame.Scene}");
-			this.minigameOptions.SetScene(minigame.Scene);
-			var sceneLoaded = this.Scene.Load(this.minigameOptions);
+			minigameOptions.SetScene(minigame.Scene);
+			var sceneLoaded = Scene.Load(minigameOptions);
 
 			if (sceneLoaded)
 			{
 				Log.Info($"Loaded {minigame.SceneType} {minigame.Scene}");
-				var stateObject = this.Scene.CreateObject();
-				this.MinigameState = stateObject.AddComponent<MinigameGameState>();
+				var stateObject = Scene.CreateObject();
+				MinigameState = stateObject.AddComponent<MinigameGameState>();
 				stateObject.NetworkSpawn();
 				Log.Info($"Created {nameof(MinigameGameState)}");
 			}

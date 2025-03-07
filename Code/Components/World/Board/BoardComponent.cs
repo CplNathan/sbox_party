@@ -14,7 +14,7 @@ namespace SandboxParty.Components.World.Board
 		{
 			base.OnUpdate();
 
-			Gizmo.Draw.Lines(this.NextComponent.Select(x => new Line(this.WorldPosition, x.WorldPosition)));
+			Gizmo.Draw.Lines(NextComponent.Select(x => new Line(WorldPosition, x.WorldPosition)));
 		}
 	}
 }

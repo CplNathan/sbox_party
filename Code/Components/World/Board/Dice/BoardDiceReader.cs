@@ -9,9 +9,9 @@ namespace SandboxParty.Components.World.Board.Dice
 	{
 		public int ReadNumber()
 		{
-			var diceNumbers = this.GetComponentsInChildren<BoardDiceNumber>();
+			var diceNumbers = GetComponentsInChildren<BoardDiceNumber>();
 
-			var normalizedVectors = diceNumbers.ToDictionary(x => x.DiceNumber, x => this.GameObject.WorldPosition - x.WorldPosition);
+			var normalizedVectors = diceNumbers.ToDictionary(x => x.DiceNumber, x => GameObject.WorldPosition - x.WorldPosition);
 			var sortedVectors = normalizedVectors.OrderByDescending(x => Vector3.DistanceBetween(x.Value, Vector3.Up));
 
 			return sortedVectors.First().Key;

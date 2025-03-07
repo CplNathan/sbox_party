@@ -32,22 +32,22 @@ namespace SandboxParty.Components.Character.Board
 		[Sync(Flags = SyncFlags.FromHost)]
 		public int LastRoll { get; private set; } = 0;
 
-		private List<GameObject> ValidDice { get => [.. this.spawnedDice?.Where(x => x.IsValid) ?? []]; }
+		private List<GameObject> ValidDice { get => [.. spawnedDice?.Where(x => x.IsValid) ?? []]; }
 
 		public async Task<int> RollDice(Vector3 effectLocation)
 		{
-			var newRoll = await this.PerformEffects(this.DicePerRoll, effectLocation);
-			this.LastRoll = newRoll >= 2 ? newRoll : Random.Shared.Next(this.DicePerRoll, this.DicePerRoll * 6);
-			return this.LastRoll;
+			var newRoll = await PerformEffects(DicePerRoll, effectLocation);
+			LastRoll = newRoll >= 2 ? newRoll : Random.Shared.Next(DicePerRoll, DicePerRoll * 6);
+			return LastRoll;
 		}
 
 		public async Task<int> PerformEffects(int count, Vector3 vector)
 		{
-			GameObject[] dice = this.CloneDice(count, vector);
+			GameObject[] dice = CloneDice(count, vector);
 
 			try
 			{
-				await this.Task.DelaySeconds(this.DiceLifetimeSeconds, this.cancellationTokenSource.Token);
+				await Task.DelaySeconds(DiceLifetimeSeconds, cancellationTokenSource.Token);
 
 				var diceReaders = dice.Select(x => x.GetComponent<BoardDiceReader>()).ToList();
 				return diceReaders.Sum(x => x.ReadNumber());
@@ -58,7 +58,7 @@ namespace SandboxParty.Components.Character.Board
 			}
 			finally
 			{
-				this.DestroyDice(dice);
+				DestroyDice(dice);
 			}
 
 			return -1;
@@ -66,19 +66,19 @@ namespace SandboxParty.Components.Character.Board
 
 		public GameObject[] CloneDice(int count, Vector3 vector)
 		{
-			Assert.NotNull(this.DicePrefab);
+			Assert.NotNull(DicePrefab);
 
 			GameObject[] newDice = new GameObject[count];
-			this.spawnedDice?.EnsureCapacity(this.spawnedDice.Count + count);
+			spawnedDice?.EnsureCapacity(spawnedDice.Count + count);
 
 			for (int i = 0; i < count; i++)
 			{
-				var diceObject = this.DicePrefab.Clone(vector, Rotation.Random);
+				var diceObject = DicePrefab.Clone(vector, Rotation.Random);
 				diceObject.NetworkSpawn();
-				diceObject.GetComponent<Rigidbody>().ApplyForceAt(Vector3.Random, -(this.WorldPosition - vector) * 20000);
+				diceObject.GetComponent<Rigidbody>().ApplyForceAt(Vector3.Random, -(WorldPosition - vector) * 20000);
 
 				newDice[i] = diceObject;
-				this.spawnedDice?.Add(diceObject);
+				spawnedDice?.Add(diceObject);
 			}
 
 			return newDice;
@@ -86,25 +86,25 @@ namespace SandboxParty.Components.Character.Board
 
 		protected void Cleanup()
 		{
-			this.cancellationTokenSource?.Cancel();
-			this.cancellationTokenSource = null;
+			cancellationTokenSource?.Cancel();
+			cancellationTokenSource = null;
 
-			this.ValidDice?.ForEach(x => x.Destroy());
-			this.spawnedDice = null;
+			ValidDice?.ForEach(x => x.Destroy());
+			spawnedDice = null;
 		}
 
 		protected override void OnStart()
 		{
 			base.OnStart();
 
-			this.cancellationTokenSource ??= new();
+			cancellationTokenSource ??= new();
 		}
 
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
 
-			this.Cleanup();
+			Cleanup();
 		}
 
 		protected override void OnUpdate()
@@ -121,7 +121,7 @@ namespace SandboxParty.Components.Character.Board
 					dice.Destroy();
 				}
 
-				this.spawnedDice?.Remove(dice);
+				spawnedDice?.Remove(dice);
 			}
 		}
 	}

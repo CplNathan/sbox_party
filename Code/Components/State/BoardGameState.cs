@@ -19,29 +19,29 @@ namespace SandboxParty.Components.State
 
 		protected override void OnConnected(Connection channel)
 		{
-			if (this.CurrentTurn == default)
+			if (CurrentTurn == default)
 			{
 				Log.Warning($"Connected user starting turn {channel.DisplayName}");
 
-				var character = this.Characters[channel.Id];
+				var character = Characters[channel.Id];
 				IBoardTurnEvent.Post(x => x.OnTurnStarted(character));
 			}
 		}
 
 		protected override void OnDisconnected(Connection channel)
 		{
-			if (this.CurrentTurn.Network.Owner == channel)
+			if (CurrentTurn.Network.Owner == channel)
 			{
 				Log.Warning($"Disconnected user ending turn {channel.DisplayName}");
 
-				IBoardTurnEvent.Post(x => x.OnTurnEnded(this.CurrentTurn));
+				IBoardTurnEvent.Post(x => x.OnTurnEnded(CurrentTurn));
 			}
 		}
 
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
 		void IBoardTurnEvent.OnTurnStarted(BoardCharacter character)
 		{
-			if (!this.OnTurnStarted_Validate(character))
+			if (!OnTurnStarted_Validate(character))
 			{
 				Log.Warning($"Failed to validate OnTurnStarted RPC for {character.Network.Owner.DisplayName}");
 				return;
@@ -49,14 +49,14 @@ namespace SandboxParty.Components.State
 
 			Log.Info($"Turn started for {character.Network.Owner.DisplayName}");
 
-			this.TurnNumber++;
-			this.CurrentTurn = character;
+			TurnNumber++;
+			CurrentTurn = character;
 		}
 
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
 		void IBoardTurnEvent.OnDestinationReached(BoardCharacter character)
 		{
-			if (!this.OnDestinationReached_Validate(character))
+			if (!OnDestinationReached_Validate(character))
 			{
 				Log.Warning($"Failed to validate OnDestinationReached RPC for {character.Network.Owner.DisplayName}");
 				return;
@@ -72,7 +72,7 @@ namespace SandboxParty.Components.State
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
 		void IBoardTurnEvent.OnTurnEnded(BoardCharacter character)
 		{
-			if (!this.OnTurnEnded_Validate(character))
+			if (!OnTurnEnded_Validate(character))
 			{
 				Log.Warning($"Failed to validate OnTurnEnded RPC for {character.Network.Owner.DisplayName}");
 				return;
@@ -80,25 +80,25 @@ namespace SandboxParty.Components.State
 
 			Log.Info($"Turn ended for {character.Network.Owner.DisplayName}");
 
-			if ((this.TurnNumber % this.Characters.Count) == 0 && this.TurnNumber > this.Characters.Count)
+			if ((TurnNumber % Characters.Count) == 0 && TurnNumber > Characters.Count)
 			{
 				IBoardRoundEvent.Post(x => x.OnRoundEnded());
 			}
 			else
 			{
-				IBoardTurnEvent.Post(x => x.OnTurnStarted(this.Characters.ElementAt(this.TurnNumber % this.Characters.Count).Value));
+				IBoardTurnEvent.Post(x => x.OnTurnStarted(Characters.ElementAt(TurnNumber % Characters.Count).Value));
 			}
 		}
 
 		protected override GameObject GetPlayerPrefab()
-			=> SceneResource.GetSceneResource(this.Scene, SceneResource.Boards).GetPlayerPrefab();
+			=> SceneResource.GetSceneResource(Scene, SceneResource.Boards).GetPlayerPrefab();
 
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
 
 			var cameraObject = GameManager.Current.WorldCamera.GameObject;
-			var cameraFocus = this.CurrentTurn?.WorldPosition ?? Vector3.Zero;
+			var cameraFocus = CurrentTurn?.WorldPosition ?? Vector3.Zero;
 			var newPosition = cameraFocus + new Vector3(-100, 0, 150);
 			var newRotation = Rotation.LookAt(cameraFocus + new Vector3(0, 0, 64) - cameraObject.WorldPosition);
 			cameraObject.WorldPosition = Vector3.Lerp(cameraObject.WorldPosition, newPosition, Time.Delta * 5f);
@@ -122,7 +122,7 @@ namespace SandboxParty.Components.State
 				return false;
 			}
 
-			return this.CurrentTurn == character;
+			return CurrentTurn == character;
 		}
 
 		private bool OnTurnEnded_Validate(BoardCharacter character)
@@ -132,7 +132,7 @@ namespace SandboxParty.Components.State
 				return false;
 			}
 
-			return this.CurrentTurn == character;
+			return CurrentTurn == character;
 		}
 
 		public void OnRoundEnded()

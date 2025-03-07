@@ -39,7 +39,7 @@
         "Output": "Result"
       },
       "Metalness": {
-        "Identifier": "26",
+        "Identifier": "24",
         "Output": "Result"
       }
     },
@@ -79,8 +79,8 @@
       "Position": "2208,420",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "21",
-        "Output": "TexCoord"
+        "Identifier": "13",
+        "Output": "Result"
       }
     },
     {
@@ -103,7 +103,7 @@
       "Position": "1344,504",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "25",
+        "Identifier": "23",
         "Output": "Cube UV"
       }
     },
@@ -215,8 +215,8 @@
       "Position": "2208,228",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "21",
-        "Output": "TexCoord"
+        "Identifier": "13",
+        "Output": "Result"
       }
     },
     {
@@ -321,54 +321,15 @@
       "Position": "2832,960",
       "HandleOffsets": {},
       "A": {
-        "Identifier": "24",
+        "Identifier": "22",
         "Output": "Result"
       },
       "B": {
-        "Identifier": "23",
+        "Identifier": "21",
         "Output": "Result"
       },
       "C": {
         "Identifier": "17",
-        "Output": "Result"
-      }
-    },
-    {
-      "_class": "SubgraphNode",
-      "SubgraphPath": "materials/shaders/parallax.shdrfunc",
-      "DefaultValues": {
-        "Depth": 0.525,
-        "Heightmap": 0,
-        "TexCoord": "0,0"
-      },
-      "Identifier": "21",
-      "Position": "1740,1344",
-      "HandleOffsets": {},
-      "Heightmap": {
-        "Identifier": "22",
-        "Output": "R"
-      },
-      "TexCoord": {
-        "Identifier": "13",
-        "Output": "Result"
-      }
-    },
-    {
-      "_class": "TextureSampler",
-      "Image": "materials/rusted_shutter/rusted_shutter_disp_1k.jpg",
-      "Sampler": {},
-      "UI": {
-        "Name": "Overlay Height",
-        "Default": "1,1,1,1",
-        "Extension": "Mask",
-        "ShowExtension": true,
-        "SrgbRead": true
-      },
-      "Identifier": "22",
-      "Position": "1512,1344",
-      "HandleOffsets": {},
-      "Coords": {
-        "Identifier": "13",
         "Output": "Result"
       }
     },
@@ -383,12 +344,12 @@
         "ShowExtension": true,
         "SrgbRead": true
       },
-      "Identifier": "23",
+      "Identifier": "21",
       "Position": "2208,612",
       "HandleOffsets": {},
       "Coords": {
-        "Identifier": "21",
-        "Output": "TexCoord"
+        "Identifier": "13",
+        "Output": "Result"
       }
     },
     {
@@ -399,7 +360,7 @@
       "Name": "",
       "IsAttribute": false,
       "UI": {},
-      "Identifier": "24",
+      "Identifier": "22",
       "Position": "2208,960",
       "HandleOffsets": {}
     },
@@ -409,7 +370,7 @@
       "DefaultValues": {
         "Tiling": 1
       },
-      "Identifier": "25",
+      "Identifier": "23",
       "Position": "1164,504",
       "HandleOffsets": {}
     },
@@ -418,7 +379,7 @@
       "DefaultA": 0,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "26",
+      "Identifier": "24",
       "Position": "2832,1200",
       "HandleOffsets": {},
       "B": {
@@ -435,7 +396,7 @@
       "DefaultA": 1,
       "DefaultB": 1,
       "Fraction": 0.5,
-      "Identifier": "27",
+      "Identifier": "25",
       "Position": "2832,1320",
       "HandleOffsets": {},
       "B": {

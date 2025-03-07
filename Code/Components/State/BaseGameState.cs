@@ -34,47 +34,47 @@ namespace SandboxParty.Components.State
 
 			var displayName = $"Player - {channel.DisplayName}";
 
-			if (this.OrphanedCharacters.TryGetValue(channel.SteamId, out TCharacter existingPlayer))
+			if (OrphanedCharacters.TryGetValue(channel.SteamId, out TCharacter existingPlayer))
 			{
 				Log.Info($"Retrieving existing character for {displayName}");
 				existingPlayer.GameObject.Name = displayName;
 				existingPlayer.GameObject.Enabled = true;
 				existingPlayer.GameObject.Network.AssignOwnership(channel);
 
-				this.Characters[channel.Id] = existingPlayer;
-				this.OrphanedCharacters.Remove(channel.SteamId);
+				Characters[channel.Id] = existingPlayer;
+				OrphanedCharacters.Remove(channel.SteamId);
 
 				return;
 			}
 
 			Log.Info($"Spawning new character for {displayName}");
 
-			var player = this.GetPlayerPrefab().Clone(this.GetSpawnTransform(), name: displayName);
+			var player = GetPlayerPrefab().Clone(GetSpawnTransform(), name: displayName);
 			player.Network.SetOrphanedMode(NetworkOrphaned.Host);
 			player.NetworkSpawn(channel);
 
-			this.Characters[channel.Id] = player.GetComponentInChildren<TCharacter>();
+			Characters[channel.Id] = player.GetComponentInChildren<TCharacter>();
 
-			this.OnConnected(channel);
+			OnConnected(channel);
 		}
 
 		void INetworkListener.OnDisconnected(Connection channel)
 		{
 			Log.Info($"Storing disconnected character for {channel.DisplayName}");
-			var character = this.Characters[channel.Id];
+			var character = Characters[channel.Id];
 			character.GameObject.Enabled = false;
 
-			this.OrphanedCharacters[channel.SteamId] = character;
-			this.Characters.Remove(channel.Id);
+			OrphanedCharacters[channel.SteamId] = character;
+			Characters.Remove(channel.Id);
 
-			this.OnDisconnected(channel);
+			OnDisconnected(channel);
 		}
 
 		protected abstract GameObject GetPlayerPrefab();
 
 		protected Transform GetSpawnTransform()
 		{
-			return BaseSceneInformation.GetSpawnPoints(this.Scene)[0].WorldTransform.WithScale(1).WithRotation(Rotation.FromYaw(0));
+			return BaseSceneInformation.GetSpawnPoints(Scene)[0].WorldTransform.WithScale(1).WithRotation(Rotation.FromYaw(0));
 		}
 	}
 }

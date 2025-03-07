@@ -29,16 +29,16 @@ namespace SandboxParty.Resources
 			=> dataSource.First(source => source.Scene == scene.Source.ResourcePath);
 
 		public SceneFile GetSceneFile()
-			=> ResourceLibrary.Get<SceneFile>(this.Scene);
+			=> ResourceLibrary.Get<SceneFile>(Scene);
 
 		public GameObject GetPlayerPrefab()
-			=> GameObject.GetPrefab(this.PlayerPrefab);
+			=> GameObject.GetPrefab(PlayerPrefab);
 
 		protected override void PostLoad()
 		{
 			base.PostLoad();
 
-			switch (this.SceneType)
+			switch (SceneType)
 			{
 				case SceneType.Board:
 					if (!_boardList.Contains(this))
