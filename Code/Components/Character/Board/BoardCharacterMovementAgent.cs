@@ -4,7 +4,6 @@
 
 using SandboxParty.Components.World.Board;
 using SandboxParty.Events;
-using SandboxParty.Structs;
 
 namespace SandboxParty.Components.Character.Board
 {
@@ -29,67 +28,57 @@ namespace SandboxParty.Components.Character.Board
 		[Sync(Flags = SyncFlags.FromHost | SyncFlags.Interpolate)]
 		public Rotation DesiredRotation { get; set; }
 
-		public BoardPathComponent CurrentTile;
+		[Sync(Flags = SyncFlags.FromHost)]
+		public BoardPathComponent CurrentTile { get; set; }
+
+		[Sync]
+		public BoardComponent RequestedComponent { get; set; }
 
 		protected override void OnStart()
 		{
 			base.OnStart();
 
-			this.NavigationAgent.SetAgentPosition(this.GameObject.WorldPosition);
-			this.NavigationAgent.MoveTo(this.GameObject.WorldPosition);
-
-			this.CurrentTile = new BoardPathComponent(this.Scene.Components.GetAll<BoardComponent>().First());
+			this.CurrentTile = new BoardPathComponent(this.Scene.GetComponentsInChildren<BoardComponent>().First());
+			this.NavigationAgent.SetAgentPosition(this.CurrentTile.Component.WorldPosition);
+			this.NavigationAgent.MoveTo(this.CurrentTile.Component.WorldPosition);
 		}
 
 		protected override void OnUpdate()
 		{
 			base.OnUpdate();
 
-			this.Velocity = this.NavigationAgent.Velocity;
-			this.WishVelocity = this.NavigationAgent.WishVelocity;
-
-			this.DebugRendering();
-
 			if (Networking.IsHost)
 			{
-				this.HandleNavigation();
+				this.HandleNavigation(RequestedComponent);
 			}
 
+			this.DebugRendering();
 			this.HandleMovement();
 			this.HandleRotation();
-		}
 
-		private void HandleNavigation()
-		{
-			BoardComponent requestedComponent = null;
-			if (this.CurrentTile.SelectionRequired && !this.CurrentTile.SelectionMade)
+			if (this.Network.IsProxy)
 			{
-				var currentComponent = this.CurrentTile.Component;
-				var closestComponent = this.CurrentTile.NextComponents.OrderBy(component => component.WorldPosition.Distance(this.Scene.Camera.ScreenToWorld(Gizmo.CursorPosition))).First();
-
-				foreach (var nextComponent in this.CurrentTile.NextComponents)
-				{
-					var forwardDirection = Rotation.LookAt(nextComponent.WorldPosition - currentComponent.WorldPosition).Forward;
-
-					Gizmo.Draw.Color = nextComponent == closestComponent ? Color.Yellow : Color.White;
-					Gizmo.Draw.Arrow(currentComponent.WorldPosition + (forwardDirection * 10), currentComponent.WorldPosition + (forwardDirection * 25));
-				}
-
-				if (Input.Pressed("attack1"))
-				{
-					requestedComponent = closestComponent;
-				}
+				return;
 			}
 
-			var destinationReached = this.CurrentTile.Reached(this.NavigationAgent.AgentPosition);
-			if (this.Steps > 0 && destinationReached && this.CurrentTile.MoveNext(requestedComponent, out BoardPathComponent? nextTile))
+			if (Input.Pressed("attack1"))
 			{
-				this.CurrentTile = nextTile.Value;
-				this.NavigationAgent.MoveTo(nextTile.Value.Component.WorldPosition);
+				var closestComponent = this.CurrentTile.NextComponents.OrderBy(component => component.WorldPosition.Distance(this.Scene.Camera.ScreenToWorld(Gizmo.CursorPosition))).First();
+				RequestedComponent = closestComponent;
+			}
+		}
+
+		private void HandleNavigation(BoardComponent requestedComponent = null)
+		{
+			var destinationReached = this.CurrentTile.Reached(this.NavigationAgent.AgentPosition, out bool justReached);
+			if (this.Steps > 0 && destinationReached && this.CurrentTile.MoveNext(requestedComponent, out BoardPathComponent nextTile))
+			{
+				this.CurrentTile = nextTile;
+				this.NavigationAgent.MoveTo(this.CurrentTile.Component.WorldPosition);
 
 				this.Steps = -1;
 			}
-			else if (this.Steps == 0 && this.CurrentTile.CanSendDestinationNotification())
+			else if (this.Steps == 0 && destinationReached && justReached)
 			{
 				IBoardCharacterEvent.PostToGameObject(this.GameObject, x => x.OnDestinationReached());
 				// this.NavigationAgent.Stop();
@@ -98,6 +87,8 @@ namespace SandboxParty.Components.Character.Board
 
 		private void HandleMovement()
 		{
+			this.Velocity = this.NavigationAgent.Velocity;
+			this.WishVelocity = this.NavigationAgent.WishVelocity;
 			this.DesiredLocation = this.NavigationAgent.AgentPosition;
 		}
 
@@ -121,6 +112,18 @@ namespace SandboxParty.Components.Character.Board
 
 		private void RenderBranch()
 		{
+			var currentComponent = this.CurrentTile.Component;
+
+			if (this.CurrentTile.SelectionRequired && !this.CurrentTile.SelectionMade)
+			{
+				foreach (var nextComponent in this.CurrentTile.NextComponents)
+				{
+					var forwardDirection = Rotation.LookAt(nextComponent.WorldPosition - currentComponent.WorldPosition).Forward;
+
+					Gizmo.Draw.Color = nextComponent == RequestedComponent ? Color.Yellow : Color.White;
+					Gizmo.Draw.Arrow(currentComponent.WorldPosition + (forwardDirection * 10), currentComponent.WorldPosition + (forwardDirection * 25));
+				}
+			}
 		}
 
 		private void RenderPath(BoardPathComponent tile, int steps)
