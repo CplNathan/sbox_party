@@ -4,19 +4,27 @@
 
 using System;
 using SandboxParty.Components.Character;
-using SandboxParty.Components.World;
 
 namespace SandboxParty.Components.State
 {
 	public abstract class BaseGameState<TCharacter> : Component, Component.INetworkListener
 		where TCharacter : BaseCharacter
 	{
+		public int MaxPlayers { get; set; } = 8;
+
+		protected abstract GameObject PlayerPrefab { get; }
+
+		protected abstract Vector3 SpawnLocation { get; }
+
 		protected Dictionary<Guid, TCharacter> Characters { get; private set; } = [];
 
 		protected Dictionary<SteamId, TCharacter> OrphanedCharacters { get; private set; } = [];
 
 		bool INetworkListener.AcceptConnection(Connection channel, ref string reason)
 		{
+			if (Connection.All.Count > MaxPlayers)
+				reason += "Max Players";
+
 			channel.CanSpawnObjects = false;
 			channel.CanRefreshObjects = false;
 
@@ -48,7 +56,7 @@ namespace SandboxParty.Components.State
 
 			Log.Info($"Spawning new character for {displayName}");
 
-			var player = GetPlayerPrefab().Clone(GetSpawnLocation(), Rotation.FromYaw(0));
+			var player = PlayerPrefab.Clone(SpawnLocation, Rotation.FromYaw(0));
 			player.Name = displayName;
 			player.Network.SetOrphanedMode(NetworkOrphaned.Host);
 			player.NetworkSpawn(channel);
@@ -69,9 +77,5 @@ namespace SandboxParty.Components.State
 
 			OnDisconnected(channel);
 		}
-
-		protected abstract GameObject GetPlayerPrefab();
-
-		protected abstract Vector3 GetSpawnLocation();
 	}
 }

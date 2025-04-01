@@ -13,9 +13,7 @@ namespace SandboxParty.Components.Character.Board
 	[Title("Board Dice")]
 	public class BoardCharacterDice : Component
 	{
-		private List<GameObject> spawnedDice = [];
-
-		private CancellationTokenSource cancellationTokenSource = new();
+		public List<GameObject> ValidDice { get => [.. _spawnedDice?.Where(x => x.IsValid) ?? []]; }
 
 		[Property]
 		public GameObject DicePrefab { get; init; }
@@ -32,7 +30,9 @@ namespace SandboxParty.Components.Character.Board
 		[Sync(Flags = SyncFlags.FromHost)]
 		public int LastRoll { get; private set; } = 0;
 
-		private List<GameObject> ValidDice { get => [.. spawnedDice?.Where(x => x.IsValid) ?? []]; }
+		private List<GameObject> _spawnedDice = [];
+
+		private CancellationTokenSource _cancellationTokenSource = new();
 
 		public async Task<int> RollDice(Vector3 effectLocation)
 		{
@@ -47,7 +47,7 @@ namespace SandboxParty.Components.Character.Board
 
 			try
 			{
-				await Task.DelaySeconds(DiceLifetimeSeconds, cancellationTokenSource.Token);
+				await Task.DelaySeconds(DiceLifetimeSeconds, _cancellationTokenSource.Token);
 
 				var diceReaders = dice.Select(x => x.GetComponent<BoardDiceReader>()).ToList();
 				return diceReaders.Sum(x => x.ReadNumber());
@@ -69,7 +69,7 @@ namespace SandboxParty.Components.Character.Board
 			Assert.NotNull(DicePrefab);
 
 			GameObject[] newDice = new GameObject[count];
-			spawnedDice?.EnsureCapacity(spawnedDice.Count + count);
+			_spawnedDice?.EnsureCapacity(_spawnedDice.Count + count);
 
 			for (int i = 0; i < count; i++)
 			{
@@ -78,7 +78,7 @@ namespace SandboxParty.Components.Character.Board
 				diceObject.GetComponent<Rigidbody>().ApplyForceAt(Vector3.Random, -(WorldPosition - vector) * 20000);
 
 				newDice[i] = diceObject;
-				spawnedDice?.Add(diceObject);
+				_spawnedDice?.Add(diceObject);
 			}
 
 			return newDice;
@@ -86,18 +86,18 @@ namespace SandboxParty.Components.Character.Board
 
 		protected void Cleanup()
 		{
-			cancellationTokenSource?.Cancel();
-			cancellationTokenSource = null;
+			_cancellationTokenSource?.Cancel();
+			_cancellationTokenSource = null;
 
 			ValidDice?.ForEach(x => x.Destroy());
-			spawnedDice = null;
+			_spawnedDice = null;
 		}
 
 		protected override void OnStart()
 		{
 			base.OnStart();
 
-			cancellationTokenSource ??= new();
+			_cancellationTokenSource ??= new();
 		}
 
 		protected override void OnDestroy()
@@ -121,7 +121,7 @@ namespace SandboxParty.Components.Character.Board
 					dice.Destroy();
 				}
 
-				spawnedDice?.Remove(dice);
+				_spawnedDice?.Remove(dice);
 			}
 		}
 	}

@@ -400,6 +400,7 @@
           "OnComponentUpdate": null,
           "Projection": "Sphere",
           "RenderDynamically": false,
+          "Resolution": "Small",
           "Texture": "textures/cubemaps/default2.vtex",
           "TintColor": "1,1,1,1",
           "UpdateStrategy": "OnEnabled",

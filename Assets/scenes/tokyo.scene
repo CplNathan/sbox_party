@@ -41,7 +41,7 @@
             {
               "__type": "SandboxParty.Components.World.Board.BoardComponent",
               "__guid": "f8837d33-8e12-4531-b446-74612c340ba5",
-              "IsSpawn": false,
+              "IsSpawn": true,
               "NextComponent": [
                 {
                   "_type": "gameobject",

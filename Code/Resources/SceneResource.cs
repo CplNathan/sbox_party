@@ -2,7 +2,10 @@
 // Copyright (c) Nathan Ford. All rights reserved.
 // </copyright>
 
+using SandboxParty.Components.State.Minigame;
+using SandboxParty.Components.State.Rules;
 using SandboxParty.Enums;
+using System;
 
 namespace SandboxParty.Resources
 {
@@ -24,6 +27,8 @@ namespace SandboxParty.Resources
 
 		[ResourceType("prefab")]
 		public string PlayerPrefab { get; set; }
+
+		public Type Rules { get; set; }
 
 		public static SceneResource GetSceneResource(Scene scene, IReadOnlyList<SceneResource> dataSource)
 			=> dataSource.First(source => source.Scene == scene.Source.ResourcePath);

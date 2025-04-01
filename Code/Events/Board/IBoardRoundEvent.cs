@@ -1,4 +1,4 @@
-﻿namespace SandboxParty.Events
+﻿namespace SandboxParty.Events.Board
 {
     public interface IBoardRoundEvent : ISceneEvent<IBoardRoundEvent>
     {

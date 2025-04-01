@@ -5,7 +5,7 @@
 using SandboxParty.Components.Character.Board;
 using SandboxParty.Components.World;
 using SandboxParty.Components.World.Board;
-using SandboxParty.Events;
+using SandboxParty.Events.Board;
 using SandboxParty.Resources;
 using GameManager = SandboxParty.Managers.GameManager;
 
@@ -18,6 +18,27 @@ namespace SandboxParty.Components.State
 
 		[Sync(Flags = SyncFlags.FromHost)]
 		public BoardCharacter CurrentTurn { get; set; }
+
+		protected override GameObject PlayerPrefab
+			=> SceneResource.GetSceneResource(Scene, SceneResource.Boards).GetPlayerPrefab();
+
+		protected override Vector3 SpawnLocation
+			=> Scene.GetComponentsInChildren<BoardComponent>()
+				.Where(component => component.IsSpawn).First()
+				.GameObject
+				.WorldPosition;
+
+		protected override void OnUpdate()
+		{
+			base.OnUpdate();
+
+			var cameraObject = GameManager.Current.WorldCamera.GameObject;
+			var cameraFocus = CurrentTurn?.WorldPosition ?? Vector3.Zero;
+			var newPosition = cameraFocus + new Vector3(-150, 0, 150);
+			var newRotation = Rotation.LookAt(cameraFocus + new Vector3(0, 0, 64) - cameraObject.WorldPosition);
+			cameraObject.WorldPosition = Vector3.Lerp(cameraObject.WorldPosition, newPosition, Time.Delta * 5f);
+			cameraObject.WorldRotation = Rotation.Slerp(cameraObject.WorldRotation, newRotation, Time.Delta * 2.5f);
+		}
 
 		protected override void OnConnected(Connection channel)
 		{
@@ -43,7 +64,7 @@ namespace SandboxParty.Components.State
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
 		void IBoardTurnEvent.OnTurnStarted(BoardCharacter character)
 		{
-			if (!OnTurnStarted_Validate(character))
+			if (!OnTurnStarted_Validate(character, true))
 			{
 				Log.Warning($"Failed to validate OnTurnStarted RPC for {character.Network.Owner.DisplayName}");
 				return;
@@ -53,6 +74,16 @@ namespace SandboxParty.Components.State
 
 			TurnNumber++;
 			CurrentTurn = character;
+		}
+
+		bool OnTurnStarted_Validate(BoardCharacter character, bool ignoreCurrentTurn)
+		{
+			if (!Networking.IsHost)
+			{
+				return false;
+			}
+
+			return ignoreCurrentTurn || CurrentTurn != character;
 		}
 
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
@@ -69,6 +100,16 @@ namespace SandboxParty.Components.State
 			// TODO: Implement OnDestinationReached Handling
 			// Instead make the following call only once the player has confirmed that they want to end their turn or it times out.
 			IBoardTurnEvent.Post(x => x.OnTurnEnded(character));
+		}
+
+		bool OnDestinationReached_Validate(BoardCharacter character)
+		{
+			if (!Networking.IsHost)
+			{
+				return false;
+			}
+
+			return CurrentTurn == character;
 		}
 
 		[Rpc.Host(Flags = NetFlags.HostOnly)]
@@ -92,62 +133,14 @@ namespace SandboxParty.Components.State
 			}
 		}
 
-		protected override GameObject GetPlayerPrefab()
-			=> SceneResource.GetSceneResource(Scene, SceneResource.Boards).GetPlayerPrefab();
-
-		protected override Vector3 GetSpawnLocation()
+		bool OnTurnEnded_Validate(BoardCharacter character)
 		{
-			return Scene.GetComponentsInChildren<BoardComponent>()
-				.Where(component => component.IsSpawn).First()
-				.GameObject
-				.WorldPosition;
-		}
-
-		protected override void OnUpdate()
-		{
-			base.OnUpdate();
-
-			var cameraObject = GameManager.Current.WorldCamera.GameObject;
-			var cameraFocus = CurrentTurn?.WorldPosition ?? Vector3.Zero;
-			var newPosition = cameraFocus + new Vector3(-150, 0, 150);
-			var newRotation = Rotation.LookAt(cameraFocus + new Vector3(0, 0, 64) - cameraObject.WorldPosition);
-			cameraObject.WorldPosition = Vector3.Lerp(cameraObject.WorldPosition, newPosition, Time.Delta * 5f);
-			cameraObject.WorldRotation = Rotation.Slerp(cameraObject.WorldRotation, newRotation, Time.Delta * 2.5f);
-		}
-
-		private bool OnTurnStarted_Validate(BoardCharacter character)
-		{
-			if (!Rpc.Caller.IsHost)
-			{
-				return false;
-			}
-
-			return true;
-		}
-
-		private bool OnDestinationReached_Validate(BoardCharacter character)
-		{
-			if (!Rpc.Caller.IsHost)
+			if (!Networking.IsHost)
 			{
 				return false;
 			}
 
 			return CurrentTurn == character;
-		}
-
-		private bool OnTurnEnded_Validate(BoardCharacter character)
-		{
-			if (!Rpc.Caller.IsHost)
-			{
-				return false;
-			}
-
-			return CurrentTurn == character;
-		}
-
-		public void OnRoundEnded()
-		{
-			throw new System.NotImplementedException();
 		}
 	}
 }

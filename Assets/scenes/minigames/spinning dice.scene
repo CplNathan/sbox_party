@@ -1,0 +1,376 @@
+{
+  "__guid": "5a638b86-da19-487e-9175-545de8dbd495",
+  "GameObjects": [
+    {
+      "__guid": "ec84717d-aa40-4401-a120-525f00500f42",
+      "Flags": 0,
+      "Name": "Dice",
+      "Scale": "10,10,10",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "a36318ee-fcc5-47f9-bd6c-64b8dd72659b",
+          "Center": "0,0,0",
+          "Friction": null,
+          "IsTrigger": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": {
+            "__version": 9,
+            "__guid": "5cf90779-82a4-420f-b199-fe9fa4c39515",
+            "__changeId": 165,
+            "UserData": {
+              "Title": "On Collider Exit",
+              "ReferencedComponentTypes": [
+                "SandboxParty.Components.Character.Minigame.MinigameCharacter",
+                "SandboxParty.Components.State.Minigame.EliminationMinigameRules"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-12,0"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Scene",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "156,-48"
+                }
+              },
+              {
+                "Id": 15,
+                "Type": "property",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "156,48"
+                }
+              },
+              {
+                "Id": 16,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "SandboxParty.Components.Character.Minigame.MinigameCharacter"
+                },
+                "UserData": {
+                  "Position": "420,48"
+                }
+              },
+              {
+                "Id": 32,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Get",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "SandboxParty.Components.State.MinigameGameState"
+                },
+                "UserData": {
+                  "Position": "396,-72"
+                }
+              },
+              {
+                "Id": 37,
+                "Type": "property",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "708,-84"
+                }
+              },
+              {
+                "Id": 50,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "SandboxParty.Components.State.Minigame.EliminationMinigameRules"
+                },
+                "UserData": {
+                  "Position": "972,-84"
+                }
+              },
+              {
+                "Id": 51,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "OnEliminated",
+                  "_type": "SandboxParty.Components.State.Minigame.EliminationMinigameRules"
+                },
+                "UserData": {
+                  "Position": "1332,-0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 15,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 15,
+                "SrcName": "_result",
+                "DstId": 16,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 32,
+                "DstName": "_target"
+              },
+              {
+                "Id": 54,
+                "Value": "InChildren",
+                "DstId": 32,
+                "DstName": "search"
+              },
+              {
+                "SrcId": 32,
+                "SrcName": "_result",
+                "DstId": 37,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 37,
+                "SrcName": "_result",
+                "DstId": 50,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 51,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 50,
+                "SrcName": "_result",
+                "DstId": 51,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 16,
+                "SrcName": "_result",
+                "DstId": 51,
+                "DstName": "character"
+              }
+            ]
+          },
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "314eacda-c3df-4cc1-b068-e65373900f08",
+          "Flags": 0,
+          "Name": "Model",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "f812ff04-9e99-474a-ad6f-f0bd0a37fe5f",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "10,10,10",
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "45a2fad8-98a2-4c9a-9b4e-bddc7ffec539",
+              "AngularDamping": 1,
+              "Gravity": false,
+              "LinearDamping": 1,
+              "Locking": {
+                "X": true,
+                "Y": true,
+                "Z": true,
+                "Pitch": false,
+                "Yaw": false,
+                "Roll": false
+              },
+              "MassCenterOverride": "0,0,0",
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideMassCenter": false,
+              "RigidbodyFlags": "DisableCollisionSounds",
+              "StartAsleep": false
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "9fda4a4d-98c7-479f-8614-55629af41c27",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dice/dice.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "76458e33-9009-4dde-afc9-53ad714c5298",
+      "Flags": 0,
+      "Name": "Sun",
+      "Rotation": "0.5272032,-0.5609854,-0.3043809,-0.5609854",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "47f7ae27-ec37-40e6-bc90-e128427b126d",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Shadows": true,
+          "SkyColor": "0,0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "e27f6792-f554-4d62-a9b6-dfbe3a6acb58",
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "c074b85b-4223-449e-9b69-115ea9f76696",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SkyIndirectLighting": true,
+          "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "37701d5e-c10d-4d16-bef2-1227ea71f0e0",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "0,0,100",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "9da0813b-be9a-4c71-8875-bee87bfc455e",
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 2,
+  "Title": null,
+  "Description": null,
+  "__references": [
+    "baik.dice#19430"
+  ],
+  "__version": 2
+}
